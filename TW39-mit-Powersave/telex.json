@@ -1,0 +1,46 @@
+{
+  "devices": {
+    "screen": {
+      "type": "screen",
+      "enable": true
+    },
+    "RPiTTY": {
+      "type": "RPiTTY",         # standard TW39 (current loop) CCU and teletype
+      "enable": true,
+      "mode": "TW39",
+      "pin_txd": 2,
+      "pin_rxd": 5,
+      "pin_relay": 13,          # GPIO of loop relay (for changing polarity)
+      "pin_number_switch": -1,  # -1 = use definition in "RPiCtrl"
+      "txd_powersave": true     # switch off loop current in sleep mode
+    },
+    "RPiCtrl": {
+      "type": "RPiCtrl",
+      "enable": true,
+      "pin_number_switch": 6,   # GPIO of pin to monitor for dial pulses
+      "pin_button_PT": 21,      # GPIO for power button
+      "pin_LED_WB": 16,         # GPIO for LED indicating dial mode (Wählbereitschaft)
+      "pin_LED_A": 20,          # GPIO for LED indicating active connection
+      "pin_LED_Z": 12,          # GPIO for LED indicating Standby/Sleep
+      "LED_Z_heartbeat": 2,     # duty cycle of hearbeat in ZZ mode: 0.5s on / 1s off
+      "pin_power": 26,          # GPIO for power relay (switching mains)
+      "inv_power": false
+    },
+    "i-Telex": {
+      "type": "i-Telex",
+      "enable": true,
+      ....
+      "port": 2342
+    }
+  },
+#
+  "power_off_delay": 3,         # wait # seconds after poweroff condition 
+#                               # before switching off mains
+#
+  "power_button_timeout": 7200, # switch off mainsain any case after # seconds
+#
+  "wru_id": "123456 dummy d",
+  "wru_replace_always": false,
+  "continue_with_no_printer": false,
+  "dial_timeout": 0
+}
