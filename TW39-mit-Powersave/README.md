@@ -6,13 +6,16 @@ Vor ein paar Jahren habe ich begonnen, mich mit i-telex zu beschäftigen. Anfang
 ich wollte einfach einen alten Fernschreiber wieder zum Laufen bekommen. Vor diesem Hintergrund habe ich die Anschaffungskosten für eine i-telex-Station gescheut und stattdessen piTelex ausprobiert, das versprach, 
 kostengünstiger zu sein, allerdings auch einen geringeren Leistungsumfang bietet und voraussetzt, dass man Spaß hat am Elektronikbasteln und über Grundkenntnisse in python und linux verfügt.
 
-<img src="KiCad/TW39-mit-Powersave_Ansicht-Platine-3D-bestückt.jpg" width="70%" >
-Die hier beschriebene Platine habe ich aus den im [piTelex-Wiki](https://github.com/fablab-wue/piTelex/wiki) gezeigten Grundschaltungen dann entwickelt, weil ich mit der angebotenen Eagle-Platine nicht wirklich klarkam.
+<img src="KiCad/TW39-mit-Powersave_Ansicht-Platine-3D-bestückt.jpg" width="70%">
+
+Die hier beschriebene Platine habe ich aus den im [piTelex wiki](https://github.com/fablab-wue/piTelex/wiki) gezeigten Grundschaltungen dann entwickelt, weil ich mit der angebotenen Eagle-Platine nicht wirklich klarkam.
 
 Die Platine ist weder besonders kompakt noch besonders raffiniert layoutet, und sie verwendet statt der ULN...-Treiber-ICs vier einfache NPN-Transistoren. 
 Diese Schaltung funktioniert in sechs meiner sieben piTelex-Stationen seit Jahren problemlos (Die siebte Station ist eine piTelex V.10 Station, die eine FS220 ohne FSG ins i-telex Netz bringt).
 
-<img src="KiCad/TW39-mit-Powersave_Ansicht_Leiterbahnen.png" width="50%" align="right">
+<img src="KiCad/TW39-mit-Powersave_Ansicht_Leiterbahnen.png" width="20%" align=left>
+<img src="KiCad/TW39-mit-Powersave_Ansicht-Platine-Vorderseite-bestückt.jpg" width="20%" align=middle>
+<img src="KiCad/TW39-mit-Powersave_Ansicht-Platinen-Vorderseite.jpg" width="20%" align=middle>
 Das Platinenlayout ist auf Einfachheit hin getrimmt. Man kann sie zweilagig herstellen, aber auch als einlagig kupferkaschierte Platine ausführen, dann müssen lediglich drei Drahtbrücken eingesetzt werden, 
 die ansonsten durch die zweite Kupferlage realisiert werden. Die Leitungsführung ist in Standradrastermaß von 1/10 Zoll gehalten, so dass das Layout unverändert auch auf einer 
 handelsüblichen Punktrasterplatine ganz "zu Fuß" umgesetzt werden kann. Besonderes Augenmerk habe ich auf ausreichende Leiterbahnabstände im Hochspannnungsbereich gelegt. 
