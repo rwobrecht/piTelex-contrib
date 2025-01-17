@@ -13,11 +13,11 @@ Die hier beschriebene Platine habe ich aus den im [piTelex wiki](https://github.
 Meine Platine ist weder besonders kompakt noch besonders raffiniert layoutet, und sie verwendet statt der ULN...-Treiber-ICs vier einfache NPN-Transistoren. 
 Diese Schaltung funktioniert in sechs meiner sieben piTelex-Stationen seit Jahren problemlos (Die siebte Station ist eine piTelex V.10 Station, die eine FS220 ohne FAG200 ins i-telex Netz bringt).
 
-<img src="KiCad/TW39-mit-Powersave_Ansicht_Leiterbahnen.png" width="24%" align=left>
-<img src="KiCad/TW39-mit-Powersave_Ansicht-Platine-Vorderseite-bestückt.jpg" width="24%" align=middle>
-<img src="KiCad/TW39-mit-Powersave_Ansicht-Platinen-Vorderseite.jpg" width="24%" align=middle>
-<img src="KiCad/TW39-mit-Powersave_Ansicht-Platine-Bestückungsplan.png" width="24%" align=middle>  
-
+<img src="KiCad/TW39-mit-Powersave_Ansicht_Leiterbahnen.png" width="23%" align=left>
+<img src="KiCad/TW39-mit-Powersave_Ansicht-Platine-Vorderseite-bestückt.jpg" width="23%" align=left>
+<img src="KiCad/TW39-mit-Powersave_Ansicht-Platinen-Vorderseite.jpg" width="23%" align=left>
+<img src="KiCad/TW39-mit-Powersave_Ansicht-Platine-Bestückungsplan.png" width="23%" align=left>  
+<hrule></hrule>
 Das Platinenlayout ist auf Einfachheit hin getrimmt. Man kann sie zweilagig herstellen, aber auch als einlagig kupferkaschierte Platine ausführen, dann müssen lediglich drei Drahtbrücken eingesetzt werden, 
 die ansonsten durch die zweite Kupferlage realisiert werden. Die Leitungsführung ist in Standradrastermaß von 1/10 Zoll gehalten, so dass das Layout unverändert auch auf einer 
 handelsüblichen Punktrasterplatine ganz "zu Fuß" umgesetzt werden kann. Besonderes Augenmerk habe ich auf ausreichende Leiterbahnabstände im Hochspannnungsbereich gelegt. 
