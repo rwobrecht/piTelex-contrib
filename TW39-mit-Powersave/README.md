@@ -1,11 +1,11 @@
-## Platine für piTelex TW39
+# Platine für piTelex TW39
 
 
 
 
 <img src="KiCad/TW39-mit-Powersave_Ansicht-Platine-3D-bestückt.jpg" width="70%">
 
-Vor ein paar Jahren habe ich i-telex (www.itelex.net) entdeckt, weil ich einen alten Fernschreiber wieder zum Laufen bekommen wollte. Dazu erschien mir piTelex geeignet, weil es kostengünstig ist. 
+Vor ein paar Jahren habe ich i-telex (www.i-telex.net) entdeckt, weil ich einen alten Fernschreiber wieder zum Laufen bekommen wollte. Dazu erschien mir piTelex geeignet, weil es kostengünstig ist. 
 Die hier beschriebene Platine habe ich dann aus den im [piTelex wiki](https://github.com/fablab-wue/piTelex/wiki) gezeigten Grundschaltungen entwickelt, weil ich mit der unter https://github.com/fablab-wue/piTelex.supplement angebotenen Eagle-Platine nicht wirklich klarkam (was aber wohl an mir liegt, die Platine ist ja verbreitet im Einsatz).
 
 **Diese Platine eignet sich zum Anschluss eines Fernschreibers mit vorgeschaltetem Fernschaltgerät, das das Wählverfahren TW39 unterstützt.**
@@ -22,6 +22,33 @@ Die Schaltung verwendet statt der ULN...-Treiber-ICs einfache NPN-Transistoren. 
 Die Platine ist nicht auf Kompaktheit optimiert; das Layout ist auf Einfachheit getrimmt. Die Leitungsführung ist bewusst in Standardrastermaß von 1/10 Zoll gehalten, so dass das Layout unverändert auch auf einer handelsüblichen Punktrasterplatine ganz "zu Fuß" umgesetzt werden kann.
 Man kann sie zweilagig herstellen, aber auch als einlagig kupferkaschierte Platine ausführen, dann müssen lediglich drei Drahtbrücken eingesetzt werden, die ansonsten durch die zweite Kupferlage realisiert werden.  
 Besonderes Augenmerk habe ich auf ausreichende Leiterbahnabstände im Hochspannnungsbereich gelegt. Wenn man die Schaltung auf einer Punktrasterplatine aufbaut, müssen die nicht verwendeten Lötstützpunkte im Bereich der Linienstromversorgung weggefräst werden, denn die 0,4mm "Luft" zwischen zwei Lötstützpunkten sind bei 120V Speisespannung sicher nicht ausreichend.
+
+Als SBC ist ein Raspberry Pi Zero WH vorgesehen, der einfach seitlich auf die zweireihige Kontaktleiste gesteckt wird. Es passen natürlich auch andere RPi mit 40-poligem GPIO-Sockel.
+Für die Steuerung eines einzelnen TW39-Fernschreibers ist ein  RPi Zero jedenfalls mehr als ausreichend.
+
+Auf den Ersatz des Umpolrelais durch eine H-Bridge habe ich verzichtet. Die Standard-Relais arbeiten zuverlässig, sind preiswert und erfüllen ihren Zweck.
+
+### Bauteileliste
+
+Bauteil|Wert|
+|-|-|
+C1|100n Umax >= 250V|
+D1|1N4007|
+J1|PinSocket_2x20_P2.54mm_Horizontal|
+J2-J5|PinHeader,z.B. Molex_KK-254 o.ä.|
+K1|Relais DPDT, z.B. Axicom D2n oder Omron_G5V-2 o.ä|
+Q4,Q3,Q2,Q1|BC337|
+Q5|TIP50|
+R11,R3,R1|1kOhm|
+R2|470Ohm|
+R4|510Ohm|
+R6|100Ohm|
+R7,R5|330Ohm|
+R8,R9|68Ohm|
+RV1|20Ohm Mehrgang|
+U1|LTV-817 o.ä.|
+
+Alle Widerstände 0,125 W oder 0,25W
 
 ### Anschlüsse
 
@@ -82,27 +109,6 @@ Die Schaltung verwendet **nicht** die Standard-GPIOs von piTelex, daher füge ic
                                 # switch off mains after 2 hours of inactivity 
                                 # (probably forgot to switch off manually...)
 ```
-### Bauteileliste
-
-Bauteil|Wert|
-|-|-|
-C1|100n Umax >= 250V|
-D1|1N4007|
-J1|PinSocket_2x20_P2.54mm_Horizontal|
-J2-J5|PinHeader,z.B. Molex_KK-254 o.ä.|
-K1|Relais DPDT, z.B. Axicom D2n,Relais_Omron_G5V-2 oder Axicom D2n o.ä|
-Q4,Q3,Q2,Q1|BC337|
-Q5|TIP50|
-R11,R3,R1|1kOhm|
-R2|470Ohm|
-R4|510Ohm|
-R6|100Ohm|
-R7,R5|330Ohm|
-R8,R9|68Ohm|
-RV1|20Ohm Mehrgang|
-U1|LTV-817 o.ä.|
-
-Alle Widerstände 0,125 W oder 0,25W
 
 ## Abschließend der unvermeidliche Disclaimer:
 Auch wenn dieser Schaltungsvorschlag in mehreren Exemplaren seit Jahren unproblematisch funktioniert: für korrekte Funktion und für mögliche Schäden, verursacht durch Verwendung der in diesem Repository bereitgestellten Informationen, kann ich keine Haftung übernehmen. 
