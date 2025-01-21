@@ -4,7 +4,7 @@
 
 <img src="KiCad/Stromversorgung-Leiterbahnen.png" width="60%" align=middle>
 
-Die hier beschriebene Platine liefert zum einen eine galvanisch vom Netz getrennte Linienstromversorgung mit  ca 100V Leerlaufspannung und etwa 85V bei 40mA Last. Der Trafo ist für einen maximalen Sekundärstrom von 80mA_eff ausgelegt und die Sekundärseite ist auch so abzusichern. 
+Die hier beschriebene Platine liefert zum einen eine galvanisch vom Netz getrennte Linienstromversorgung mit  ca 100V Leerlaufspannung und etwa 85V bei 40mA Last. Der Trafo ist für einen maximalen Sekundärstrom von 80mA_eff ausgelegt und die Sekundärseite ist auch so abzusichern. Da der Sekundärstrom **geregelt** wird (auch bei Kurzschluss des Linienstromkreises), ist ein Ansprechen der Feinsicherung in der Praxis so gut wie ausgeschlossen, deshalb kann sie ohne Komforteinbuße im Geräteinneren verbaut werden.
 
 Zum anderen stellt die Schaltung +5V bei max 2A für die Versorgung des RPi Zero und die übrige Steuerelektronik bereit. Dafür ist ein fertiger Netzteilbaustein verwendet. 
 
@@ -16,7 +16,7 @@ Das Platinenlayout ist auf Einfachheit hin getrimmt. Man kann sie zweilagig hers
 Wenn man die Schaltung auf einer Punktrasterplatine aufbaut, müssen die nicht verwendeten Lötstützpunkte im Bereich der Netzspannung und der Linienstromversorgung weggefräst werden, denn die 0,4mm "Luft" 
 zwischen zwei Lötstützpunkten sind bei diesen Spanungen sicher nicht ausreichend. 
 
-Die Eingangsseite sollte mit 1A träge abgesichert werden. Das ist ausreichend für den Betrieb eines Fernschreibers und des Vorschaltgeräts. Außerdem empfiehlt es sich, vor diese Netzteilschaltung ein Fehlerstromschutzorgan mit max 30mA Abschaltstrom einzusetzen, um Schäden duch mögliche Isolationsprobleme insbesondere bei älteren Maschinen abfangen zu können. Dazu ist eine dreiadrige Netzzuleitung mit Schutzleiter (PE) erforderlich, der auf die Ausgangs-Schukosteckdose für den Fernschreiber durchzuverbinden ist.
+Die Eingangsseite sollte mit 1A träge abgesichert werden. Das ist ausreichend für den Betrieb eines Fernschreibers und des Vorschaltgeräts. Diese Sicherung ist nicht auf der Platine vorgesehen, sondern wird bei mir über eine im Gehäuse verbaute Kaltgeräte-Einbaubuchse mit integriertem Sicherungshalter realisiert. Außerdem empfiehlt es sich, vor diese Netzteilschaltung ein Fehlerstromschutzorgan mit max 30mA Abschaltstrom einzusetzen (sofern nicht bauseitig bereits vorhanden), um Schäden duch mögliche Isolationsprobleme insbesondere bei älteren Maschinen abfangen zu können. Dazu ist eine dreiadrige Netzzuleitung mit Schutzleiter (PE) erforderlich, der auf die Ausgangs-Schukosteckdose für den Fernschreiber durchzuverbinden ist.
 
 ### Stückliste
 |Bez.|Bauteil|Bemerkung|
@@ -33,6 +33,7 @@ Die Eingangsseite sollte mit 1A träge abgesichert werden. Das ist ausreichend f
 |R2|180k 0,25W|
 |C1| 330 µF 200V|
 |U1|BC337|
+|PS1| MeanWell IRM 10-5|
 
 ## Abschließend der unvermeidliche Disclaimer:
 Auch wenn dieser Schaltungsvorschlag in mehreren Exemplaren seit Jahren unproblematisch funktioniert: für korrekte Funktion und für mögliche Schäden, verursacht durch Verwendung der in diesem Repository bereitgestellten Informationen, kann ich keine Haftung übernehmen. 
