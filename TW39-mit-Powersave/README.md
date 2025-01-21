@@ -64,18 +64,18 @@ Die Platine bietet folgende Anschlussmöglichkeiten:
 |J5     |1  |    |A           |Linienstrom für TW39 (+) (ADo8 Pin 1)|
 |J5     |2  |    |A           |Linienstrom für TW39 (-) (ADo8 Pin 4)|
 |||||
-J2     |1   |RP  |A           |`pin_power` herausgeführt. Steuert das Leistungsrelais für die Netzspannungsversorgung zum den Fernschreiber manuell bei Drücken der Powertaste und bei ankommenden Verbindungen. Das Relais befindet sich auf der Stromversorgungsplatine.|
+J2     |1   |RP  |A           |`pin_power` herausgeführt. Schaltet das Leistungsrelais für die Netzspannungsversorgung zum Fernschreiber:<br>- manuell bei Drücken der Powertaste<br>- und bei ankommenden Verbindungen. <br>Das Relais befindet sich auf der Stromversorgungsplatine.|
 J2     |2   |GND |A           |Massepotential für LED und Taster|
-J2     |3   |BP  |E           |`pin_button_PT` herausgeführt. Taster (gegen GND) schaltet den Fernschreiber über das Leistungsrelais ein und aus.|
-J2     |4   |LA  |A           |`pin_LED_A` herausgeführt. Hier kann eine LED mit passendem Vorwiderstand gegen GND angeschlossen werden.|
-J2     |5   |LW  |A           |`pin_LED_WB` herausgeführt. Hier kann eine LED mit passendem Vorwiderstand gegen GND angeschlossen werden.|
-J2     |6   |LZ  |A           |`pin_LED_Z` herausgeführt. Hier kann eine LED mit passendem Vorwiderstand gegen GND angeschlossen werden.|
+J2     |3   |BP  |E           |`pin_button_PT` herausgeführt.<br> Taster (gegen GND) schaltet den Fernschreiber über das Leistungsrelais auf der Stromversorgungsplatine ein und aus.|
+J2     |4   |LA  |A           |`pin_LED_A` herausgeführt. <br>Hier kann eine LED mit passendem Vorwiderstand gegen GND angeschlossen werden. <br>Sie leuchtet bei bestehender Verbindung.|
+J2     |5   |LW  |A           |`pin_LED_WB` herausgeführt.<br> Hier kann eine LED mit passendem Vorwiderstand gegen GND angeschlossen werden. <br>Sie leuchtet bei Wählbereitschaft.|
+J2     |6   |LZ  |A           |`pin_LED_Z` herausgeführt.<br> Hier kann eine LED mit passendem Vorwiderstand gegen GND angeschlossen werden. <br>Sie leuchtet im Offline-Modus. Zusammen mit der heartbeat-Funktion blinkt sie im Sleep-Modus langsam|
 
-Die Pins können auch mit anderen Funktionen belegt werden. Dazu ist dann die `telex.json` entsprechend anzupassen.
+Die Pins können natürlich auch anders oder auch gar nicht verwendet werden. Dann ist die `telex.json` (s.u.) entsprechend anzupassen.
 
 ### telex.json
 
-Die Schaltung verwendet **nicht** die Standard-GPIOs von piTelex, daher füge ich eine passende `telex.json` Datei mit den korrekten GPIO-Nummern bei:
+Die Schaltung verwendet **nicht** die Standard-GPIOs von piTelex, daher füge ich einen passenden Ausschnitt aus der `telex.json` Datei mit den korrekten GPIO-Nummern bei:
 
 ```JSON
       "RPiTTY": {
@@ -109,6 +109,7 @@ Die Schaltung verwendet **nicht** die Standard-GPIOs von piTelex, daher füge ic
                                 # switch off mains after 2 hours of inactivity 
                                 # (probably forgot to switch off manually...)
 ```
+
 
 ## Abschließend der unvermeidliche Disclaimer:
 Auch wenn dieser Schaltungsvorschlag in mehreren Exemplaren seit Jahren unproblematisch funktioniert: für korrekte Funktion und für mögliche Schäden, verursacht durch Verwendung der in diesem Repository bereitgestellten Informationen, kann ich keine Haftung übernehmen. 
