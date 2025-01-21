@@ -1,15 +1,14 @@
 # Platine für piTelex TW39
 
-
-
-
-<img src="KiCad/TW39-mit-Powersave_Ansicht-Platine-3D-bestückt.jpg" width="70%">
-
 Vor ein paar Jahren habe ich i-telex (www.i-telex.net) entdeckt, weil ich einen alten Fernschreiber wieder zum Laufen bekommen wollte. Dazu erschien mir piTelex geeignet, weil es kostengünstig ist. 
 Die hier beschriebene Platine habe ich dann aus den im [piTelex wiki](https://github.com/fablab-wue/piTelex/wiki) gezeigten Grundschaltungen entwickelt, weil ich mit der unter https://github.com/fablab-wue/piTelex.supplement angebotenen Eagle-Platine nicht wirklich klarkam (was aber wohl an mir liegt, die Platine ist ja verbreitet im Einsatz).
 
+<img src="KiCad/TW39-mit-Powersave_Schaltbild.png" width="50%" align=left>
+<img src="KiCad/TW39-mit-Powersave_Ansicht-Platine-3D-bestückt.jpg" width="45%" align=left>
+
 **Diese Platine eignet sich zum Anschluss eines Fernschreibers mit vorgeschaltetem Fernschaltgerät, das das Wählverfahren TW39 unterstützt.**
-Die nötige Stromversorgung muss extern bereitgestellt werden.
+Die nötige Stromversorgung muss extern bereitgestellt werden. Ein passender Bauvorschlag, der auch die Powersave-Funktion unterstützt, findet sich im entsprechenden Unterverzeichnis des repositories.
+
 
 Die Schaltung verwendet statt der ULN...-Treiber-ICs einfache NPN-Transistoren. Sie funktioniert in sechs meiner sieben piTelex-Stationen seit Jahren problemlos (Die siebte Station ist eine piTelex V.10 Station, die eine FS220 ohne FAG200 ins i-telex Netz bringt).
 
@@ -20,13 +19,17 @@ Die Schaltung verwendet statt der ULN...-Treiber-ICs einfache NPN-Transistoren. 
 
 ---
 Die Platine ist nicht auf Kompaktheit optimiert; das Layout ist auf Einfachheit getrimmt. Die Leitungsführung ist bewusst in Standardrastermaß von 1/10 Zoll gehalten, so dass das Layout unverändert auch auf einer handelsüblichen Punktrasterplatine ganz "zu Fuß" umgesetzt werden kann.
-Man kann sie zweilagig herstellen, aber auch als einlagig kupferkaschierte Platine ausführen, dann müssen lediglich drei Drahtbrücken eingesetzt werden, die ansonsten durch die zweite Kupferlage realisiert werden.  
+Man kann sie zweilagig herstellen, aber auch als einlagig kupferkaschierte Platine ausführen, dann müssen lediglich drei Drahtbrücken eingesetzt werden (im Bild rot), die ansonsten durch die zweite Kupferlage realisiert werden.  
 Besonderes Augenmerk habe ich auf ausreichende Leiterbahnabstände im Hochspannnungsbereich gelegt. Wenn man die Schaltung auf einer Punktrasterplatine aufbaut, müssen die nicht verwendeten Lötstützpunkte im Bereich der Linienstromversorgung weggefräst werden, denn die 0,4mm "Luft" zwischen zwei Lötstützpunkten sind bei 120V Speisespannung sicher nicht ausreichend.
 
 Als SBC ist ein Raspberry Pi Zero WH vorgesehen, der einfach seitlich auf die zweireihige Kontaktleiste gesteckt wird. Es passen natürlich auch andere RPi mit 40-poligem GPIO-Sockel.
 Für die Steuerung eines einzelnen TW39-Fernschreibers ist ein  RPi Zero jedenfalls mehr als ausreichend.
 
 Auf den Ersatz des Umpolrelais durch eine H-Bridge habe ich verzichtet. Die Standard-Relais arbeiten zuverlässig, sind preiswert und erfüllen ihren Zweck.
+
+Der Leistungstransistor wird abgesetzt über den Anschluss Q5 an geeigneter Stelle im Gehäuse mit Kühlkörper montiert. Es ist nicht vorgesehen, ihn direkt auf der Platine zu montieren. Der Kühlkörper muss etwa 4W abgeben können bei zulässiger Temperaturerhöhung. 
+<img src="doc/fischer-kk.jpg" width="23%" align=right>
+Ein Alu-Fingerkühlkörper 36x36mm mit 3,25 K/W bspw. tut hier gute Dienste.
 
 ### Bauteileliste
 
@@ -40,12 +43,12 @@ K1|Relais DPDT, z.B. Axicom D2n oder Omron_G5V-2 o.ä|
 Q4,Q3,Q2,Q1|BC337|
 Q5|TIP50|
 R11,R3,R1|1kOhm|
-R2|470Ohm|
-R4|510Ohm|
-R6|100Ohm|
-R7,R5|330Ohm|
-R8,R9|68Ohm|
-RV1|20Ohm Mehrgang|
+R2|470 Ohm|
+R4|510 Ohm|
+R6|100 Ohm|
+R7,R5|330 Ohm|
+R8,R9|68 Ohm|
+RV1|20 Ohm Mehrgang|
 U1|LTV-817 o.ä.|
 
 Alle Widerstände 0,125 W oder 0,25W
@@ -62,7 +65,7 @@ Die Platine bietet folgende Anschlussmöglichkeiten:
 |J4     |2  |GND |E           | Massepotential für +5V und +90V|
 |||||
 |J5     |1  |    |A           |Linienstrom für TW39 (+) (ADo8 Pin 1)|
-|J5     |2  |    |A           |Linienstrom für TW39 (-) (ADo8 Pin 4)|
+|J5     |2  |    |A           |Linienstrom für TW39 (-) (ADo8 Pin 4)<br>Der Linienstrom von 40mA wird mit RV1 eingestellt, z.B. bei kurzgeschlossenen Pins von J5|
 |||||
 J2     |1   |RP  |A           |`pin_power` herausgeführt. Schaltet das Leistungsrelais für die Netzspannungsversorgung zum Fernschreiber:<br>- manuell bei Drücken der Powertaste<br>- und bei ankommenden Verbindungen. <br>Das Relais befindet sich auf der Stromversorgungsplatine.|
 J2     |2   |GND |A           |Massepotential für LED und Taster|
