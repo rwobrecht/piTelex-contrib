@@ -24,7 +24,7 @@ Die Eingangsseite sollte mit 1A träge abgesichert werden. Das ist ausreichend f
 | J1,J4| Schraubklemme 2pol  RM 10,16|
 | J3|PinHeader 2pol RM2,54mm|
 | J2,J5|PinHeader 1pol|
-|T1| Trafo 230V / 2x30V 80mA |z.B. GERTH 422.60.2| 
+|T1| Trafo 230V / 2x24V 100mA |z.B. GERTH 421.48.2, Achtung GERTH 422.60.2 passt nicht!!!| 
 |D1| 1N4007|
 |D2|BrGleichrichter DF08M| o.ä.|
 |F1|Sicherungshalter 5x20mm|
