@@ -4,9 +4,9 @@
 
 <img src="KiCad/Stromversorgung-Leiterbahnen.png" width="60%" align=middle>
 
-Die hier beschriebene Platine liefert zum einen eine galvanisch vom Netz getrennte Linienstromversorgung mit  ca 100V Leerlaufspannung und etwa 85V bei 40mA Last. Der Trafo ist für einen maximalen Sekundärstrom von 80mA_eff ausgelegt und die Sekundärseite ist auch so abzusichern. Da der Sekundärstrom **geregelt** wird (auch bei Kurzschluss des Linienstromkreises), ist ein Ansprechen der Feinsicherung in der Praxis so gut wie ausgeschlossen, deshalb kann sie ohne Komforteinbuße im Geräteinneren verbaut werden.
+Die hier beschriebene Platine liefert zum einen eine galvanisch vom Netz getrennte Linienstromversorgung mit  ca 90V Leerlaufspannung und etwa 75V bei 40mA Last. Der Trafo ist für einen maximalen Sekundärstrom von 100mA_eff ausgelegt und die Sekundärseite ist auch so abzusichern. Da der Sekundärstrom **geregelt** wird (auch bei Kurzschluss des Linienstromkreises), ist ein Ansprechen der Feinsicherung in der Praxis so gut wie ausgeschlossen, deshalb kann sie ohne Komforteinbuße im Geräteinneren verbaut werden.
 
-Zum anderen stellt die Schaltung +5V bei max 2A für die Versorgung des RPi Zero und die übrige Steuerelektronik bereit. Dafür ist ein fertiger Netzteilbaustein verwendet. 
+Zum anderen stellt die Schaltung +5V bei max 2A für die Versorgung eines RPi Zero WH und die übrige Steuerelektronik bereit. Dafür ist ein fertiger Netzteilbaustein Meanwell IRM 10-5 verwendet. 
 
 Darüber hinaus gibt es einen relaisgeschalteten 230V-Ausgang zum Anschluss des Fernschreibers/des Fernschaltgeräts. Wird der Steuereingang "RP" mit dem entsprechenden Ausgang auf der TW39-Platine verbunden, kann damit eine Stromsparschaltung realisiert werden, so dass das Fernschreibequipment nur Netzspannung erhält für die Dauer eines ankommenden Fernschreibens und bei manueller Betätigung des Tasters "PT" (siehe TW39-Platine).
 
@@ -24,7 +24,7 @@ Die Eingangsseite sollte mit 1A träge abgesichert werden. Das ist ausreichend f
 | J1,J4| Schraubklemme 2pol  RM 10,16|
 | J3|PinHeader 2pol RM2,54mm|
 | J2,J5|PinHeader 1pol|
-|T1| Trafo 230V / 2x24V 100mA |z.B. GERTH 421.48.2, Achtung GERTH 422.60.2 passt nicht!!!| 
+|T1| Trafo 230V / 2x24V 100mA |z.B. GERTH 421.48.2, Achtung GERTH 422.60.2 passt entgegen dem Platinenaufdruck **nicht**!!!| 
 |D1| 1N4007|
 |D2|BrGleichrichter DF08M| o.ä.|
 |F1|Sicherungshalter 5x20mm|
