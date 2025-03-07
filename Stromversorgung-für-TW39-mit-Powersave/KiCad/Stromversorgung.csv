@@ -1,6 +1,6 @@
 "ID";"Bezeichner";"Footprint";"Stückzahl";"Bezeichnung";"Anbieter und Referenz";
-1;"T1";"Transformer_CHK_EI42-5VA_2xSec_6pin";1;"GERTH 422.60.2";;;
-2;"F1";"Fuseholder_Clip-5x20mm_Eaton_1A5601-01_Inline_P20.80x6.76mm_D1.70mm_Horizontal";1;"80mAT";;;
+1;"T1";"Transformer_CHK_EI42-5VA_2xSec_6pin";1;"GERTH 421.48.2";;;
+2;"F1";"Fuseholder_Clip-5x20mm_Eaton_1A5601-01_Inline_P20.80x6.76mm_D1.70mm_Horizontal";1;"100mAT";;;
 3;"J3";"Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical";1;"+5V";;;
 4;"J2";"PinHeader_1x01_P2.54mm_Vertical";1;"RP";;;
 5;"R2";"R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal";1;"180k";;;

@@ -1,4 +1,4 @@
-### Footprint positions - created on 2025-01-21T15:05:37+0100 ###
+### Footprint positions - created on 2025-03-07T13:30:26+0100 ###
 ### Printed by KiCad version 8.0.6
 ## Unit = mm, Angle = deg.
 ## Side : top
@@ -6,7 +6,7 @@
 C1        330µF/200V     CP_Radial_D22.0mm_P10.00mm_SnapIn                                                137.0000   -99.0600  180.0000  top
 D1        1N4007          D_DO-41_SOD81_P7.62mm_Horizontal                                                 116.8400   -50.8000   90.0000  top
 D2        DF08M           Diode_Bridge_DIP-4_W7.62mm_P5.08mm                                               131.9400  -119.3800  -90.0000  top
-F1        80mAT           Fuseholder_Clip-5x20mm_Eaton_1A5601-01_Inline_P20.80x6.76mm_D1.70mm_Horizontal    94.8400  -134.6200    0.0000  top
+F1        100mAT          Fuseholder_Clip-5x20mm_Eaton_1A5601-01_Inline_P20.80x6.76mm_D1.70mm_Horizontal    94.8400  -134.6200    0.0000  top
 J1        230V~_IN        TerminalBlock_RND_205-00067_1x02_P7.50mm_Horizontal                               73.6600   -81.2200   90.0000  top
 J2        RP              PinHeader_1x01_P2.54mm_Vertical                                                  139.7000   -60.9600  -90.0000  top
 J3        +5V             Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical                                   137.1600   -73.6600    0.0000  top
@@ -17,5 +17,5 @@ PS1       IRM-10-5        Converter_ACDC_MeanWell_IRM-10-xx_THT                 
 Q1        BC337           TO-92_Inline_Wide                                                                127.0000   -43.1800    0.0000  top
 R1        1k              R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal                                139.7000   -53.3400  180.0000  top
 R2        180k            R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal                                137.1600  -114.3000  180.0000  top
-T1        GERTH_422.60.2  Transformer_CHK_EI42-5VA_2xSec_6pin                                               86.5200   -96.7200  -90.0000  top
+T1        GERTH_421.48.2  Transformer_CHK_EI42-5VA_2xSec_6pin                                               86.5200   -96.7200  -90.0000  top
 ## End
