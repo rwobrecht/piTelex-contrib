@@ -2,7 +2,7 @@
 
 
 
-<img src="KiCad/Stromversorgung-Leiterbahnen.png" width="60%" align=middle>
+<img src="../img/1741348757242.jpg" width="60%" align=middle>
 
 Die hier beschriebene Platine liefert zum einen eine galvanisch vom Netz getrennte Linienstromversorgung mit  ca 90V Leerlaufspannung und etwa 75V bei 40mA Last. Der Trafo ist für einen maximalen Sekundärstrom von 100mA_eff ausgelegt und die Sekundärseite ist auch so abzusichern. Da der Sekundärstrom **geregelt** wird (auch bei Kurzschluss des Linienstromkreises), ist ein Ansprechen der Feinsicherung in der Praxis so gut wie ausgeschlossen, deshalb kann sie ohne Komforteinbuße im Geräteinneren verbaut werden.
 
@@ -24,7 +24,7 @@ Die Eingangsseite sollte mit 1A träge abgesichert werden. Das ist ausreichend f
 | J1,J4| Schraubklemme 2pol  RM 10,16|
 | J3|PinHeader 2pol RM2,54mm|
 | J2,J5|PinHeader 1pol|
-|T1| Trafo 230V / 2x24V 100mA |z.B. GERTH 421.48.2, Achtung GERTH 422.60.2 passt entgegen dem Platinenaufdruck **nicht**!!!| 
+|T1| Trafo 230V / 2x24V 100mA |z.B. GERTH 421.48.2| 
 |D1| 1N4007|
 |D2|BrGleichrichter DF08M| o.ä.|
 |F1|Sicherungshalter 5x20mm|
