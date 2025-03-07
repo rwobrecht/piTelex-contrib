@@ -4,7 +4,7 @@ Hier sammle ich Anpassungen und anderes, was ich rund um piTelex mal entwickelt 
 
 Den Anfang macht eine [Platine für Standard-TW39](TW39-mit-Powersave) mit einem RaspBerry Pi Zero W. Diese Platine ermöglicht TW39-Betrieb für einen Linienstrom-FS mit FSG und bietet eine Stromsparschaltung sowohl für die 230V-Versorgung als auch für die Linienstromversorgung.
 
-Dazu gehört eine entsprechende [Stromversorgungsplatine](HW_TW39_powersupply). 
+Dazu gehört eine entsprechende [Stromversorgungsplatine](Stromversorgung-für-TW39-mit-Powersave). 
 
 Die folgenden Bilder zeigen ein Aufbaubeispiel, bei dem diese beiden Platinen zum Einsatz kamen ("zu Fuß" auf Rasterplatine aufgebaut), wobei hier noch ein Amperemeter für den Linienstrom hinzugefügt wurde.
 
