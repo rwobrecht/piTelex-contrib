@@ -29,7 +29,7 @@ Auf den Ersatz des Umpolrelais durch eine H-Bridge habe ich verzichtet. Die Stan
 
 <img src="../img/C800_ICKS_36X36X20_01.png" width="14%" align=right>
 Der Leistungstransistor wird abgesetzt über den Anschluss Q5 an geeigneter Stelle im Gehäuse mit Kühlkörper montiert. Es ist nicht vorgesehen, ihn direkt auf der Platine zu montieren. Der Kühlkörper muss etwa 4W abgeben können bei zulässiger Temperaturerhöhung. 
-Ein solcher Alu-Fingerkühlkörper 36x36mm mit 3,25 K/W bspw. tut hier gute Dienste.
+Ein solcher Alu-Fingerkühlkörper 36x36mm  bspw. tut hier gute Dienste.
 
 ### Bauteileliste
 
@@ -74,7 +74,7 @@ J2     |4   |LA  |A           |`pin_LED_A` herausgeführt. <br>Hier kann eine LE
 J2     |5   |LW  |A           |`pin_LED_WB` herausgeführt.<br> Hier kann eine LED mit passendem Vorwiderstand gegen GND angeschlossen werden. <br>Sie leuchtet bei Wählbereitschaft.|
 J2     |6   |LZ  |A           |`pin_LED_Z` herausgeführt.<br> Hier kann eine LED mit passendem Vorwiderstand gegen GND angeschlossen werden. <br>Sie leuchtet im Offline-Modus. Zusammen mit der heartbeat-Funktion blinkt sie im Sleep-Modus langsam|
 
-Die Pins können natürlich auch anders oder auch gar nicht verwendet werden. Dann ist die `telex.json` (s.u.) entsprechend anzupassen.
+Die Pins in J2 können (bis auf den Massepin) natürlich auch anders oder auch gar nicht verwendet werden. Dann ist die `telex.json` (s.u.) entsprechend anzupassen.
 
 ### telex.json
 
