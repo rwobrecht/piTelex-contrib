@@ -87,7 +87,7 @@ Die Schaltung verwendet **nicht** die Standard-GPIOs von piTelex, daher füge ic
       "mode": "TW39",
       "pin_txd": 2,
       "pin_rxd": 5,
-      "pin_relay": 13,          # GPIO of loop relay (for changing polarity)
+      "pin_relay": 19,          # GPIO of loop relay (for changing polarity)
       "pin_number_switch": -1,  # -1 = use definition in "RPiCtrl"
       "txd_powersave": true     # switch off loop current in sleep mode
     },
