@@ -6,8 +6,9 @@ Die hier beschriebene Platine habe ich dann aus den im [piTelex wiki](https://gi
 <img src="KiCad/TW39-mit-Powersave_Schaltbild.png" width="50%" align=left>
 <img src="KiCad/TW39-mit-Powersave_Ansicht-Platine-3D-bestückt.jpg" width="45%" align=left>
 
-**Diese Platine eignet sich zum Anschluss eines Fernschreibers mit vorgeschaltetem Fernschaltgerät, das das Wählverfahren TW39 unterstützt.**
-Die nötige Stromversorgung muss extern bereitgestellt werden. Ein passender Bauvorschlag, der auch die Powersave-Funktion unterstützt, findet sich im entsprechenden Unterverzeichnis des repositories.
+**Die hier beschriebene Platine eignet sich zum Anschluss eines Fernschreibers mit vorgeschaltetem Fernschaltgerät, das das Wählverfahren TW39 unterstützt.**
+
+Die nötige Stromversorgung muss extern bereitgestellt werden. Ein passender Bauvorschlag, der auch die Powersave-Funktion unterstützt, findet sich im [entsprechenden Unterverzeichnis](https://github.com/rwobrecht/piTelex-contrib/blob/main/Stromversorgung-für-TW39-mit-Powersave) des repositories.
 
 
 Die Schaltung verwendet statt der ULN...-Treiber-ICs einfache NPN-Transistoren. Sie funktioniert in sechs meiner sieben piTelex-Stationen seit Jahren problemlos (Die siebte Station ist eine piTelex V.10 Station, die eine FS220 ohne FAG200 ins i-telex Netz bringt).
