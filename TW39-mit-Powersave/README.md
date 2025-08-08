@@ -29,7 +29,11 @@ Für die Steuerung eines einzelnen TW39-Fernschreibers ist ein  RPi Zero jedenfa
 Auf den Ersatz des Umpolrelais durch eine H-Bridge habe ich verzichtet. Die Standard-Relais arbeiten zuverlässig, sind preiswert und erfüllen ihren Zweck.
 
 <img src="../img/C800_ICKS_36X36X20_01.png" width="14%" align=right>
-Der Leistungstransistor wird abgesetzt über den Anschluss Q5 an geeigneter Stelle im Gehäuse mit Kühlkörper montiert. Es ist nicht vorgesehen, ihn direkt auf der Platine zu montieren. Der Kühlkörper muss etwa 4W abgeben können bei zulässiger Temperaturerhöhung. 
+
+Der Leistungstransistor TIP50 wird abgesetzt über den Anschluss Q5 an geeigneter Stelle im Gehäuse mit Kühlkörper montiert. Es ist nicht vorgesehen, ihn direkt auf der Platine zu montieren. 
+Achtung, die Pinfolge auf der Platine entspricht wegen der Leiterabstände und dem simplen Layout  **nicht** dem TO220-Standard (B-C-E). 
+
+Der Kühlkörper muss etwa 4W abgeben können bei zulässiger Temperaturerhöhung. 
 Ein solcher Alu-Fingerkühlkörper 36x36mm  bspw. tut hier gute Dienste.
 
 ### Bauteileliste
