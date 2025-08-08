@@ -3,24 +3,44 @@
 Vor ein paar Jahren habe ich i-telex (www.i-telex.net) entdeckt, weil ich einen alten Fernschreiber wieder zum Laufen bekommen wollte. Dazu erschien mir piTelex geeignet, weil es kostengünstig ist. 
 Die hier beschriebene Platine habe ich dann aus den im [piTelex wiki](https://github.com/fablab-wue/piTelex/wiki) gezeigten Grundschaltungen entwickelt, weil ich mit der unter https://github.com/fablab-wue/piTelex.supplement angebotenen Eagle-Platine nicht wirklich klarkam (was aber wohl an mir liegt, die Platine ist ja verbreitet im Einsatz).
 
-<img src="KiCad/TW39-mit-Powersave_Schaltbild.png" width="50%" align=left>
-<img src="KiCad/TW39-mit-Powersave_Ansicht-Platine-3D-bestückt.jpg" width="45%" align=left>
 
-**Die hier beschriebene Platine eignet sich zum Anschluss eines Fernschreibers mit vorgeschaltetem Fernschaltgerät, das das Wählverfahren TW39 unterstützt.**
+<img src="KiCad/TW39-mit-Powersave_Ansicht-Platine-3D-bestückt.jpg" width="45%" align=right>
 
-Die nötige Stromversorgung muss extern bereitgestellt werden. Ein passender Bauvorschlag, der auch die Powersave-Funktion unterstützt, findet sich im [entsprechenden Unterverzeichnis](https://github.com/rwobrecht/piTelex-contrib/blob/main/Stromversorgung-für-TW39-mit-Powersave) des repositories.
+## Die Funktionsmerkmale
+Die hier beschriebene Platine eignet sich zum Anschluss eines Fernschreibers mit vorgeschaltetem Fernschaltgerät für das Wählverfahren TW39.
 
+Die nötige Stromversorgung (+5V= und ca 80V= für die Linienversorgung)  muss extern bereitgestellt werden. Ein passender Bauvorschlag, der auch die Powersave-Funktion unterstützt, findet sich im [entsprechenden Unterverzeichnis](https://github.com/rwobrecht/piTelex-contrib/blob/main/Stromversorgung-für-TW39-mit-Powersave) des repositories.
 
-Die Schaltung verwendet statt der ULN...-Treiber-ICs einfache NPN-Transistoren. Sie funktioniert in sechs meiner sieben piTelex-Stationen seit Jahren problemlos (Die siebte Station ist eine piTelex V.10 Station, die eine FS220 ohne FAG200 ins i-telex Netz bringt).
+Die Platine/Schaltung verwendet drei LEDs:
+* LED_Z blinkt bei Standby der Software ("ZZ"-Zustand) und leuchtet kontinuierlich bei Betriebsbereitschaft ("Z"-Zustand). Der Blinkrhythmus kann in `telex.json` mit `LED_Z_heartbeat` eingestellt werden (s.u.).
+* LED_WB leuchtet bei Wählbereitschaft
+* LED_A leuchtet bei bestehender i-telex-Verbindung
 
+Es ist möglich, eine Stromsparschaltung zu aktivieren. Dazu muss die Stromversorgung aus dem [Bauvorschlag](https://github.com/rwobrecht/piTelex-contrib/blob/main/Stromversorgung-für-TW39-mit-Powersave) verwendet werden. Der Pin `RP` (Relais Power)  dieser Platine wird dann mit dem Pin `RP` der Stromversorgung verbunden und steuert das Leistungsrelais auf der Stromversorgungsplatine, an deren Kontaktblock die (schutzgeerdete!) Steckdose zur Versorgung des Fernschaltgeräts und des Fernschreibers angeklemmt wird. Außerdem muss in der telex.json die Stromsparschaltung aktiviert werden. Der `telex.json`-Ausschnitt weiter unten enthält alle hierfür nötigen Einstellungen. Ist die Stromsparschaltung aktiv, dann gilt:
+
+* Bei ankommendem Anruf schaltet piTelex die Stromversorgung für FSG/FS ein und nach Verbindungsende automatisch auch wieder aus.
+* Für einen ausgehenden Anruf drückt man kurz die am `pin_button_PT` angeschlossene Taste, um das Stromrelais einzuschalten. Nach Verbindungsende wird die Anlage durch erneutes Drücken der Taste oder automatisch nach einer vorwählbaren Zeit (`power_button_timeout`) wieder ausgeschaltet.
+
+Zusätzlich kann durch Aktivieren von `txd_powersave` im Standby auch der Schleifenstrom abgeschaltet werden. Das ist nützlich bei T68-Maschinen, die bei abgeschalteter Netzspannung den Linienstrom von 5mA auf 40mA hochfahren.
+
+## Die Schaltung
+
+<img src="KiCad/TW39-mit-Powersave_Schaltbild.png" width="50%" align=right>
+
+Die Empfängerschaltung und die Polwechselschaltung sind unverändert aus dem piTelex-Wiki übernommen, die Schaltung des Senders besteht wie im Original aus einer Stromquellenschaltung mit BC337 und TIP50, verwendet aber statt der ULN...-Treiber-ICs für die Invertierung und Ankopplung des TXD-Signals zwei einfache NPN-Transistoren BC337. Mit dem Trimmpoti wird der Schleifenstrom auf 40mA eingestellt. Da wir es hier mit einer einstellbaren Konstantstromquelle zu tun haben, ist die Stromschleife kurzschlussfest und die Einstellung der 40mA kann daher auch bei Kurzschluss der Schleife erfolgen.
+
+Diese Schaltung funktioniert in meinen sechs piTelex-TW39-Stationen seit Jahren problemlos...
+
+## Die Platine
 <img src="KiCad/TW39-mit-Powersave_Ansicht_Leiterbahnen.png" width="23%" align=left>
 <img src="KiCad/TW39-mit-Powersave_Ansicht-Platine-Bestückungsplan.png" width="23%" align=left>  
 <img src="KiCad/TW39-mit-Powersave_Ansicht-Platinen-Vorderseite.jpg" width="23%" align=left>
 <img src="KiCad/TW39-mit-Powersave_Ansicht-Platine-Vorderseite-bestückt.jpg" width="23%" align=left>
 
 ---
-Die Platine ist nicht auf Kompaktheit optimiert; das Layout ist auf Einfachheit getrimmt. Die Leitungsführung ist bewusst in Standardrastermaß von 1/10 Zoll gehalten, so dass das Layout unverändert auch auf einer handelsüblichen Punktrasterplatine ganz "zu Fuß" umgesetzt werden kann.
-Man kann sie zweilagig herstellen, aber auch als einlagig kupferkaschierte Platine ausführen, dann müssen lediglich drei Drahtbrücken eingesetzt werden (im Bild rot), die ansonsten durch die zweite Kupferlage realisiert werden.  
+ 
+Sie ist nicht auf Kompaktheit optimiert; das Layout ist auf Einfachheit getrimmt. Die Leitungsführung ist bewusst in Standardrastermaß von 1/10 Zoll gehalten, so dass das Layout unverändert auch auf einer handelsüblichen Punktrasterplatine ganz "zu Fuß" umgesetzt werden kann.
+Man kann sie zweilagig herstellen, aber auch als einlagige, unterseitig kupferkaschierte Platine ausführen, dann müssen lediglich drei Drahtbrücken auf Bauteilseite eingesetzt werden (im Bild rot), die ansonsten durch die zweite (obere) Kupferlage realisiert werden.  
 Besonderes Augenmerk habe ich auf ausreichende Leiterbahnabstände im Hochspannnungsbereich gelegt. Wenn man die Schaltung auf einer Punktrasterplatine aufbaut, müssen die nicht verwendeten Lötstützpunkte im Bereich der Linienstromversorgung weggefräst werden, denn die 0,4mm "Luft" zwischen zwei Lötstützpunkten sind bei 120V Speisespannung sicher nicht ausreichend.
 
 Als SBC ist ein Raspberry Pi Zero WH vorgesehen, der einfach seitlich auf die zweireihige Kontaktleiste gesteckt wird. Es passen natürlich auch andere RPi mit 40-poligem GPIO-Sockel.
@@ -31,7 +51,7 @@ Auf den Ersatz des Umpolrelais durch eine H-Bridge habe ich verzichtet. Die Stan
 <img src="../img/C800_ICKS_36X36X20_01.png" width="14%" align=right>
 
 Der Leistungstransistor TIP50 wird abgesetzt über den Anschluss Q5 an geeigneter Stelle im Gehäuse mit Kühlkörper montiert. Es ist nicht vorgesehen, ihn direkt auf der Platine zu montieren. 
-Achtung, die Pinfolge auf der Platine entspricht wegen der Leiterabstände und dem simplen Layout  **nicht** dem TO220-Standard (B-C-E). 
+Achtung, die Pinfolge auf der Platine entspricht wegen der Leiterabstände und dem simplen Layout  **nicht** der [Pinfolge am Transistor](https://www.componentsinfo.com/wp-content/uploads/2022/10/tip50-transistor-pinout-equivalent.gif)
 
 Der Kühlkörper muss etwa 4W abgeben können bei zulässiger Temperaturerhöhung. 
 Ein solcher Alu-Fingerkühlkörper 36x36mm  bspw. tut hier gute Dienste.
@@ -81,7 +101,7 @@ J2     |6   |LZ  |A           |`pin_LED_Z` herausgeführt.<br> Hier kann eine LE
 
 Die Pins in J2 können (bis auf den Massepin) natürlich auch anders oder auch gar nicht verwendet werden. Dann ist die `telex.json` (s.u.) entsprechend anzupassen.
 
-### telex.json
+## Die `telex.json`
 
 Die Schaltung verwendet **nicht** die Standard-GPIOs von piTelex, daher füge ich einen passenden Ausschnitt aus der `telex.json` Datei mit den korrekten GPIO-Nummern bei:
 
@@ -100,16 +120,16 @@ Die Schaltung verwendet **nicht** die Standard-GPIOs von piTelex, daher füge ic
       "type": "RPiCtrl",
       "enable": true,
       "pin_number_switch": 6,   # GPIO of pin to monitor for dial pulses
-      "pin_button_PT": 21,      # GPIO for power button
+      "pin_button_PT": 21,      # GPIO for power pushbutton (power save feature, toggles pin_power, see below)
       "pin_LED_WB": 16,         # GPIO for LED indicating dial mode (Wählbereitschaft)
       "pin_LED_A": 20,          # GPIO for LED indicating active connection
       "pin_LED_Z": 12,          # GPIO for LED indicating Standby/Sleep
       "LED_Z_heartbeat": 2,     # duty cycle of hearbeat in ZZ mode: 0.5s on / 1s off
-      "pin_power": 26,          # GPIO for power relay (switching mains)
+      "pin_power": 26,          # GPIO for power relay (switching mains in power save feature)
       "inv_power": false
     },
 (...)
-# if you want to use the power saving functionality:
+# if you want to use the power saving feature:
   "power_off_delay": 3,         # wait 3 seconds after poweroff condition 
                                 # before switching off mains
 #
