@@ -2,18 +2,18 @@
 
 
 
-<img src="img/V10-3-pwr-bestueckt-1.jpg" width="41%" align=middle>
-<img src="img/V10-3-pwr-bestueckt-2.jpg" width="40%" align=middle>
+<img src="img/V10-3-pwr-bestueckt-1.jpg" width="41%" align=right><img src="img/V10-3-pwr-bestueckt-2.jpg" width="40%" align=right>
 
 ## Die Funktion
 Die hier beschriebene Platine liefert zum einen eine galvanisch vom Netz getrennte +5V Spannung bei max 2A für die Versorgung eines RPi Zero WH und die übrige Steuerelektronik bereit. Dafür ist ein fertiger Netzteilbaustein Meanwell IRM 10-5 verwendet. Der Baustein ist kurzschluss- und überlastungsfest und hat eine entsprechende Zulassung.
 
 Darüber hinaus gibt es einen relaisgeschalteten 230V-Ausgang zum Anschluss des Fernschreibers/des Fernschaltgeräts. Wird der Steuereingang mit dem entsprechenden Ausgang auf der V.10-Platine verbunden, kann damit eine Stromsparschaltung realisiert werden, so dass das Fernschreibequipment nur Netzspannung erhält für die Dauer eines ankommenden Fernschreibens und bei manueller Betätigung des Tasters "PT" ([siehe V.10-Platine](https://github.com/rwobrecht/piTelex-contrib/tree/main/V.10-3-mit-Powersave) ).
 
+---
+
 ## Die Platine
 
-<img src="img/V10-3-pwr-silk.png" width="30%" align=middle>
-<img src="img/V10-3-pwr-layout.png" width="31%" align=middle>
+<img src="img/V10-3-pwr-silk.png" width="30%" align=right><img src="img/V10-3-pwr-layout.png" width="31%" align=right>
 
 Die Platine wurde mit KiCad entwickelt, die Projektdaten liegen im [KiCad-Unterverzeichnis](KiCad).Man kann die Platine zweilagig herstellen, aber auch als einlagig kupferkaschierte Platine ausführen, dann muss lediglich eine Drahtbrücke eingesetzt werden, die ansonsten durch die zweite Kupferlage realisiert wird. 
 
@@ -21,7 +21,7 @@ Besonderes Augenmerk habe ich auf ausreichende Leiterbahnabstände im Netzspannn
 Die V.10-Platine wird über einen dreipoligen Stecker J1 versorgt, der auch den Eingangspin für die Relaissteuerung enthält.
 
 
-## Die Stückliste
+### Die Stückliste
 
 |Bez.|Bauteil|Bemerkung|
 |----|-------|---------|
@@ -33,6 +33,8 @@ Die V.10-Platine wird über einen dreipoligen Stecker J1 versorgt, der auch den 
 |Q2|BC337|
 |PS1| MeanWell IRM 10-5|
 ||(Sorry für die krude Annotierung...)|
+
+---
 
 ## Die Sicherheit
 Der FS220 ist in Schutzklasse II ausgeführt, so dass die Durchverbindung des Schutzleiters auf die FS-Steckdose entbehrlich ist.  
