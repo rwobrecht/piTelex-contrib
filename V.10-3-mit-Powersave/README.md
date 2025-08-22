@@ -6,7 +6,7 @@
 ## Die Funktionsmerkmale
 Die hier beschriebene Platine eignet sich zum Anschluss eines Fernschreibers mit V.10 Schnittstelle (TeKaDe FS200/FS220) ***ohne*** Fernschaltgerät (FAG200 o.ä.). 
 
-Die nötige Stromversorgung (+5V= ) muss extern bereitgestellt werden. Ein passender Bauvorschlag, der auch die Powersave-Funktion unterstützt, findet sich im [entsprechenden Unterverzeichnis](https://github.com/rwobrecht/piTelex-contrib/blob/main/V10-3-Powersupply) des repositories.
+Die nötige Stromversorgung (+5V= ) muss extern bereitgestellt werden. Ein passender Bauvorschlag, der auch die Powersave-Funktion unterstützt, findet sich im [entsprechenden Unterverzeichnis](https://github.com/rwobrecht/piTelex-contrib/blob/main/V.10-3-Powersupply) des repositories.
 
 Die Platine/Schaltung verwendet drei LEDs:
 * LED_Z blinkt bei Standby der Software ("ZZ"-Zustand) und leuchtet kontinuierlich bei Betriebsbereitschaft ("Z"-Zustand). Der Blinkrhythmus kann in `telex.json` mit `LED_Z_heartbeat` eingestellt werden (s.u.).
