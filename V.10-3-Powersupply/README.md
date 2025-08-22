@@ -25,22 +25,20 @@ Die V.10-Platine wird über einen dreipoligen Stecker J1 versorgt, der auch den 
 
 |Bez.|Bauteil|Bemerkung|
 |----|-------|---------|
-| J3|PinHeader 3pol RM2,54mm, z.B. Molex-KK254 o.ä.|
-|D1| 1N4007|
+| J1|PinHeader 3pol RM2,54mm, z.B. Molex-KK254 o.ä.|
+| J2,J3| Schraubklemme 2pol  RM 10,16|
+|D4| 1N4007|
 |K1|Relais DPDT 250V/8A, 5V Spule | z.B. FINDER-40.52|
 |R1|1k 0,125W|
-|U1|BC337|
+|Q2|BC337|
 |PS1| MeanWell IRM 10-5|
-
+||(Sorry für die krude Annotierung...)|
 
 ## Die Sicherheit
-Es ist eine **drei**adrige Netzzuleitung **mit Schutzleiter (PE)** zu verwenden, der auf die Ausgangs-Schukosteckdose für den Fernschreiber durchzuverbinden ist.
-Die Eingangsseite (230V) sollte mit 1A träge abgesichert werden. Das ist ausreichend für den Betrieb eines Fernschreibers und des Vorschaltgeräts. Diese Sicherung ist nicht auf der Platine vorgesehen, sondern wird bei mir über eine im Gehäuse verbaute Kaltgeräte-Einbaubuchse mit integriertem Sicherungshalter realisiert. Außerdem empfiehlt es sich, vor diese Netzteilschaltung ein Fehlerstromschutzorgan mit max 30mA Abschaltstrom (Personenschutzschalter) einzusetzen (sofern nicht bauseitig bereits vorhanden), um Schäden duch mögliche Isolationsprobleme insbesondere bei älteren Maschinen abfangen zu können. 
+Der FS220 ist in Schutzklasse II ausgeführt, so dass die Durchverbindung des Schutzleiters auf die FS-Steckdose entbehrlich ist.  
+Die Eingangsseite (230V) sollte mit 1A träge abgesichert werden. Das ist ausreichend für den Betrieb eines Fernschreibers FS220. Diese Sicherung ist nicht auf der Platine vorgesehen, sondern wird bei mir über eine im Gehäuse verbaute Kaltgeräte-Einbaubuchse mit integriertem Sicherungshalter realisiert. 
 
-Der Trafo ist sekundärseitig mit 100mAT abzusichern. Da der Linienstrom auf der TW39-Platine **geregelt** wird (auch bei Kurzschluss des Linienstromkreises), ist ein Ansprechen der Feinsicherung in der Praxis so gut wie ausgeschlossen, deshalb ist sie ohne Komforteinbuße auf der Platine im Geräteinneren verbaut.
-
-
-Das Ganze wird sinnvollerweise in ein Vollkunststoffgehäuse Schutzklasse II eingebaut. Von außen berührbare Metallteile (bspw. Metallfrontplatte o.ä) mit ausreichendem Leiterquerschnitt schutzerden!
+Das Ganze wird sinnvollerweise in ein Vollkunststoffgehäuse Schutzklasse II eingebaut. Von außen berührbare Metallteile (bspw. Metallfrontplatte o.ä) mit ausreichendem Leiterquerschnitt schutzerden! Dazu muss eine **drei**adrige Netzzuleitung **mit Schutzleiter (PE)** verwendet werden.
 
 ## Abschließend der unvermeidliche Disclaimer:
 Auch wenn dieser Schaltungsvorschlag in mehreren Exemplaren seit Jahren unproblematisch funktioniert: für korrekte Funktion und für mögliche Schäden, verursacht durch Verwendung der in diesem Repository bereitgestellten Informationen, kann ich keine Haftung übernehmen. 
