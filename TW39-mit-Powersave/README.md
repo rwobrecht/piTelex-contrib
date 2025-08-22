@@ -1,10 +1,7 @@
 # Platine für piTelex TW39
 
-Vor ein paar Jahren habe ich i-telex (www.i-telex.net) entdeckt, weil ich einen alten Fernschreiber wieder zum Laufen bekommen wollte. Dazu erschien mir piTelex geeignet, weil es kostengünstig ist. 
-Die hier beschriebene Platine habe ich dann aus den im [piTelex wiki](https://github.com/fablab-wue/piTelex/wiki) gezeigten Grundschaltungen entwickelt, weil ich mit der unter https://github.com/fablab-wue/piTelex.supplement angebotenen Eagle-Platine nicht wirklich klarkam (was aber wohl an mir liegt, die Platine ist ja verbreitet im Einsatz).
 
-
-<img src="KiCad/TW39-mit-Powersave_Ansicht-Platine-3D-bestückt.jpg" width="45%" align=right>
+<img src="img/TW39-mit-Powersave_Ansicht-Platine-3D-bestückt.jpg" width="45%" align=right>
 
 ## Die Funktionsmerkmale
 Die hier beschriebene Platine eignet sich zum Anschluss eines Fernschreibers mit vorgeschaltetem Fernschaltgerät für das Wählverfahren TW39.
@@ -25,17 +22,17 @@ Zusätzlich kann durch Aktivieren von `txd_powersave` im Standby auch der Schlei
 
 ## Die Schaltung
 
-<img src="KiCad/TW39-mit-Powersave_Schaltbild.png" width="50%" align=right>
+<img src="img/TW39-mit-Powersave_Schaltbild.png" width="50%" align=right>
 
 Die Empfängerschaltung und die Polwechselschaltung sind unverändert aus dem piTelex-Wiki übernommen, die Schaltung des Senders besteht wie im Original aus einer Stromquellenschaltung mit BC337 und TIP50, verwendet aber statt der ULN...-Treiber-ICs für die Invertierung und Ankopplung des TXD-Signals zwei einfache NPN-Transistoren BC337. Mit dem Trimmpoti wird der Schleifenstrom auf 40mA eingestellt. Da wir es hier mit einer einstellbaren Konstantstromquelle zu tun haben, ist die Stromschleife kurzschlussfest und die Einstellung der 40mA kann daher auch bei Kurzschluss der Schleife erfolgen.
 
 Diese Schaltung funktioniert in meinen sechs piTelex-TW39-Stationen seit Jahren problemlos...
 
 ## Die Platine
-<img src="KiCad/TW39-mit-Powersave_Ansicht_Leiterbahnen.png" width="23%" align=left>
-<img src="KiCad/TW39-mit-Powersave_Ansicht-Platine-Bestückungsplan.png" width="23%" align=left>  
-<img src="KiCad/TW39-mit-Powersave_Ansicht-Platinen-Vorderseite.jpg" width="23%" align=left>
-<img src="KiCad/TW39-mit-Powersave_Ansicht-Platine-Vorderseite-bestückt.jpg" width="23%" align=left>
+<img src="img/TW39-mit-Powersave_Ansicht_Leiterbahnen.png" width="23%" align=left>
+<img src="img/TW39-mit-Powersave_Ansicht-Platine-Bestückungsplan.png" width="23%" align=left>  
+<img src="img/TW39-mit-Powersave_Ansicht-Platinen-Vorderseite.jpg" width="23%" align=left>
+<img src="img/TW39-mit-Powersave_Ansicht-Platine-Vorderseite-bestückt.jpg" width="23%" align=left>
 
 ---
  

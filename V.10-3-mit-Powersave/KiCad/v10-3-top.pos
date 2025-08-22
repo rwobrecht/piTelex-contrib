@@ -1,0 +1,31 @@
+### Footprint positions - created on 2025-08-22T14:40:01+0200 ###
+### Printed by KiCad version 9.0.4-9.0.4-0~ubuntu24.04.1
+## Unit = mm, Angle = deg.
+## Side : top
+# Ref     Val                   Package                                              PosX       PosY       Rot  Side
+C1        3,3uF                 CP_Radial_Tantal_D4.5mm_P2.50mm                   76.2000  -100.3300  -90.0000  top
+C2        1uF                   CP_Radial_Tantal_D4.5mm_P2.50mm                   78.7400   -86.3600    0.0000  top
+C3        3,3uF                 CP_Radial_Tantal_D4.5mm_P2.50mm                   74.9700   -69.8500    0.0000  top
+C4        1uF                   CP_Radial_Tantal_D4.5mm_P2.50mm                   88.9400   -86.3600    0.0000  top
+C5        1uF                   CP_Radial_Tantal_D4.5mm_P2.50mm                   83.8200   -86.3600    0.0000  top
+C6        1uF                   CP_Radial_Tantal_D4.5mm_P2.50mm                   94.0200   -86.3600    0.0000  top
+D1        1N4148                D_DO-15_P2.54mm_Vertical_AnodeUp                  93.9800   -69.8500  180.0000  top
+D2        1N4148                D_DO-15_P2.54mm_Vertical_AnodeUp                  83.8200   -69.8500    0.0000  top
+J1        RX_TX_G               Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical    97.7900  -111.7600  -90.0000  top
+J2        Raspberry_Pi_Zero_WH  PinSocket_2x20_P2.54mm_Horizontal                 71.1200   -68.5800    0.0000  top
+J3        V10                   Molex_KK-254_AE-6410-04A_1x04_P2.54mm_Vertical    82.5500   -62.2300    0.0000  top
+J4        PWR                   Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical    73.6600   -62.2300    0.0000  top
+J5        BTN_PWR               Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical    77.4700  -123.1900  180.0000  top
+J6        LED                   Molex_KK-254_AE-6410-04A_1x04_P2.54mm_Vertical    88.9000  -123.1900  180.0000  top
+R1        2k2                   R_Axial_DIN0309_L9.0mm_D3.2mm_P2.54mm_Vertical    90.1700  -116.8400    0.0000  top
+R2        2k2                   R_Axial_DIN0309_L9.0mm_D3.2mm_P2.54mm_Vertical    90.1700  -113.0300    0.0000  top
+R3        470                   R_Axial_DIN0309_L9.0mm_D3.2mm_P2.54mm_Vertical    78.7400  -115.5700  -90.0000  top
+R4        470                   R_Axial_DIN0309_L9.0mm_D3.2mm_P2.54mm_Vertical    82.5500  -114.3000  -90.0000  top
+R5        4k7                   R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical    83.8200   -95.2500   90.0000  top
+R6        4k7                   R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical    93.9800   -95.2500   90.0000  top
+R7        2k2                   R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical    80.0100   -92.7100  -90.0000  top
+R8        2k2                   R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical    90.1700   -92.7100  -90.0000  top
+R9        470                   R_Axial_DIN0309_L9.0mm_D3.2mm_P2.54mm_Vertical    86.3600  -114.3000  -90.0000  top
+U1        74HCT00               DIP-14_W7.62mm                                    81.2800  -107.9500   90.0000  top
+U2        MAX232                DIP-16_W7.62mm                                    80.0100   -81.2800   90.0000  top
+## End

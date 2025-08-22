@@ -1,0 +1,16 @@
+"ID";"Bezeichner";"Footprint";"Stückzahl";"Bezeichnung";"Anbieter und Referenz";
+1;"U2";"DIP-16_W7.62mm";1;"MAX232";;;
+2;"U1";"DIP-14_W7.62mm";1;"74HCT00";;;
+3;"J1";"Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical";1;"RX TX G";;;
+4;"C1,C3";"CP_Radial_Tantal_D4.5mm_P2.50mm";2;"3,3uF";;;
+5;"J6";"Molex_KK-254_AE-6410-04A_1x04_P2.54mm_Vertical";1;"LED";;;
+6;"R7,R8";"R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical";2;"2k2";;;
+7;"D2,D1";"D_DO-15_P2.54mm_Vertical_AnodeUp";2;"1N4148";;;
+8;"R3,R9,R4";"R_Axial_DIN0309_L9.0mm_D3.2mm_P2.54mm_Vertical";3;"470";;;
+9;"C5,C6,C4,C2";"CP_Radial_Tantal_D4.5mm_P2.50mm";4;"1uF";;;
+10;"R5,R6";"R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical";2;"4k7";;;
+11;"J4";"Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical";1;"PWR";;;
+12;"R2,R1";"R_Axial_DIN0309_L9.0mm_D3.2mm_P2.54mm_Vertical";2;"2k2";;;
+13;"J3";"Molex_KK-254_AE-6410-04A_1x04_P2.54mm_Vertical";1;"V10";;;
+14;"J5";"Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical";1;"BTN_PWR";;;
+15;"J2";"PinSocket_2x20_P2.54mm_Horizontal";1;"Raspberry_Pi_Zero_WH";;;

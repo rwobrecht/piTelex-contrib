@@ -1,0 +1,50 @@
+## Platine für piTelex V.10 (Stromversorgung)
+
+
+
+<img src="img/V10-3-pwr-bestueckt-1.jpg" width="41%" align=middle>
+<img src="img/V10-3-pwr-bestueckt-2.jpg" width="40%" align=middle>
+
+## Die Funktion
+Die hier beschriebene Platine liefert zum einen eine galvanisch vom Netz getrennte +5V Spannung bei max 2A für die Versorgung eines RPi Zero WH und die übrige Steuerelektronik bereit. Dafür ist ein fertiger Netzteilbaustein Meanwell IRM 10-5 verwendet. Der Baustein ist kurzschluss- und überlastungsfest und hat eine entsprechende Zulassung.
+
+Darüber hinaus gibt es einen relaisgeschalteten 230V-Ausgang zum Anschluss des Fernschreibers/des Fernschaltgeräts. Wird der Steuereingang mit dem entsprechenden Ausgang auf der V.10-Platine verbunden, kann damit eine Stromsparschaltung realisiert werden, so dass das Fernschreibequipment nur Netzspannung erhält für die Dauer eines ankommenden Fernschreibens und bei manueller Betätigung des Tasters "PT" ([siehe V.10-Platine](https://github.com/rwobrecht/piTelex-contrib/tree/main/V.10-3-mit-Powersave) ).
+
+## Die Platine
+
+<img src="img/V10-3-pwr-silk.png" width="30%" align=middle>
+<img src="img/V10-3-pwr-layout.png" width="31%" align=middle>
+
+Die Platine wurde mit KiCad entwickelt, die Projektdaten liegen im [KiCad-Unterverzeichnis](KiCad).Man kann die Platine zweilagig herstellen, aber auch als einlagig kupferkaschierte Platine ausführen, dann muss lediglich eine Drahtbrücke eingesetzt werden, die ansonsten durch die zweite Kupferlage realisiert wird. 
+
+Besonderes Augenmerk habe ich auf ausreichende Leiterbahnabstände im Netzspannnungsbereich gelegt. 
+Die V.10-Platine wird über einen dreipoligen Stecker J1 versorgt, der auch den Eingangspin für die Relaissteuerung enthält.
+
+
+## Die Stückliste
+
+|Bez.|Bauteil|Bemerkung|
+|----|-------|---------|
+| J3|PinHeader 3pol RM2,54mm, z.B. Molex-KK254 o.ä.|
+|D1| 1N4007|
+|K1|Relais DPDT 250V/8A, 5V Spule | z.B. FINDER-40.52|
+|R1|1k 0,125W|
+|U1|BC337|
+|PS1| MeanWell IRM 10-5|
+
+
+## Die Sicherheit
+Es ist eine **drei**adrige Netzzuleitung **mit Schutzleiter (PE)** zu verwenden, der auf die Ausgangs-Schukosteckdose für den Fernschreiber durchzuverbinden ist.
+Die Eingangsseite (230V) sollte mit 1A träge abgesichert werden. Das ist ausreichend für den Betrieb eines Fernschreibers und des Vorschaltgeräts. Diese Sicherung ist nicht auf der Platine vorgesehen, sondern wird bei mir über eine im Gehäuse verbaute Kaltgeräte-Einbaubuchse mit integriertem Sicherungshalter realisiert. Außerdem empfiehlt es sich, vor diese Netzteilschaltung ein Fehlerstromschutzorgan mit max 30mA Abschaltstrom (Personenschutzschalter) einzusetzen (sofern nicht bauseitig bereits vorhanden), um Schäden duch mögliche Isolationsprobleme insbesondere bei älteren Maschinen abfangen zu können. 
+
+Der Trafo ist sekundärseitig mit 100mAT abzusichern. Da der Linienstrom auf der TW39-Platine **geregelt** wird (auch bei Kurzschluss des Linienstromkreises), ist ein Ansprechen der Feinsicherung in der Praxis so gut wie ausgeschlossen, deshalb ist sie ohne Komforteinbuße auf der Platine im Geräteinneren verbaut.
+
+
+Das Ganze wird sinnvollerweise in ein Vollkunststoffgehäuse Schutzklasse II eingebaut. Von außen berührbare Metallteile (bspw. Metallfrontplatte o.ä) mit ausreichendem Leiterquerschnitt schutzerden!
+
+## Abschließend der unvermeidliche Disclaimer:
+Auch wenn dieser Schaltungsvorschlag in mehreren Exemplaren seit Jahren unproblematisch funktioniert: für korrekte Funktion und für mögliche Schäden, verursacht durch Verwendung der in diesem Repository bereitgestellten Informationen, kann ich keine Haftung übernehmen. 
+
+Für die Einhaltung der sicherheitstechnischen Vorschriften und anerkannten Regeln der Technik, insbesondere im Bereich der elektrischen Sicherheit, ist jeder Anwender selbst verantwortlich.
+
+Unabhängig davon würde ich mich über Rückmeldungen zu Funktion oder möglichen Verbesserungen sehr freuen.
