@@ -5,7 +5,7 @@
 <img src="img/V10-3-pwr-bestueckt-1.jpg" width="41%" align=right><img src="img/V10-3-pwr-bestueckt-2.jpg" width="40%" align=right>
 
 ## Die Funktion
-Die hier beschriebene Platine liefert zum einen eine galvanisch vom Netz getrennte +5V Spannung bei max 2A für die Versorgung eines RPi Zero WH und die übrige Steuerelektronik bereit. Dafür ist ein fertiger Netzteilbaustein Meanwell IRM 10-5 verwendet. Der Baustein ist in Schutzklasse II ausgeführt und zertifiziert.
+Die hier beschriebene Platine liefert eine galvanisch vom Netz getrennte +5V Spannung bei max 2A für die Versorgung eines RPi Zero WH und der übrigen Steuerelektronik. Dafür ist ein fertiger Netzteilbaustein Meanwell IRM 10-5 verwendet. Der Baustein ist in Schutzklasse II ausgeführt und zertifiziert.
 <img src="/img/IRM-safety.png" >
 
 Darüber hinaus gibt es einen relaisgeschalteten 230V-Ausgang zum Anschluss des Fernschreibers/des Fernschaltgeräts. Wird der Steuereingang mit dem entsprechenden Ausgang auf der V.10-Platine verbunden, kann damit eine Stromsparschaltung realisiert werden, so dass das Fernschreibequipment nur Netzspannung erhält für die Dauer eines ankommenden Fernschreibens und bei manueller Betätigung des Tasters "PT" ([siehe V.10-Platine](https://github.com/rwobrecht/piTelex-contrib/tree/main/V.10-3-mit-Powersave) ).
