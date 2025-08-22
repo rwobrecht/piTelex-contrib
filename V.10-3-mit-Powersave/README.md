@@ -18,6 +18,7 @@ Es ist möglich, eine Stromsparschaltung zu aktivieren. Dazu muss die Stromverso
 * Bei ankommendem Anruf schaltet piTelex die Stromversorgung für FSG/FS ein und nach Verbindungsende automatisch auch wieder aus.
 * Für einen ausgehenden Anruf drückt man kurz die am `pin_button_PT` angeschlossene Taste, um das Stromrelais einzuschalten. Nach Verbindungsende wird die Anlage durch erneutes Drücken der Taste oder automatisch nach einer vorwählbaren Zeit (`power_button_timeout`) wieder ausgeschaltet.
 
+---
 
 ## Die Schaltung
 
@@ -28,9 +29,11 @@ Um den TTL-Ausgangspegel des MAX232 auf 3,3V für den RPi herabzusetzen, werden 
 
 Die Schaltung verwendet **nicht** die Standard-GPIO-Belegung! 
 
+
+---
 ## Die Platine
-<img src="img/V10-3.1-silk.png" width="23%" align=middle>
-<img src="img/V10-3.1-front.png" width="23%" align=middle>
+<img src="img/V10-3.1-front.png" width="23%" align=right><img src="img/V10-3.1-silk.png" width="23%" align=right>
+
 
 Die Platine ist zweilagig mit KiCad entwickelt worden, die Projektdaten liegen im Unterverzeichnis [KiCad](KiCad).
 
@@ -66,9 +69,9 @@ Die Platine bietet folgende Anschlussmöglichkeiten:
 |J2     |*  |    |            | RaspBerryPi GPIO|
 |||||
 |J3     |1  |GND |A           ||
-|J3     |2  |D1  |E           |RXD, verbinde auf Pin 2 der DSUB25 Buchse|
-|J3     |3  |D2  |A           |TXD, verbinde auf Pin 3 der DSUB25 Buchse|
-|J3     |4  |S2  |E           |CTS, verbinde auf Pin 4 der DSUB25 Buchse|
+|J3     |2  |D1  |E           |verbinde auf Pin 2 der DSUB25 Buchse|
+|J3     |3  |D2  |A           |verbinde auf Pin 3 der DSUB25 Buchse|
+|J3     |4  |S2  |E           |verbinde auf Pin 4 der DSUB25 Buchse|
 |||||
 |J4     |1  |+5V |E           |+5V Versorgungsspannung    |
 |J4     |2  |GND |E           | Massepotential für +5V |
@@ -82,6 +85,8 @@ Die Platine bietet folgende Anschlussmöglichkeiten:
 |J6     |3  | LED_WB|A       | Anode LED_WB ohne Vorwiderstand anschließen gegen J6/Pin1|
 |J6     |2  | LED_A|A        | Anode LED_A ohne Vorwiderstand anschließen gegen J6/Pin1|
 
+---
+
 ## Die DB25-Buchse zum FS200
 Die Buchse braucht folgende Pinbelegung:
 
@@ -91,6 +96,8 @@ Die Buchse braucht folgende Pinbelegung:
 |3|D2|J3/3|
 |4|S2|J3/4|
 |7,9,11-14|GND|J3/1|
+
+---
 
 ## Die `telex.json`
 
@@ -137,7 +144,7 @@ Die Schaltung verwendet **nicht** die Standard-GPIOs von piTelex, daher füge ic
 }
 
 ```
-
+---
 
 ## Abschließend der unvermeidliche Disclaimer:
 Auch wenn dieser Schaltungsvorschlag in mehreren Exemplaren unproblematisch funktioniert: für korrekte Funktion und für mögliche Schäden, verursacht durch Verwendung der in diesem Repository bereitgestellten Informationen, kann ich keine Haftung übernehmen. 
