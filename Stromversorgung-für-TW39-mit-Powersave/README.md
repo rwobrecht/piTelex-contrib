@@ -5,7 +5,8 @@
 <img src="../img/1741348757242.jpg" width="80%" align=middle>
 
 ## Die Funktion
-Die hier beschriebene Platine liefert zum einen eine galvanisch vom Netz getrennte Linienstromversorgung mit ca 90V Leerlaufspannung und etwa 75V bei 40mA Last. Zum anderen stellt sie +5V bei max 2A für die Versorgung eines RPi Zero WH und die übrige Steuerelektronik bereit. Dafür ist ein fertiger Netzteilbaustein Meanwell IRM 10-5 verwendet. 
+Die hier beschriebene Platine liefert zum einen eine galvanisch vom Netz getrennte Linienstromversorgung mit ca 90V Leerlaufspannung und etwa 75V bei 40mA Last. Zum anderen stellt sie +5V bei max 2A für die Versorgung eines RPi Zero WH und die übrige Steuerelektronik bereit. Dafür ist ein fertiger Netzteilbaustein Meanwell IRM 10-5 verwendet. Dieser Baustein ist in Schutzklasse II ausgeführt und u.a. TÜV-zertifiziert:
+[<img src="/img/IRM-safety.png" >](https://www.meanwell.com/webapp/product/search.aspx?prod=IRM-10)
 
 Darüber hinaus gibt es einen relaisgeschalteten 230V-Ausgang zum Anschluss des Fernschreibers/des Fernschaltgeräts. Wird der Steuereingang "RP" mit dem entsprechenden Ausgang auf der TW39-Platine verbunden, kann damit eine Stromsparschaltung realisiert werden, so dass das Fernschreibequipment nur Netzspannung erhält für die Dauer eines ankommenden Fernschreibens und bei manueller Betätigung des Tasters "PT" ([siehe TW39-Platine](https://github.com/rwobrecht/piTelex-contrib/tree/main/TW39-mit-Powersave) ).
 
