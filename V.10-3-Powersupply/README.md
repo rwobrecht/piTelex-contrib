@@ -2,7 +2,7 @@
 
 
 
-<img src="img/V10-3-pwr-bestueckt-1.jpg" width="41%" align=right><img src="img/V10-3-pwr-bestueckt-2.jpg" width="40%" align=right>
+<img src="img/V10-3-pwr-bestueckt-1.jpg" width="41%" align=center><img src="img/V10-3-pwr-bestueckt-2.jpg" width="40%" align=right>
 
 ## Die Funktion
 Die hier beschriebene Platine liefert eine galvanisch vom Netz getrennte +5V Spannung bei max 2A für die Versorgung eines RPi Zero WH und der übrigen Steuerelektronik. Dafür ist ein fertiger Netzteilbaustein Meanwell IRM 10-5 verwendet. Der Baustein ist in Schutzklasse II ausgeführt und u.a. TÜV-zertifiziert:
@@ -14,7 +14,7 @@ Darüber hinaus gibt es einen relaisgeschalteten 230V-Ausgang zum Anschluss des 
 
 ## Die Platine
 
-<img src="img/V10-3-pwr-layout.png" width="30%" align=left>
+<img src="img/V10-3-pwr-layout.png" width="30%" >
 
 Die Platine wurde mit KiCad entwickelt, die Projektdaten liegen im [KiCad-Unterverzeichnis](KiCad).
 
@@ -44,6 +44,8 @@ Der FS220 ist in Schutzklasse II ausgeführt, so dass die Durchverbindung des Sc
 Die Eingangsseite (230V) sollte mit 1A träge abgesichert werden. Das ist ausreichend für den Betrieb eines Fernschreibers FS220. Diese Sicherung ist nicht auf der Platine vorgesehen, sondern wird bei mir über eine im Gehäuse verbaute Kaltgeräte-Einbaubuchse mit integriertem Sicherungshalter realisiert. 
 
 Das Ganze wird sinnvollerweise in ein Vollkunststoffgehäuse Schutzklasse II eingebaut. Von außen berührbare Metallteile (bspw. Metallfrontplatte o.ä) mit ausreichendem Leiterquerschnitt schutzerden! Dazu muss eine **drei**adrige Netzzuleitung **mit Schutzleiter (PE)** verwendet werden.
+
+---
 
 ## Abschließend der unvermeidliche Disclaimer:
 Auch wenn dieser Schaltungsvorschlag in mehreren Exemplaren seit Jahren unproblematisch funktioniert: für korrekte Funktion und für mögliche Schäden, verursacht durch Verwendung der in diesem Repository bereitgestellten Informationen, kann ich keine Haftung übernehmen. 
