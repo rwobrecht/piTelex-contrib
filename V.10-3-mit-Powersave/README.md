@@ -13,7 +13,7 @@ Die Platine/Schaltung verwendet drei LEDs:
 * LED_WB leuchtet bei Wählbereitschaft
 * LED_A leuchtet bei bestehender i-telex-Verbindung
 
-Es ist möglich, eine Stromsparschaltung zu aktivieren. Dazu muss die Stromversorgung aus dem [Bauvorschlag](https://github.com/rwobrecht/piTelex-contrib/blob/main/V10-3-Powersupply) verwendet werden. Der Pin 3 des Steckers J3 dieser Platine steuert das Leistungsrelais auf der Stromversorgungsplatine, an deren Kontaktblock die Steckdose zur Versorgung des Fernschreibers angeklemmt wird. Außerdem muss in der telex.json die Stromsparschaltung aktiviert werden. Der `telex.json`-Ausschnitt weiter unten enthält alle hierfür nötigen Einstellungen. Ist die Stromsparschaltung aktiv, dann gilt:
+Es ist möglich, eine Stromsparschaltung zu aktivieren. Dazu kann die Stromversorgung aus dem [Bauvorschlag](https://github.com/rwobrecht/piTelex-contrib/blob/main/V10-3-Powersupply) verwendet werden. Der Pin 3 des Steckers J3 dieser Platine steuert das Leistungsrelais auf der Stromversorgungsplatine, an deren Kontaktblock die Steckdose zur Versorgung des Fernschreibers angeklemmt wird. Außerdem muss in der telex.json die Stromsparschaltung aktiviert werden. Der `telex.json`-Ausschnitt weiter unten enthält alle hierfür nötigen Einstellungen. Ist die Stromsparschaltung aktiv, dann gilt:
 
 * Bei ankommendem Anruf schaltet piTelex die Stromversorgung ein und nach Verbindungsende automatisch auch wieder aus.
 * Für einen ausgehenden Anruf drückt man kurz die am `pin_button_PT` angeschlossene Taste, um das Stromrelais einzuschalten. Nach Verbindungsende wird der FS durch erneutes Drücken der Taste oder automatisch nach einer vorwählbaren Zeit (`power_button_timeout`) wieder ausgeschaltet.
@@ -24,15 +24,15 @@ Es ist möglich, eine Stromsparschaltung zu aktivieren. Dazu muss die Stromverso
 
 <img src="img/piTelex-V10-3.1.sch.png" width="50%" align=right>
 
-Für die Ansteuerung des Fernschreibers werden nur die Signale TXD,RXD und CTS benötigt. Damit die gesendeten Zeichen in rot, die empfangenen in schwarz gedruckt werden, ist mittels eines 74HCT00 Bausteins ein hardware-loopback realisiert. Die 74**HCT**xx-Serie ist für die 3,3V-Logik angepasst, andere Familien (LS,...) müssen nicht zwingend funktionieren. Die V.10-Schnittstelle ist sehr ähnlich zur V.24 bzw. RS232-Schnittstelle und arbeitet mit symmetrischen Spannungen. Daher kann zur Pegelumwandlung von TTL-Signalen ein MAX232 verwendet werden.
+Für die Ansteuerung des Fernschreibers werden nur die Signale TXD, RXD und CTS benötigt. Damit die gesendeten Zeichen in rot, die empfangenen in schwarz gedruckt werden, ist mittels eines 74HCT00 Bausteins ein hardware-loopback realisiert. Die 74**HCT**xx-Serie ist für die 3,3V-Logik angepasst, andere Familien (LS,...) müssen nicht zwingend funktionieren. Die V.10-Schnittstelle ist sehr ähnlich zur V.24 bzw. RS232-Schnittstelle und arbeitet mit symmetrischen Spannungen. Daher kann zur Pegelumwandlung von TTL-Signalen ein MAX232 verwendet werden.
 Um den TTL-Ausgangspegel des MAX232 auf 3,3V für den RPi herabzusetzen, werden zwei Spannungsteiler R7/R5 und R8/R6 eingesetzt.
 
-Die Schaltung verwendet **nicht** die Standard-GPIO-Belegung! 
+Die Schaltung verwendet **nicht** die Standard-GPIO-Belegung!  Siehe unten.
 
 
 ---
 ## Die Platine
-<img src="img/V10-3.1-front.png" width="23%" align=right><img src="img/V10-3.1-silk.png" width="23%" align=right>
+<img src="img/V10-3.2-front.png" width="23%" align=right><img src="img/V10-3.2-silk.png" width="23%" align=right>
 
 
 Die Platine ist zweilagig mit KiCad entwickelt worden, die Projektdaten liegen im Unterverzeichnis [KiCad](KiCad).
@@ -44,17 +44,19 @@ Für die Steuerung eines einzelnen V.10-Fernschreibers ist ein  RPi Zero jedenfa
 
 ### Bauteileliste
 
-Bauteil|Wert|
-|-|-|
-|C1,C3|3,3µF/16V|
-|C2,C4,C5,C6| 1µF/16V|
-|R1,R2,R3,R4,R9|470 Ohm|
-|R5,R6|4K7|
-|R7,R8|2k2|
-|U1|74HCT00|
-|U2|MAX232|
+| Bauteil     | Wert      |
+| ----------- | --------- |
+| C1,C3       | 3,3µF/16V |
+| C2,C4,C5,C6 | 1µF/16V   |
+| R3,R4,R9    | 470 Ohm   |
+| R5,R6       | 4K7       |
+| R1,R2,R7,R8 | 2k2       |
+| U1          | 74HCT00   |
+| U2          | MAX232    |
 
 Alle Widerstände 0,125 W oder 0,25W
+
+
 
 ### Anschlüsse
 
@@ -63,24 +65,24 @@ Die Platine bietet folgende Anschlussmöglichkeiten:
 |Stecker|Pin|Name|Ein-/Ausgang|Beschreibung|
 |-------|---|----|------------|---------------------------|
 |J1     |1  |GND |            ||
-|J1     |2  |TXD |A           | TXD zur weiteren Verarbeitung (LED?)|
-|J1     |3  |RXD |A           | RXD zur weiteren Verarbeitung (LED?)|
-|||||
+|J1     |2  |TXD |A           | optional: LED zur Anzeige von TXD (Anode, LED ohne Vorwiderstand gegen J1/Pin1 anschließen) |
+|J1     |3  |RXD |A           | optional: LED zur Anzeige von RXD (Anode, LED ohne Vorwiderstand gegen J1/Pin1 anschließen) |
+|---|||||
 |J2     |*  |    |            | RaspBerryPi GPIO|
-|||||
+|---|||||
 |J3     |1  |GND |A           ||
 |J3     |2  |D1  |E           |verbinde auf Pin 2 der DSUB25 Buchse|
 |J3     |3  |D2  |A           |verbinde auf Pin 3 der DSUB25 Buchse|
 |J3     |4  |S2  |E           |verbinde auf Pin 4 der DSUB25 Buchse|
-|||||
+|---|||||
 |J4     |1  |+5V |E           |+5V Versorgungsspannung    |
 |J4     |2  |GND |E           | Massepotential für +5V |
-|J4     |3  |RLY |A           | Steuerspannung Relais| 
-|||||
+|J4     |3  |RLY |A           | Steuerspannung Relais|
+|---|||||
 |J5     |1  |    |A           |Taster Powersave|
 |J5     |2  |    |E           |Taster Powersave|
-|||||
-|J6     |1  |GND| Rückleiter |
+|---|||||
+|J6     |1  |GND| Rückleiter ||
 |J6     |2  | LED_Z|A        | Anode LED_Z ohne Vorwiderstand anschließen gegen J6/Pin1|
 |J6     |3  | LED_WB|A       | Anode LED_WB ohne Vorwiderstand anschließen gegen J6/Pin1|
 |J6     |2  | LED_A|A        | Anode LED_A ohne Vorwiderstand anschließen gegen J6/Pin1|
@@ -151,4 +153,4 @@ Auch wenn dieser Schaltungsvorschlag in mehreren Exemplaren unproblematisch funk
 
 Für die Einhaltung der sicherheitstechnischen Vorschriften und anerkannten Regeln der Technik, insbesondere im Bereich der elektrischen Sicherheit, ist jeder Anwender selbst verantwortlich.
 
-Unabhängig davon würde ich mich über Rückmeldungen zu Funktion oder möglichen Verbesserungen sehr freuen.
+Unabhängig davon würde ich mich über Rückmeldungen zu Doku-Fehlern, Funktion oder möglichen Verbesserungen sehr freuen.
