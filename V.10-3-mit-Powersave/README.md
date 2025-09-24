@@ -22,7 +22,7 @@ Es ist möglich, eine Stromsparschaltung zu aktivieren. Dazu kann die Stromverso
 
 ## Die Schaltung
 
-<img src="img/piTelex-V10-3.1.sch.png" width="50%" align=right>
+<img src="img/piTelex-V10-3.2.sch.png" width="50%" align=right>
 
 Für die Ansteuerung des Fernschreibers werden nur die Signale TXD, RXD und CTS benötigt. Damit die gesendeten Zeichen in rot, die empfangenen in schwarz gedruckt werden, ist mittels eines 74HCT00 Bausteins ein hardware-loopback realisiert. Die 74**HCT**xx-Serie ist für die 3,3V-Logik angepasst, andere Familien (LS,...) müssen nicht zwingend funktionieren. Die V.10-Schnittstelle ist sehr ähnlich zur V.24 bzw. RS232-Schnittstelle und arbeitet mit symmetrischen Spannungen. Daher kann zur Pegelumwandlung von TTL-Signalen ein MAX232 verwendet werden.
 Um den TTL-Ausgangspegel des MAX232 auf 3,3V für den RPi herabzusetzen, werden zwei Spannungsteiler R7/R5 und R8/R6 eingesetzt.
