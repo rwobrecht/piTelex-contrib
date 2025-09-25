@@ -6,14 +6,14 @@
 ## Die Funktionsmerkmale
 Die hier beschriebene Platine eignet sich zum Anschluss eines Fernschreibers mit V.10 Schnittstelle (TeKaDe FS200/FS220) ***ohne*** Fernschaltgerät (FAG200 o.ä.). 
 
-Die nötige Stromversorgung (+5V= ) muss extern bereitgestellt werden. Ein passender Bauvorschlag, der auch die Powersave-Funktion unterstützt, findet sich im [entsprechenden Unterverzeichnis](https://github.com/rwobrecht/piTelex-contrib/blob/main/V.10-3-Powersupply) des repositories.
+Die nötige Stromversorgung (+5V= ) muss extern bereitgestellt werden. Ein passender Bauvorschlag, der auch die Powersave-Funktion unterstützt, findet sich im [entsprechenden Unterverzeichnis](https://github.com/rwobrecht/piTelex-contrib/blob/main/V10/V.10-3-Powersupply) des repositories.
 
 Die Platine/Schaltung verwendet drei LEDs:
 * LED_Z blinkt bei Standby der Software ("ZZ"-Zustand) und leuchtet kontinuierlich bei Betriebsbereitschaft ("Z"-Zustand). Der Blinkrhythmus kann in `telex.json` mit `LED_Z_heartbeat` eingestellt werden (s.u.).
 * LED_WB leuchtet bei Wählbereitschaft
 * LED_A leuchtet bei bestehender i-telex-Verbindung
 
-Es ist möglich, eine Stromsparschaltung zu aktivieren. Dazu kann die Stromversorgung aus dem [Bauvorschlag](https://github.com/rwobrecht/piTelex-contrib/blob/main/V10-3-Powersupply) verwendet werden. Der Pin 3 des Steckers J3 dieser Platine steuert das Leistungsrelais auf der Stromversorgungsplatine, an deren Kontaktblock die Steckdose zur Versorgung des Fernschreibers angeklemmt wird. Außerdem muss in der telex.json die Stromsparschaltung aktiviert werden. Der `telex.json`-Ausschnitt weiter unten enthält alle hierfür nötigen Einstellungen. Ist die Stromsparschaltung aktiv, dann gilt:
+Es ist möglich, eine Stromsparschaltung zu aktivieren. Dazu kann die Stromversorgung aus dem [Bauvorschlag](https://github.com/rwobrecht/piTelex-contrib/blob/main/V10/V10-3-Powersupply) verwendet werden. Der Pin 3 des Steckers J3 dieser Platine steuert das Leistungsrelais auf der Stromversorgungsplatine, an deren Kontaktblock die Steckdose zur Versorgung des Fernschreibers angeklemmt wird. Außerdem muss in der telex.json die Stromsparschaltung aktiviert werden. Der `telex.json`-Ausschnitt weiter unten enthält alle hierfür nötigen Einstellungen. Ist die Stromsparschaltung aktiv, dann gilt:
 
 * Bei ankommendem Anruf schaltet piTelex die Stromversorgung ein und nach Verbindungsende automatisch auch wieder aus.
 * Für einen ausgehenden Anruf drückt man kurz die am `pin_button_PT` angeschlossene Taste, um das Stromrelais einzuschalten. Nach Verbindungsende wird der FS durch erneutes Drücken der Taste oder automatisch nach einer vorwählbaren Zeit (`power_button_timeout`) wieder ausgeschaltet.
