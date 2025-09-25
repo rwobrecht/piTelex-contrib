@@ -29,8 +29,8 @@ Die V.10-Platine wird über einen dreipoligen Stecker J3 versorgt, der auch den 
 
 |Bez.|Bauteil|Funktion|Bemerkung|
 |----|-------|---------|---------|
-| J1 | Schraubklemme 2pol  RM 10,16|Netzspannungszuführung||
-| J2 | Schraubklemme 2pol  RM 10,16 |Geschalteter Netzspannungsausgang für den FS220||
+| J1 | Schraubklemme 2pol  RM 7,5mm|Netzspannungszuführung||
+| J2 | Schraubklemme 2pol  RM 7,5mm |Geschalteter Netzspannungsausgang für den FS220||
 | J3 |PinHeader 3pol RM2,54mm| Spannungsversorgung V.10-Platine und <br>Steuerspannungeingang von V.10-Platine |z.B. Molex-KK254 o.ä.|
 | J4 |PinHeader 2pol RM2,54mm|5V-LED zur Anzeige des Relais-Schaltzustands|z.B. Molex-KK254 o.ä.|
 |D1| 1N4007|||
