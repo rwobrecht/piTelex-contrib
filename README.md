@@ -5,7 +5,6 @@ Hier sammle ich Anpassungen und anderes, was ich rund um piTelex mal entwickelt 
 
 ### Hardware für TW39 (Version 1)
 * [TW39-Platine](TW39/V1/TW39-mit-Powersave) für einen RaspBerry Pi Zero W mit Powersave-Funktion sowohl für die 230V-Versorgung als auch für die Linienstromversorgung.
-
 * [TW39-Stromversorgung](TW39/V1/Stromversorgung-für-TW39-mit-Powersave) dazu passend, mit Powersave-Unterstützung. 
 
   
@@ -13,7 +12,6 @@ Hier sammle ich Anpassungen und anderes, was ich rund um piTelex mal entwickelt 
 ### Hardware für TW39 (Version 2)
 
 * [TW39-Platine](TW39/V2/TW39-mit-Powersave) für einen RaspBerry Pi Zero W mit Powersave-Funktion sowohl für die 230V-Versorgung als auch für die Linienstromversorgung.
-
 * [TW39-Stromversorgung](TW39/V2/Stromversorgung-für-TW39-mit-Powersave) dazu passend, mit Powersave-Unterstützung. 
 
 
