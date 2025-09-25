@@ -1,4 +1,4 @@
-## Platine für piTelex TW39 (Stromversorgung)
+## Stromversorgung für piTelex TW39 (Version 2)
 
 
 
