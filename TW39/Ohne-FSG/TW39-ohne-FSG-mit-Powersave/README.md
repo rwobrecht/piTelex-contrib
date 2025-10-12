@@ -69,10 +69,7 @@ Die Gesamtstromaufnahme von Fernschreiber (40mA) plus maximal zwei gleichzeitig 
 
 ## Die Platine
 
-<img src="img/PCBunbestückt-TW39-ohne-FSG-mit-Powersave.png" width="30%" align=left><img src="img/PCBlayout-TW39-ohne-FSG-mit-Powersave.png" width="30%" align=left>
-
----
-
+<img src="img/PCBunbestückt-TW39-ohne-FSG-mit-Powersave.png" width="30%" align=middle><img src="img/PCBlayout-TW39-ohne-FSG-mit-Powersave.png" width="30%" align=right>
 
 
 Als SBC ist ein Raspberry Pi Zero WH vorgesehen, der einfach seitlich auf die zweireihige Kontaktleiste gesteckt wird. Es passen natürlich auch andere RPi mit 40-poligem GPIO-Sockel.
@@ -81,17 +78,6 @@ Für die Steuerung eines einzelnen TW39-Fernschreibers ist ein  RPi Zero jedenfa
 Der Leistungstransistor TIP50 muss ausreichend gekühlt werden. Der Kühlkörper sollte etwa 4W abgeben können bei zulässiger Temperaturerhöhung. 
 
 Der Linienstrom von 40mA wird mit RV1 eingestellt, z.B. bei kurzgeschlossenen Pins von J5
-
-
-
-
-
-
-
-
-
-
-
 
 
 
