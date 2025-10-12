@@ -3,7 +3,7 @@
 <img src="img/Aufbau-TW39-ohne-FSG-mit-Powersave.png" width="60%" align=middle>
 
 ## Die Funktionsmerkmale
-Die hier beschriebene Platine eignet sich zum Anschluss eines Fernschreibers an das i-telex-Netz für das Wählverfahren TW39 mit Nummernschalterwahl oder Tastaturwahl, ***ohne*** vorgeschaltetes Fernschaltgerät. piTelex übernimmt die Funktion des FSG.
+Die hier beschriebene Platine eignet sich zum Anschluss eines 40mA-Linienstrom-Fernschreibers (z.B. T100, Lo15 u.a.) an das i-telex-Netz für das Wählverfahren TW39 mit Nummernschalterwahl oder Tastaturwahl, ***ohne*** vorgeschaltetes Fernschaltgerät. piTelex übernimmt die Funktion des FSG.
 
 Da kein FSG gespeist werden muss, kann die Linienspannung ohne Einbuße auf 24V herabgesetzt werden; die Verlustwärme im Leistungstransistor wird dadurch deutlich reduziert.
 
