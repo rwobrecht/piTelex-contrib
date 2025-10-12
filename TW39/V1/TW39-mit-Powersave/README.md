@@ -6,14 +6,14 @@
 ## Die Funktionsmerkmale
 Die hier beschriebene Platine eignet sich zum Anschluss eines Fernschreibers mit vorgeschaltetem Fernschaltgerät für das Wählverfahren TW39.
 
-Die nötige Stromversorgung (+5V= und ca 80V= für die Linienversorgung)  muss extern bereitgestellt werden. Ein passender Bauvorschlag, der auch die Powersave-Funktion unterstützt, findet sich im [entsprechenden Unterverzeichnis](https://github.com/rwobrecht/piTelex-contrib/blob/main/Stromversorgung-für-TW39-mit-Powersave) des repositories.
+Die nötige Stromversorgung (+5V= und ca 80V= für die Linienversorgung)  muss extern bereitgestellt werden. Ein passender Bauvorschlag, der auch die Powersave-Funktion unterstützt, findet sich im [entsprechenden Unterverzeichnis](https://github.com/rwobrecht/piTelex-contrib/blob/main/TW39/V1/Stromversorgung-für-TW39-mit-Powersave) des repositories.
 
 Die Platine/Schaltung verwendet drei LEDs:
 * LED_Z blinkt bei Standby der Software ("ZZ"-Zustand) und leuchtet kontinuierlich bei Betriebsbereitschaft ("Z"-Zustand). Der Blinkrhythmus kann in `telex.json` mit `LED_Z_heartbeat` eingestellt werden (s.u.).
 * LED_WB leuchtet bei Wählbereitschaft
 * LED_A leuchtet bei bestehender i-telex-Verbindung
 
-Es ist möglich, eine Stromsparschaltung zu aktivieren. Dazu muss die Stromversorgung aus dem [Bauvorschlag](https://github.com/rwobrecht/piTelex-contrib/blob/main/Stromversorgung-für-TW39-mit-Powersave) verwendet werden. Der Pin `RP` (Relais Power)  dieser Platine wird dann mit dem Pin `RP` der Stromversorgung verbunden und steuert das Leistungsrelais auf der Stromversorgungsplatine, an deren Kontaktblock die (schutzgeerdete!) Steckdose zur Versorgung des Fernschaltgeräts und des Fernschreibers angeklemmt wird. Außerdem muss in der telex.json die Stromsparschaltung aktiviert werden. Der `telex.json`-Ausschnitt weiter unten enthält alle hierfür nötigen Einstellungen. Ist die Stromsparschaltung aktiv, dann gilt:
+Es ist möglich, eine Stromsparschaltung zu aktivieren. Dazu muss die Stromversorgung aus dem [Bauvorschlag](https://github.com/rwobrecht/piTelex-contrib/blob/main/TW39/V1/Stromversorgung-für-TW39-mit-Powersave) verwendet werden. Der Pin `RP` (Relais Power)  dieser Platine wird dann mit dem Pin `RP` der Stromversorgung verbunden und steuert das Leistungsrelais auf der Stromversorgungsplatine, an deren Kontaktblock die (schutzgeerdete!) Steckdose zur Versorgung des Fernschaltgeräts und des Fernschreibers angeklemmt wird. Außerdem muss in der telex.json die Stromsparschaltung aktiviert werden. Der `telex.json`-Ausschnitt weiter unten enthält alle hierfür nötigen Einstellungen. Ist die Stromsparschaltung aktiv, dann gilt:
 
 * Bei ankommendem Anruf schaltet piTelex die Stromversorgung für FSG/FS ein und nach Verbindungsende automatisch auch wieder aus.
 * Für einen ausgehenden Anruf drückt man kurz die am `pin_button_PT` angeschlossene Taste, um das Stromrelais einzuschalten. Nach Verbindungsende wird die Anlage durch erneutes Drücken der Taste oder automatisch nach einer vorwählbaren Zeit (`power_button_timeout`) wieder ausgeschaltet.
@@ -35,7 +35,7 @@ Diese Schaltung funktioniert in meinen sechs piTelex-TW39-Stationen seit Jahren 
 <img src="img/TW39-mit-Powersave_Ansicht-Platine-Vorderseite-bestückt.jpg" width="23%" align=left>
 
 ---
- 
+
 Sie ist nicht auf Kompaktheit optimiert; das Layout ist auf Einfachheit getrimmt. Die Leitungsführung ist bewusst in Standardrastermaß von 1/10 Zoll gehalten, so dass das Layout unverändert auch auf einer handelsüblichen Punktrasterplatine ganz "zu Fuß" umgesetzt werden kann.
 Man kann sie zweilagig herstellen, aber auch als einlagige, unterseitig kupferkaschierte Platine ausführen, dann müssen lediglich drei Drahtbrücken auf Bauteilseite eingesetzt werden (im Bild rot), die ansonsten durch die zweite (obere) Kupferlage realisiert werden.  
 Besonderes Augenmerk habe ich auf ausreichende Leiterbahnabstände im Hochspannnungsbereich gelegt. Wenn man die Schaltung auf einer Punktrasterplatine aufbaut, müssen die nicht verwendeten Lötstützpunkte im Bereich der Linienstromversorgung weggefräst werden, denn die 0,4mm "Luft" zwischen zwei Lötstützpunkten sind bei 120V Speisespannung sicher nicht ausreichend.
@@ -45,7 +45,7 @@ Für die Steuerung eines einzelnen TW39-Fernschreibers ist ein  RPi Zero jedenfa
 
 Auf den Ersatz des Umpolrelais durch eine H-Bridge habe ich verzichtet. Die Standard-Relais arbeiten zuverlässig, sind preiswert und erfüllen ihren Zweck.
 
-<img src="../img/C800_ICKS_36X36X20_01.png" width="14%" align=right>
+<img src="/img/C800_ICKS_36X36X20_01.png" width="14%" align=right>
 
 Der Leistungstransistor TIP50 wird abgesetzt über den Anschluss Q5 an geeigneter Stelle im Gehäuse mit Kühlkörper montiert. Es ist nicht vorgesehen, ihn direkt auf der Platine zu montieren. 
 Achtung, die Pinfolge auf der Platine entspricht wegen der Leiterabstände und dem simplen Layout  **nicht** der [Pinfolge am Transistor](https://www.componentsinfo.com/wp-content/uploads/2022/10/tip50-transistor-pinout-equivalent.gif)
@@ -55,7 +55,7 @@ Ein solcher Alu-Fingerkühlkörper 36x36mm  bspw. tut hier gute Dienste.
 
 ### Bauteileliste
 
-Bauteil|Wert|
+|Bauteil|Wert|
 |-|-|
 C1|100n Umax >= 250V|
 D1|1N4007|
@@ -82,19 +82,19 @@ Die Platine bietet folgende Anschlussmöglichkeiten:
 |Stecker|Pin|Name|Ein-/Ausgang|Beschreibung|
 |-------|---|----|------------|---------------------------|
 |J3     |1  |+90V|E           |Linienspannungseingang (+) |
-|||||
+||||||
 |J4     |1  |+5V |E           |+5V Versorgungsspannung    |
 |J4     |2  |GND |E           | Massepotential für +5V und +90V|
-|||||
-|J5     |1  |    |A           |Linienstrom für TW39 (+) (ADo8 Pin 1)|
+||||||
+|J5     |1  |    |A           |Linienstrom für TW39 (+) (ADo8 Pin 1; [Pins2 und 3 in der Dose brücken!])|
 |J5     |2  |    |A           |Linienstrom für TW39 (-) (ADo8 Pin 4)<br>Der Linienstrom von 40mA wird mit RV1 eingestellt, z.B. bei kurzgeschlossenen Pins von J5|
-|||||
-J2     |1   |RP  |A           |`pin_power` herausgeführt. Schaltet das Leistungsrelais für die Netzspannungsversorgung zum Fernschreiber:<br>- manuell bei Drücken der Powertaste<br>- und bei ankommenden Verbindungen. <br>Das Relais befindet sich auf der Stromversorgungsplatine.|
-J2     |2   |GND |A           |Massepotential für LED und Taster|
-J2     |3   |BP  |E           |`pin_button_PT` herausgeführt.<br> Taster (gegen GND) schaltet den Fernschreiber über das Leistungsrelais auf der Stromversorgungsplatine ein und aus.|
-J2     |4   |LA  |A           |`pin_LED_A` herausgeführt. <br>Hier kann eine LED mit passendem Vorwiderstand (330 Ohm) gegen GND angeschlossen werden. <br>Sie leuchtet bei bestehender Verbindung.|
-J2     |5   |LW  |A           |`pin_LED_WB` herausgeführt.<br> Hier kann eine LED mit passendem Vorwiderstand (330 Ohm) gegen GND angeschlossen werden. <br>Sie leuchtet bei Wählbereitschaft.|
-J2     |6   |LZ  |A           |`pin_LED_Z` herausgeführt.<br> Hier kann eine LED mit passendem Vorwiderstand (330 Ohm) gegen GND angeschlossen werden. <br>Sie leuchtet im Offline-Modus. Zusammen mit der heartbeat-Funktion blinkt sie im Sleep-Modus langsam|
+||||||
+|J2     |1   |RP  |A           |`pin_power` herausgeführt. Schaltet das Leistungsrelais für die Netzspannungsversorgung zum Fernschreiber:<br>- manuell bei Drücken der Powertaste<br>- und bei ankommenden Verbindungen. <br>Das Relais befindet sich auf der Stromversorgungsplatine.|
+|J2     |2   |GND |A           |Massepotential für LED und Taster|
+|J2     |3   |BP  |E           |`pin_button_PT` herausgeführt.<br> Taster (gegen GND) schaltet den Fernschreiber über das Leistungsrelais auf der Stromversorgungsplatine ein und aus.|
+|J2     |4   |LA  |A           |`pin_LED_A` herausgeführt. <br>Hier kann eine LED mit passendem Vorwiderstand (330 Ohm) gegen GND angeschlossen werden. <br>Sie leuchtet bei bestehender Verbindung.|
+|J2     |5   |LW  |A           |`pin_LED_WB` herausgeführt.<br> Hier kann eine LED mit passendem Vorwiderstand (330 Ohm) gegen GND angeschlossen werden. <br>Sie leuchtet bei Wählbereitschaft.|
+|J2     |6   |LZ  |A           |`pin_LED_Z` herausgeführt.<br> Hier kann eine LED mit passendem Vorwiderstand (330 Ohm) gegen GND angeschlossen werden. <br>Sie leuchtet im Offline-Modus. Zusammen mit der heartbeat-Funktion blinkt sie im Sleep-Modus langsam|
 
 Die Pins in J2 können (bis auf den Massepin) natürlich auch anders oder auch gar nicht verwendet werden. Dann ist die `telex.json` (s.u.) entsprechend anzupassen.
 

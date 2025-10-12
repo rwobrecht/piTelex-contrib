@@ -26,8 +26,8 @@ Das Platinenlayout ist auf Einfachheit hin getrimmt. Besonderes Augenmerk habe i
 
 |Bez.|Bauteil|Funktion||
 |----|-------|---------|----|
-| J1 | Schraubklemme 2pol  RM 10,16|Netzspannungszuführung||
-| J2 | Schraubklemme 2pol  RM 10,16 |relaisgeschalteter Netzausgang zum Anschluss des FSG||
+| J1 | Schraubklemme 2pol  RM 7,5mm |Netzspannungszuführung||
+| J2 | Schraubklemme 2pol  RM 7,5mm |relaisgeschalteter Netzausgang zum Anschluss des FSG||
 | J3|PinHeader 2pol RM2,54mm|Anschluss einer 5V-LED (Relaiszustandsanzeige), Pin1:Anode||
 | J4 |PinHeader 5pol|Versorgung der TW39-Platine und Relaiseingang:<br>Pin1: +80V Linie<br>Pin2: leer<br>Pin3: GND<br>Pin4: +5V<br>Pin5: RP (Steuereingang des Relais)|z.B. Molex KK254 o.ä.|
 |T1| Trafo 230V / 2x24V 100mA |Erzeugen der Linienspannung|z.B. GERTH 421.48.2|

@@ -97,7 +97,7 @@ Die Platine bietet folgende Anschlussmöglichkeiten:
 |J4     |4  |+5V |E           |+5V Versorgungsspannung    |
 |J4     |5   |RP  |A           |`pin_power` herausgeführt. Schaltet das Leistungsrelais für die Netzspannungsversorgung zum Fernschreiber:<br>- manuell bei Drücken der Powertaste<br>- und bei ankommenden Verbindungen. <br>Das Relais befindet sich auf der Stromversorgungsplatine.|
 |---|||||
-|J5     |1  |    |A           |Linienstrom für TW39 (+) (ADo8 Pin 1)|
+|J5     |1  |    |A           |Linienstrom für TW39 (+) (ADo8 Pin 1, [Pins 2 und 3 in der Dose brücken!] )|
 |J5     |2  |    |-           |unbenutzt|
 |J5     |3  |    |A           |Linienstrom für TW39 (-) (ADo8 Pin 4)<br>Der Linienstrom von 40mA wird mit RV1 eingestellt, z.B. bei kurzgeschlossenen Pins von J5|
 
