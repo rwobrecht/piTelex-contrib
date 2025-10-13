@@ -28,4 +28,4 @@ Hier sammle ich Anpassungen und anderes, was ich rund um piTelex mal entwickelt 
 
 **Fragen oder Anregungen gerne an `telex(at)freenet.de`.**
 
-**Da bei meinem PCB Hersteller immer eine Mindestabnahme gilt, und ich selber die Platinen nicht alle "verbrauchen" kann, gebe ich vorhandenes Material gerne weiter. Einfach anfragen!**
+**Da bei meinem PCB Hersteller immer eine Mindestabnahme gilt, und ich selber die Platinen nicht alle "verbrauchen" kann, gebe ich vorhandenes Material gerne weiter. Bei Interesse einfach nachfragen!**
