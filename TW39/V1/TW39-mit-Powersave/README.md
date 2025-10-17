@@ -103,7 +103,7 @@ Die Pins in J2 können (bis auf den Massepin) natürlich auch anders oder auch g
 Die Schaltung verwendet **nicht** die Standard-GPIOs von piTelex, daher füge ich einen passenden Ausschnitt aus der `telex.json` Datei mit den korrekten GPIO-Nummern bei:
 
 ```JSON
-      "RPiTTY": {
+    "RPiTTY": {
       "type": "RPiTTY",         # standard TW39 (current loop) CCU and teletype
       "enable": true,
       "mode": "TW39",
