@@ -29,3 +29,7 @@ Hier sammle ich Anpassungen und anderes, was ich rund um piTelex mal entwickelt 
 **Fragen oder Anregungen gerne an `telex(at)freenet.de`.**
 
 **Da bei meinem PCB Hersteller immer eine Mindestabnahme gilt, und ich selber die Platinen nicht alle "verbrauchen" kann, gebe ich vorhandenes Material gerne weiter. Bei Interesse einfach nachfragen!**
+
+### 5) RPi-Image dazu passend
+
+Zu den o.a. Hardware-Varianten gibt es ein [passendes Software-Image](./soft/README.md) für RaspBerry Pi's. Es enthält ein fertig vorinstalliertes und lauffähiges piTelex.
