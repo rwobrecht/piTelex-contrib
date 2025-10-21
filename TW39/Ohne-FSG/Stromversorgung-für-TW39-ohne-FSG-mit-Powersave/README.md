@@ -8,7 +8,7 @@ Die hier beschriebene Platine liefert zum einen eine galvanisch vom Netz getrenn
 
 Beide Sekundärspannungen haben ein gemeinsames Potential. 
 
-Darüber hinaus gibt es einen relaisgeschalteten 230V-Ausgang zum Anschluss des Fernschreibers/des Fernschaltgeräts. Der Steuereingang "RLY" wird mit dem entsprechenden Ausgang auf der TW39-Platine verbunden, so dass der Fernschreiber Netzspannung erhält für die Dauer eines ankommenden Fernschreibens, bei Betätigung der "AT"-Taste (sofort bei Tastaturwahl, bei Nummernschalterwahl erst nach Verbindungsaufbau) und bei Betätigung des Tasters "LT" ([siehe TW39-Platine](https://github.com/rwobrecht/piTelex-contrib/tree/main/TW39/Ohne-FSG/TW39-mit-Powersave) ).
+Darüber hinaus gibt es einen relaisgeschalteten 230V-Ausgang zum Anschluss des Fernschreibers/des Fernschaltgeräts. Der Steuereingang "RLY" wird mit dem entsprechenden Ausgang auf der TW39-Platine verbunden, so dass der Fernschreiber Netzspannung erhält für die Dauer eines ankommenden Fernschreibens, bei Betätigung der "AT"-Taste (sofort bei Tastaturwahl, bei Nummernschalterwahl erst nach Verbindungsaufbau) und bei Betätigung des Tasters "LT" ([siehe TW39-Platine](https://github.com/rwobrecht/piTelex-contrib/tree/main/TW39/Ohne-FSG/TW39-ohne-FSG-mit-Powersave) ).
 
 <img src="img/Schaltplan-Stromversorgung-für-TW39-ohne-FSG-mit-Powersave.png" width="50%" align=middle>
 
