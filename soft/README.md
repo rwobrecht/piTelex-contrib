@@ -9,9 +9,7 @@ Passend zu den PCB Layouts in diesem Repository habe ich ein bootfähiges Image 
 
 ## Betriebssystem
 
-Das image kann mittels [rpi-imager](https://www.raspberrypi.com/software/) auf die µSD-Karte geschrieben werden, bei Bedarf können hiermit auch vor dem Schreiben noch Einstellungen wie WLAN-Zugangsdaten oder hostname geändert werden (bitte nicht den usernamen ändern); alternativ geht natürlich auf linux-Rechnern auch
-
-`dd if=/path/to/imagefile of=/dev/<Name des Blockgeräts>; sync`
+Das image kann beispielsweise mittels [rpi-imager](https://www.raspberrypi.com/software/) auf die µSD-Karte geschrieben werden, bei Bedarf können hiermit auch vor dem Schreiben noch Einstellungen wie WLAN-Zugangsdaten oder hostname geändert werden (bitte nicht den usernamen ändern).
 
 Falls beim boot ein Netzwerk verfügbar ist (LAN), wird die Netzwerkeinbindung mit DHCP automatisch erledigt. Zugriff auf den RPi kann dann mittels ssh (Windows: `putty`) erfolgen. Ist kein LAN verfügbar, muss der erste Zugriff auf den RPi über Tastatur/Monitor erfolgen.  Voreingestellt ist
 
