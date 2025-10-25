@@ -5,7 +5,7 @@ Passend zu den PCB Layouts in diesem Repository habe ich ein bootfähiges Image 
 * 32bit (passt also für alle RPi inkl. ZeroW)
 * Vorinstalliertes RPi-OS trixie (Debian 13 basierend)
 * Vorinstalliertes und lauffähiges piTelex Release 2025-06
-* Speicherkarte sollte 8GB oder größer sein
+* µSD-Speicherkarte sollte 8GB oder größer sein
 
 ## Betriebssystem
 
@@ -53,6 +53,10 @@ Zum Aktivieren genügt,es, im Bereich i-Telex der `telex.json` den Eintrag `"cen
 ## Download
 
 Hier kommt der link zum Download für das Image: https://my.hidrive.com/share/rdk89-w562. (Die Datei ist zu groß für github...)
+
+## Disclaimer
+
+Ich hoffe, das Image funktioniert nicht nur bei mir, sondern auch bei anderen. Klar ist, dass es nur eine Basisfunktionalität für piTelex mitbringen kann. Für fortgeschrittenere Konfigurationen ist Lesen der passenden Wiki-Seiten Pflicht.
 
 ## Feedback
 
