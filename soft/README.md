@@ -9,15 +9,23 @@ Passend zu den PCB Layouts in diesem Repository habe ich ein bootfähiges Image 
 
 ## Betriebssystem
 
-Das image kann beispielsweise mittels [rpi-imager](https://www.raspberrypi.com/software/) auf die µSD-Karte geschrieben werden, bei Bedarf können hiermit auch vor dem Schreiben noch Einstellungen wie WLAN-Zugangsdaten oder hostname geändert werden (bitte nicht den usernamen ändern).
-
-Falls beim boot ein Netzwerk verfügbar ist (LAN), wird die Netzwerkeinbindung mit DHCP automatisch erledigt. Zugriff auf den RPi kann dann mittels ssh (Windows: `putty`) erfolgen. Ist kein LAN verfügbar, muss der erste Zugriff auf den RPi über Tastatur/Monitor erfolgen.  Voreingestellt ist
+Das image kann beispielsweise mittels [rpi-imager](https://www.raspberrypi.com/software/) auf die µSD-Karte geschrieben werden, bei Bedarf können hiermit auch vor dem Schreiben noch Einstellungen wie WLAN-Zugangsdaten oder hostname geändert werden (bitte nicht den usernamen ändern).   Voreingestellt ist
 
 * hostname: pitelex
 * user: pi
 * passwort: telex
 
-Mittels `sudo raspi-config` kann dann bei Bedarf der WLAN-Zugang, das Passwort, der hostname usw. angepasst werden.
+
+Falls beim boot ein Netzwerk verfügbar ist (LAN), wird die Netzwerkeinbindung mit DHCP automatisch erledigt. Zugriff auf den RPi kann dann mittels ssh (Windows: `putty`) erfolgen. Ist kein LAN verfügbar, muss der erste Zugriff auf den RPi über Tastatur/Monitor erfolgen.
+
+>[!NOTE]
+>Beim ersten login meckert das System fehlende LOCALEs an, gibt aber auch gleich den Hinweis, was dagegen zu tun ist: Mit
+>>
+>    `sudo dpkg-reconfigure locales`
+>
+>können die fehlenden LOCALE installiert werden. Das sollte als allererstes erfolgen, damit die störenden Meldungen verschwinden.
+
+Falls erforderlich, kann dann mit `sudo raspi-config` der WLAN-Zugang, das Passwort, der hostname usw. angepasst werden.
 
 ## piTelex
 
@@ -28,17 +36,20 @@ Die voreingestellte `telex.json` beinhaltet nur eine Minimal-Konfiguration aus S
 
 Mit Eingabe von `byobu<Enter>` an der Kommandozeile gelangt man in das laufende Screen-Modul und kann dort schonmal erste Verbindungstests durchführen:
 
-`<ESC>AT<ENTER>` geht in die Wählbereitschaft, danach kann man eine i-telex-Nummer wählen. Ist der Teilnehmer erreichbar, sollte er sich mit der Datum-/Zeitgruppe melden. Die Verbindung wird mit `<ESC>ST<ENTER>` beendet. Mit `<F6>` verlässt man die `byobu`-Oberfläche und kehrt zur Konsole zurück.
+`<ESC>AT<ENTER>` geht in die Wählbereitschaft, danach kann man eine i-telex-Nummer wählen. Ist der Teilnehmer erreichbar, sollte er sich mit der Datum-/Zeitgruppe melden. Die Verbindung wird mit `<ESC>ST<ENTER>` beendet. Mit `<F6>` verlässt man die `byobu`-Oberfläche und kehrt zur Konsole zurück. Details zu screen siehe https://github.com/fablab-wue/piTelex/wiki/SW_DevScreen
 
 ### Fernschreibequipment anschließen
 
 Für die Einbindung von Fernschreib-Hardware muss die `telex.json` entsprechend erweitert werden. Für die PCB-Layouts aus diesem Repository gibt es fertige telex.json-Varianten im Verzeichnis `/home/pi/piTelex-pool/config`. Um eine davon zu aktivieren, muss sie nur ins piTelex-Verzeichnis kopiert werden:
 
-`cp ~/piTelex-pool/config/telex.json.XXXX ~/piTelex/telex.json`
+    `cp ~/piTelex-pool/config/telex.json.XXXX ~/piTelex/telex.json`
 
-Anschließend entweder piTelex neu starten: `sudo systemctl restart pitelex`
+Anschließend entweder piTelex neu starten: 
+    `sudo systemctl restart pitelex`
 
-oder einfach neu booten: `sudo reboot`
+oder einfach neu booten: 
+    `sudo reboot`
+
 
 ## i-Telex
 
