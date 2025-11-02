@@ -42,7 +42,7 @@ Mit Eingabe von `byobu<Enter>` an der Kommandozeile gelangt man in das laufende 
 
 Für die Einbindung von Fernschreib-Hardware muss die `telex.json` entsprechend erweitert werden. Für die PCB-Layouts aus diesem Repository gibt es fertige telex.json-Varianten im Verzeichnis `/home/pi/piTelex-pool/config`. Um eine davon zu aktivieren, muss sie nur ins piTelex-Verzeichnis kopiert werden:
 
-    `cp ~/piTelex-pool/config/telex.json.XXXX ~/piTelex/telex.json`
+     cp ~/piTelex-pool/config/telex.json.XXXX ~/piTelex/telex.json
 
 Anschließend entweder piTelex neu starten: 
     `sudo systemctl restart pitelex`
@@ -50,7 +50,13 @@ Anschließend entweder piTelex neu starten:
 oder einfach neu booten: 
     `sudo reboot`
 
-
+>[!CAUTION]
+>Die beigefügte telex.json für Betrieb ohne FSG enthält einen Fehler:
+>Im Modul RPiTTY fehlt in der Zeile
+>
+>`"mode": "TW39",` <--- das abschließende Komma! Bitte ergänzen vor Neustart!
+>
+>[Das Listing der telex.json im zugehörigen Hardwarebereich](https://github.com/rwobrecht/piTelex-contrib/tree/main/TW39/Ohne-FSG/TW39-ohne-FSG-mit-Powersave#die-telexjson) ist bereits korrigiert.
 ## i-Telex
 
 Senden von Telexen sollte bei bis hierher richtiger Konfiguration schonmal funktionieren.
