@@ -154,7 +154,7 @@ Die Schaltung verwendet **nicht** die Standard-GPIOs von piTelex, daher füge ic
     "RPiTTY": {
       "type": "RPiTTY",
       "enable": true,
-      "mode": "TW39"  	             # mode = "TWM" für Tastaturwahl
+      "mode": "TW39", 	             # mode = "TWM" für Tastaturwahl
       "pin_txd": 22,
       "txd_powersave": true,
       "pin_rxd": 27,
