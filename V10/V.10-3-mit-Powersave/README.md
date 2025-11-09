@@ -51,6 +51,7 @@ Für die Steuerung eines einzelnen V.10-Fernschreibers ist ein  RPi Zero jedenfa
 | R3,R4,R9    | 470 Ohm   |
 | R5,R6       | 4K7       |
 | R1,R2,R7,R8 | 2k2       |
+| D1,D2       | 1N4148, 1N400X,...|
 | U1          | 74HCT00   |
 | U2          | MAX232    |
 
