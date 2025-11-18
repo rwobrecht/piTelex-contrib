@@ -27,13 +27,17 @@ Falls beim boot ein Netzwerk verfügbar ist (LAN), wird die Netzwerkeinbindung m
 
 ### Erster Test
 
-**piTelex startet beim Boot automatisch** (als systemd-Dienst, siehe https://github.com/fablab-wue/piTelex/wiki/SW_AutoStart). 
+**piTelex startet beim Boot automatisch** als [systemd-Dienst](https://github.com/fablab-wue/piTelex/wiki/SW_AutoStart). 
 Die voreingestellte `telex.json` beinhaltet nur eine Minimal-Konfiguration aus Screen-, i-Telex- und log-Modul.
 
-Mit Eingabe von `byobu<Enter>` an der Kommandozeile gelangt man in das laufende Screen-Modul und kann dort schonmal erste Verbindungstests durchführen:
+Mit Eingabe von `byobu<Enter>` an der Kommandozeile gelangt man in das laufende [Screen-Modul](https://github.com/fablab-wue/piTelex/wiki/SW_DevScreen) und kann dort schonmal erste Verbindungstests durchführen:
 
-`<ESC>AT<ENTER>` geht in die Wählbereitschaft, danach kann man eine i-telex-Nummer wählen. Ist der Teilnehmer erreichbar, sollte er sich mit der Datum-/Zeitgruppe melden. Eingabe von `@` sollte die Kennung des erreichten Teilnehmers zurückliefern, `#` die eigene Kennung (bis dato "123456 dummy d"). Die Verbindung wird mit `<ESC>ST<ENTER>` beendet. Mit `<F6>` verlässt man die `byobu`-Oberfläche und kehrt zur Konsole zurück. Details zu screen siehe https://github.com/fablab-wue/piTelex/wiki/SW_DevScreen
-
+* `<ESC>AT<ENTER>` geht in die Wählbereitschaft, danach kann man eine i-telex-Nummer eingeben.
+* Ist der Teilnehmer erreichbar, sollte er sich mit der Datum-/Zeitgruppe melden.
+* Eingabe von `@` sollte die Kennung des erreichten Teilnehmers zurückliefern, `#` die eigene Kennung (bis dato "123456 dummy d").
+* Die Verbindung wird mit `<ESC>ST<ENTER>` beendet.
+* Mit `<F6>` verlässt man die `byobu`-Oberfläche und kehrt zur Konsole zurück.
+  
 ### Fernschreibequipment anschließen
 
 Für die Einbindung von Fernschreib-Hardware muss die `telex.json` entsprechend erweitert werden. Für die PCB-Layouts aus diesem Repository gibt es fertige telex.json-Varianten im Verzeichnis `/home/pi/piTelex-pool/config`. Um eine davon zu aktivieren, muss sie nur ins piTelex-Verzeichnis kopiert werden:
