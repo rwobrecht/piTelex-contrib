@@ -1,5 +1,5 @@
 # RaspBerry Pi image für TW39 und V.10 Hardware
-## Version vom 17.11.25 (noch nicht hochgeladen, sorry....)
+## Version vom 17.11.25 
 
 Passend zu den PCB Layouts in diesem Repository habe ich ein bootfähiges Image zusammengebaut mit den Eigenschaften
 
@@ -32,7 +32,7 @@ Die voreingestellte `telex.json` beinhaltet nur eine Minimal-Konfiguration aus S
 
 Mit Eingabe von `byobu<Enter>` an der Kommandozeile gelangt man in das laufende Screen-Modul und kann dort schonmal erste Verbindungstests durchführen:
 
-`<ESC>AT<ENTER>` geht in die Wählbereitschaft, danach kann man eine i-telex-Nummer wählen. Ist der Teilnehmer erreichbar, sollte er sich mit der Datum-/Zeitgruppe melden. Die Verbindung wird mit `<ESC>ST<ENTER>` beendet. Mit `<F6>` verlässt man die `byobu`-Oberfläche und kehrt zur Konsole zurück. Details zu screen siehe https://github.com/fablab-wue/piTelex/wiki/SW_DevScreen
+`<ESC>AT<ENTER>` geht in die Wählbereitschaft, danach kann man eine i-telex-Nummer wählen. Ist der Teilnehmer erreichbar, sollte er sich mit der Datum-/Zeitgruppe melden. Eingabe von `@` sollte die Kennung des erreichten Teilnehmers zurückliefern, `#` die eigene Kennung (bis dato "123456 dummy d"). Die Verbindung wird mit `<ESC>ST<ENTER>` beendet. Mit `<F6>` verlässt man die `byobu`-Oberfläche und kehrt zur Konsole zurück. Details zu screen siehe https://github.com/fablab-wue/piTelex/wiki/SW_DevScreen
 
 ### Fernschreibequipment anschließen
 
