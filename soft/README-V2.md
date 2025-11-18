@@ -58,8 +58,7 @@ Zum Aktivieren genügt,es, im Bereich i-Telex der `telex.json` den Eintrag `"cen
 
 ## Download
 
-Hier kommt der link zum Download für das Image: https://my.hidrive.com/share/rdk89-w562. (Die Datei ist zu groß für github...)
-
+Hier kommt der link zum Download für das Image: [piTelex-2025-06_RPi.trixie-32bit-4G-251117.img.gz](https://my.hidrive.com/lnk/FlnxCSMz9).  (Die Datei ist zu groß für github...)
 ## Disclaimer
 
 Ich hoffe, das Image funktioniert nicht nur bei mir, sondern auch bei anderen. Klar ist, dass es nur eine Basisfunktionalität für piTelex mitbringen kann. Für fortgeschrittenere Konfigurationen ist Lesen der passenden Wiki-Seiten Pflicht.
