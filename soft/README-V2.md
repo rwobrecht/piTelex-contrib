@@ -9,7 +9,7 @@ Passend zu den PCB Layouts in diesem Repository habe ich ein bootfähiges Image 
 
 ## Betriebssystem
 
-Das image wird mittels [rpi-imager](https://www.raspberrypi.com/software/) auf die µSD-Karte geschrieben werden. Dabei sind folgende Voreinstellungen nötig:Zugangsdaten oder hostname geändert werden (bitte nicht den usernamen ändern).   Vore
+Das image wird mittels [rpi-imager](https://www.raspberrypi.com/software/) auf die µSD-Karte geschrieben werden. Dabei sind folgende Voreinstellungen nötig:
 
 
     * hostname: (nach Bedarf)
