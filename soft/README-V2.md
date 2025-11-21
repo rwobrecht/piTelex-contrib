@@ -8,7 +8,11 @@ Passend zu den PCB Layouts in diesem Repository habe ich ein bootfähiges Image 
 * Vorinstalliertes und lauffähiges piTelex Release 2025-06
 * µSD-Speicherkarte sollte 8GB oder größer sein
 
-## Betriebssystem
+Das Image kann natürlich auch mit anderer Hardware genutzt werden. Die mitgelieferten Beispiel-Konfigurationsdateien müssen dann lediglich an die verwendete Hardware angepasst werden.
+
+
+
+## * Betriebssystem
 
 Das image wird mittels [rpi-imager](https://www.raspberrypi.com/software/) auf die µSD-Karte geschrieben werden. Dabei sind folgende Voreinstellungen nötig:
 
@@ -19,8 +23,9 @@ Das image wird mittels [rpi-imager](https://www.raspberrypi.com/software/) auf d
     * Bei Bedarf noch die WLAN-Zugangsdaten und locale-Einstellung
     * im Reiter "Dienste": ssh aktivieren mit Passwort-Auth
 
-
 Falls beim boot ein Netzwerk verfügbar ist (LAN), wird die Netzwerkeinbindung mit DHCP automatisch erledigt. Zugriff auf den RPi kann dann mittels ssh (Windows: `putty`) erfolgen. Ist kein LAN verfügbar und kein WLAN konfiguriert, muss der erste Zugriff auf den RPi über Tastatur/Monitor erfolgen.
+
+
 
 
 ## piTelex
@@ -33,10 +38,15 @@ Die voreingestellte `telex.json` beinhaltet nur eine Minimal-Konfiguration aus S
 Mit Eingabe von `byobu<Enter>` an der Kommandozeile gelangt man in das laufende [Screen-Modul](https://github.com/fablab-wue/piTelex/wiki/SW_DevScreen) und kann dort schonmal erste Verbindungstests durchführen:
 
 * `<ESC>AT<ENTER>` geht in die Wählbereitschaft, danach kann man eine i-telex-Nummer eingeben.
+
 * Ist der Teilnehmer erreichbar, sollte er sich mit der Datum-/Zeitgruppe melden.
+
 * Eingabe von `@` sollte die Kennung des erreichten Teilnehmers zurückliefern, `#` die eigene Kennung (bis dato "123456 dummy d").
+
 * Die Verbindung wird mit `<ESC>ST<ENTER>` beendet.
+
 * Mit `<F6>` verlässt man die `byobu`-Oberfläche und kehrt zur Konsole zurück.
+
   
 ### Fernschreibequipment anschließen
 
@@ -50,6 +60,8 @@ Anschließend entweder piTelex neu starten:
 oder einfach neu booten: 
     `sudo reboot`
 
+
+
 ## i-Telex
 
 Senden von Telexen sollte bei bis hierher richtiger Konfiguration schonmal funktionieren.
@@ -60,13 +72,20 @@ Die Daten müssen in der `telex.json`natürlich eingetragen werden, zum einen im
 Hat man keine IPv4-Adresse, muss man centralex verwenden: https://github.com/fablab-wue/piTelex/wiki/SW_DevITelexCentralex.
 Zum Aktivieren genügt,es, im Bereich i-Telex der `telex.json` den Eintrag `"centralex": true,` hinzuzufügen.
 
+
+
 ## Download
 
 Hier kommt der link zum Download für das Image: [piTelex-2025-06_RPi.trixie-32bit-4G-251117.img.gz](https://my.hidrive.com/lnk/FlnxCSMz9).  (Die Datei ist zu groß für github...)
+
+
+
 ## Disclaimer
 
 Ich hoffe, das Image funktioniert nicht nur bei mir, sondern auch bei anderen. Klar ist, dass es nur eine Basisfunktionalität für piTelex mitbringen kann. Für fortgeschrittenere Konfigurationen ist Lesen der passenden Wiki-Seiten Pflicht.
 
+
+
 ## Feedback
 
-Rückmeldungen gerne an telex(at)freenet.de
+Rückmeldungen gerne an telex(at)freenet.de oder in telexforum.de
