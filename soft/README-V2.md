@@ -33,13 +33,15 @@ Falls beim boot ein Netzwerk verfügbar ist (LAN), wird die Netzwerkeinbindung m
 >
 > * entweder das erste login mit Tastatur und Monitor durchführen und mittels `sudo raspi-config` SSH einschalten:
 >   
->      * <img src="/img/rpi-cfg-3-IF.png" width="30%" align="left">
->      * <img src="/img/rpi-cfg-I1.png" width="30%" align="left">
->      * <img src="/img/rpi-cfg-ssh.png" width="30%" align="left">
+>      <img src="/img/rpi-cfg-3-IF.png" width="33%">
+>      <img src="/img/rpi-cfg-I1.png" width="33%">
+>      <img src="/img/rpi-cfg-ssh.png" width="33%">
 >
-> * oder die µSD-Karte im PC öffnen und in der zweiten Partition (`rootfs`) die Datei `/etc/ssh/sshd_config` in einen Texteditor der Wahl laden, die Zeile `PasswordAuthentication no` suchen und in `PasswordAuthentication yes` ändern. Darauf achten, dass die Zeile nicht mit `#` beginnt (Kommentarzeichen), sonst ist die Einstellung wirkungslos. Die Datei speichern (möglicherweise sind Admin-Rechte zum Speichern erforderlich). Die so gepatchte µSD-Karte sollte dann das Einloggen mit SSH/Passwort erlauben.
+> *  oder die µSD-Karte im PC öffnen und in der zweiten Partition (`rootfs`) die Datei `/etc/ssh/sshd_config` in einen Texteditor der Wahl laden, die Zeile `PasswordAuthentication no` suchen und in `PasswordAuthentication yes` ändern. Darauf achten, dass die Zeile nicht mit `#` beginnt (Kommentarzeichen), sonst ist die Einstellung wirkungslos. Die Datei speichern (möglicherweise sind Admin-Rechte zum Speichern erforderlich). Die so gepatchte µSD-Karte sollte dann das Einloggen mit SSH/Passwort erlauben.<img src="/img/sshd_config.png" width="50%"> 
+>
+>
 
-
+---
 
 
 ## piTelex
