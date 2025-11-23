@@ -14,8 +14,7 @@ Das Image kann natürlich auch mit anderer Hardware genutzt werden. Die mitgelie
 
 ## * Betriebssystem
 
-Das image wird mittels [rpi-imager](https://www.raspberrypi.com/software/) auf die µSD-Karte geschrieben werden. Dabei sind folgende Voreinstellungen nötig:
-
+Das image wird mittels [rpi-imager](https://www.raspberrypi.com/software/) entsprechend der [Anleitung im piTelex-wiki]( https://github.com/fablab-wue/piTelex/wiki/SW_imager) auf die µSD-Karte geschrieben. Dabei sind folgende Voreinstellungen nötig:
 
     * hostname: (nach Bedarf)
     * user: pi  (muss zwingend "pi" sein)
