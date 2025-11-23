@@ -1,5 +1,5 @@
 # RaspBerry Pi image für TW39 und V.10 Hardware
-## Version vom 17.11.25 / gepatcht für ssh/password auth 25.11.25
+### Version vom 17.11.25 / gepatcht für ssh/password auth 25.11.25
 
 Passend zu den PCB Layouts in diesem Repository habe ich ein bootfähiges Image zusammengebaut mit den Eigenschaften
 
@@ -10,9 +10,9 @@ Passend zu den PCB Layouts in diesem Repository habe ich ein bootfähiges Image 
 
 Das Image kann natürlich auch mit anderer Hardware genutzt werden. Die mitgelieferten Beispiel-Konfigurationsdateien müssen dann lediglich an die verwendete Hardware angepasst werden.
 
+---
 
-
-## * Betriebssystem
+## Betriebssystem
 
 Das image wird mittels [rpi-imager](https://www.raspberrypi.com/software/) entsprechend der [Anleitung im piTelex-wiki]( https://github.com/fablab-wue/piTelex/wiki/SW_imager) auf die µSD-Karte geschrieben. Dabei sind folgende Voreinstellungen nötig:
 
@@ -59,9 +59,13 @@ Mit Eingabe von `byobu<Enter>` an der Kommandozeile gelangt man in das laufende 
 
 * Eingabe von `@` sollte die Kennung des erreichten Teilnehmers zurückliefern, `#` die eigene Kennung (bis dato "123456 dummy d").
 
-* Die Verbindung wird mit `<ESC>ST<ENTER>` beendet.
+* An der Konsole getippter Text erscheint in rot und wird an die Gegenstelle gesendet. Von der Gegenstelle empfangener Text wird in schwarz bzw. weiß (je nach Konsole) wiedergegeben. 
+
+* Mit `<ESC>ST<ENTER>` wid die Verbindung beendet.
 
 * Mit `<F6>` verlässt man die `byobu`-Oberfläche und kehrt zur Konsole zurück.
+
+Sollte piTelex durch Fehlbedienung o.ä. beendet werden, startet der systemd den Dienst erneut nach 10 Sekunden. Dann kann man auch wieder mit `byobu` das Screen-interface bedienen. Wenn nichts mehr hilft, hilft ein reboot :-)
 
   
 ### Fernschreibequipment anschließen
@@ -72,11 +76,10 @@ Für die Einbindung von Fernschreib-Hardware muss die `telex.json` entsprechend 
 
 Anschließend entweder piTelex neu starten: 
     `sudo systemctl restart pitelex`
-
 oder einfach neu booten: 
     `sudo reboot`
 
-
+---
 
 ## i-Telex
 
@@ -85,20 +88,26 @@ Senden von Telexen sollte bei bis hierher richtiger Konfiguration schonmal funkt
 Um für andere Teilnehmer erreichbar zu sein, braucht es einen Eintrag in den TNS. Hier helfen die Admins gerne weiter.
 Die Daten müssen in der `telex.json`natürlich eingetragen werden, zum einen im Bereich i-Telex ( `"tns_dynip_number"` , `"tns_pin"`) und im Globalteil am Ende der `telex.json` die Option `"wru_id"`
 
-Hat man keine IPv4-Adresse, muss man centralex verwenden: https://github.com/fablab-wue/piTelex/wiki/SW_DevITelexCentralex.
-Zum Aktivieren genügt,es, im Bereich i-Telex der `telex.json` den Eintrag `"centralex": true,` hinzuzufügen.
+Hat man keine IPv4-Adresse, muss man [centralex](https://github.com/fablab-wue/piTelex/wiki/SW_DevITelexCentralex) verwenden.
+Zum Aktivieren genügt,es, im Bereich i-Telex der `telex.json` den Eintrag 
 
+      "centralex": true, 
 
+hinzuzufügen.
+
+---
 
 ## Download
 
 Hier kommt der link zum Download für das Image: [piTelex-2025-06_RPi.trixie-32bit-5G-251123.img.gz](https://my.hidrive.com/lnk/H86hvNZwl).  (Die Datei ist zu groß für github...)
 
-
+---
 
 ## Disclaimer
 
 Ich hoffe, das Image funktioniert nicht nur bei mir, sondern auch bei anderen. Klar ist, dass es nur eine Basisfunktionalität für piTelex mitbringen kann. Für fortgeschrittenere Konfigurationen ist Lesen der passenden Wiki-Seiten Pflicht.
+
+Und wie immer gilt: Benutzung der Software erfolgt auf eigene Gefahr...
 
 
 
