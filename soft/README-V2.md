@@ -1,5 +1,5 @@
 # RaspBerry Pi image für TW39 und V.10 Hardware
-## Version vom 17.11.25 
+## Version vom 17.11.25 / gepatcht für ssh/password auth 25.11.25
 
 Passend zu den PCB Layouts in diesem Repository habe ich ein bootfähiges Image zusammengebaut mit den Eigenschaften
 
@@ -24,6 +24,16 @@ Das image wird mittels [rpi-imager](https://www.raspberrypi.com/software/) auf d
     * im Reiter "Dienste": ssh aktivieren mit Passwort-Auth
 
 Falls beim boot ein Netzwerk verfügbar ist (LAN), wird die Netzwerkeinbindung mit DHCP automatisch erledigt. Zugriff auf den RPi kann dann mittels ssh (Windows: `putty`) erfolgen. Ist kein LAN verfügbar und kein WLAN konfiguriert, muss der erste Zugriff auf den RPi über Tastatur/Monitor erfolgen.
+
+>[!IMPORTANT]
+> Dieses Image ist mit der Einstellung `PasswordAuthentication yes` für den ssh-Zugang versehen.
+>
+>Wegen eines bugs im rpi-imager 1.9.6 kann es passieren, dass beim Schreiben des Images entgegen der Einstellungen im imager das passwort-Auth nicht funktioniert.
+>
+>__WORKAROUND:__
+>
+> * entweder das erste login mit Tastatur und Monitor durchführen und mittels `sudo raspi-config` SSH einschalten
+> * oder die µSD-Karte im PC öffnen und in der zweiten Partition (`rootfs`) die Datei `/etc/ssh/sshd_config` in einen Texteditor der Wahl laden, die Zeile `PasswordAuthentication no` suchen und in `PasswordAuthentication yes` ändern. Darauf achten, dass die Zeile nicht mit `#` beginnt (Kommentarzeichen), sonst ist die Einstellung wirkungslos. Die Datei speichern (möglicherweise sind Admin-Rechte zum Speichern erforderlich). Die so gepatchte µSD-Karte sollte dann das Einloggen mit SSH/Passwort erlauben.
 
 
 
@@ -76,7 +86,7 @@ Zum Aktivieren genügt,es, im Bereich i-Telex der `telex.json` den Eintrag `"cen
 
 ## Download
 
-Hier kommt der link zum Download für das Image: [piTelex-2025-06_RPi.trixie-32bit-4G-251117.img.gz](https://my.hidrive.com/lnk/FlnxCSMz9).  (Die Datei ist zu groß für github...)
+Hier kommt der link zum Download für das Image: [piTelex-2025-06_RPi.trixie-32bit-5G-251123.img.gz](https://my.hidrive.com/lnk/H86hvNZwl).  (Die Datei ist zu groß für github...)
 
 
 
