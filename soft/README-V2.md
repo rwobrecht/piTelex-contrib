@@ -61,7 +61,7 @@ Mit Eingabe von `byobu<Enter>` an der Kommandozeile gelangt man in das laufende 
 
 * Ist der Teilnehmer erreichbar, sollte er sich mit der Datum-/Zeitgruppe melden.
 
-* Eingabe von `@` sollte die Kennung des erreichten Teilnehmers zurückliefern, `#` die eigene Kennung (bis dato "123456 dummy d").
+* Eingabe von `@` sollte die Kennung des erreichten Teilnehmers zurückliefern, `#` die eigene Kennung (bis dato "12345 dummy d").
 
 * An der Konsole getippter Text erscheint in rot und wird an die Gegenstelle gesendet. Von der Gegenstelle empfangener Text wird in schwarz bzw. weiß (je nach Konsole) wiedergegeben. 
 
