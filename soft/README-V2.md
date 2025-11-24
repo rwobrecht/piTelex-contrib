@@ -69,8 +69,7 @@ Mit Eingabe von `byobu<Enter>` an der Kommandozeile gelangt man in das laufende 
 
 * Mit `<F6>` verlässt man die `byobu`-Oberfläche und kehrt zur Konsole zurück.
 
->[!NOTE]
->Sollte piTelex durch Fehlbedienung o.ä. beendet werden, startet der systemd den Dienst erneut nach 10 Sekunden. Dann kann man auch wieder mit `byobu` das Screen-interface bedienen. Wenn nichts mehr hilft, hilft ein reboot. Ggf. vorher eine funktionierende Variante der telex.json aktivieren... :-)
+
 
 
 ### Fernschreibequipment anschließen
@@ -86,6 +85,10 @@ Anschließend entweder piTelex neu starten:
 oder einfach neu booten: 
     `sudo reboot`
 
+>[!NOTE]
+>Sollte piTelex durch Fehlbedienung oder fehlerhafte `telex.json` beendet werden, versucht der systemd, den Dienst erneut nach 10 Sekunden zu starten. Wenn das gelingt, kann man auch wieder mit `byobu` das Screen-interface bedienen. Wenn nichts mehr hilft, hilft ein reboot; ggf. vorher eine funktionierende Variante der telex.json aktivieren... :-)
+>
+>Bitte **nicht** versuchen, `telex.py` "zu Fuß" zu starten, das überkreuzt sich mit dem systemd-Dienst und führt zu Fehlermeldungen, aber nicht zum Funktionieren :-)
 ---
 
 ## i-Telex
