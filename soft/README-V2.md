@@ -1,14 +1,16 @@
 # RaspBerry Pi image für TW39 und V.10 Hardware
 ### Version vom 17.11.25 / gepatcht für ssh/password auth 25.11.25
 
-Passend zu den PCB Layouts in diesem Repository habe ich ein bootfähiges Image zusammengebaut mit den Eigenschaften
+Passend  zu den PCB Layouts in diesem Repository habe ich ein bootfähiges Image zusammengebaut mit den Eigenschaften
 
 * 32bit (passt also für alle RPi inkl. ZeroW)
 * Vorinstalliertes RPi-OS trixie (Debian 13 basierend)
 * Vorinstalliertes und lauffähiges piTelex Release 2025-06
 * µSD-Speicherkarte sollte 8GB oder größer sein
 
-Das Image kann natürlich auch mit anderer Hardware genutzt werden. Die mitgelieferten Beispiel-Konfigurationsdateien müssen dann lediglich an die verwendete Hardware angepasst werden.
+> [!TIP]
+>
+> Das Image kann natürlich auch mit anderer Hardware genutzt werden. Die mitgelieferten Beispiel-Konfigurationsdateien müssen dann lediglich an die verwendete Hardware angepasst werden.
 
 ---
 
@@ -27,7 +29,7 @@ Falls beim boot ein Netzwerk verfügbar ist (LAN), wird die Netzwerkeinbindung m
 >[!IMPORTANT]
 > Dieses Image ist mit der Einstellung `PasswordAuthentication yes` für den ssh-Zugang versehen.
 >
->Wegen eines bugs im rpi-imager 1.9.6 kann es passieren, dass beim Schreiben des Images entgegen der Einstellungen im imager das passwort-Auth nicht funktioniert.
+>Wegen eines bugs im rpi-imager 1.9.6 kann es passieren, dass  entgegen der Einstellungen im imager das passwort-Auth nicht funktioniert.
 >
 >__WORKAROUND:__
 >
@@ -37,7 +39,7 @@ Falls beim boot ein Netzwerk verfügbar ist (LAN), wird die Netzwerkeinbindung m
 >      <img src="/img/rpi-cfg-I1.png" width="33%">
 >      <img src="/img/rpi-cfg-ssh.png" width="33%">
 >
-> *  oder die µSD-Karte im PC öffnen und in der zweiten Partition (`rootfs`) die Datei `/etc/ssh/sshd_config` in einen Texteditor der Wahl laden, die Zeile `PasswordAuthentication no` suchen und in `PasswordAuthentication yes` ändern. Darauf achten, dass die Zeile nicht mit `#` beginnt (Kommentarzeichen), sonst ist die Einstellung wirkungslos. Die Datei speichern (möglicherweise sind Admin-Rechte zum Speichern erforderlich). Die so gepatchte µSD-Karte sollte dann das Einloggen mit SSH/Passwort erlauben.<img src="/img/sshd_config.png" width="50%"> 
+> *  oder die frisch mit dem image beschriebene µSD-Karte im PC öffnen und in der zweiten Partition (`rootfs`) die Datei `/etc/ssh/sshd_config` in einen Texteditor der Wahl laden, die Zeile `PasswordAuthentication no` suchen und in `PasswordAuthentication yes` ändern. Darauf achten, dass die Zeile nicht mit `#` beginnt (Kommentarzeichen), sonst ist die Einstellung wirkungslos. Die Datei speichern (möglicherweise sind Admin-Rechte zum Speichern erforderlich). Die so gepatchte µSD-Karte sollte dann das Einloggen mit SSH/Passwort erlauben.<img src="/img/sshd_config.png" width="50%"> 
 >
 >
 
@@ -67,12 +69,14 @@ Mit Eingabe von `byobu<Enter>` an der Kommandozeile gelangt man in das laufende 
 
 Sollte piTelex durch Fehlbedienung o.ä. beendet werden, startet der systemd den Dienst erneut nach 10 Sekunden. Dann kann man auch wieder mit `byobu` das Screen-interface bedienen. Wenn nichts mehr hilft, hilft ein reboot :-)
 
-  
+
 ### Fernschreibequipment anschließen
 
-Für die Einbindung von Fernschreib-Hardware muss die `telex.json` entsprechend erweitert werden. Für die PCB-Layouts aus diesem Repository gibt es fertige telex.json-Varianten im Verzeichnis `/home/pi/piTelex-pool/config`. Um eine davon zu aktivieren, muss sie nur ins piTelex-Verzeichnis kopiert werden:
+Für die Einbindung von Fernschreib-Hardware muss die `telex.json` entsprechend erweitert werden. Für die PCB-Layouts aus diesem Repository und für die SEU-M gibt es fertige telex.json-Varianten im Verzeichnis `/home/pi/piTelex-pool/config`. Um eine davon zu aktivieren, muss sie nur ins piTelex-Verzeichnis kopiert werden:
 
-     cp ~/piTelex-pool/config/telex.json.XXXX ~/piTelex/telex.json
+```bash
+ cp ~/piTelex-pool/config/telex.json.XXXX ~/piTelex/telex.json
+```
 
 Anschließend entweder piTelex neu starten: 
     `sudo systemctl restart pitelex`
@@ -91,7 +95,9 @@ Die Daten müssen in der `telex.json`natürlich eingetragen werden, zum einen im
 Hat man keine IPv4-Adresse, muss man [centralex](https://github.com/fablab-wue/piTelex/wiki/SW_DevITelexCentralex) verwenden.
 Zum Aktivieren genügt,es, im Bereich i-Telex der `telex.json` den Eintrag 
 
-      "centralex": true, 
+```json
+  "centralex": true, 
+```
 
 hinzuzufügen.
 
