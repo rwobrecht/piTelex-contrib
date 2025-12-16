@@ -19,14 +19,15 @@ Passend  zu den PCB Layouts in diesem Repository habe ich ein bootfähiges Image
 * Das image wird mittels [rpi-imager](https://www.raspberrypi.com/software/) analog zur [Anleitung im piTelex-wiki]( https://github.com/fablab-wue/piTelex/wiki/SW_imager) auf die µSD-Karte geschrieben. 
 
 >[!IMPORTANT]
->Bitte die aktuelle Version des Imagers verwenden (>= 2.0.2).  
+> * Bitte die aktuelle Version des Imagers verwenden (>= 2.0.2).
+> * Anpassungen des image (hostname, passwort, wlan,...) werden vom rpi-imager neuerdings bei Fremdimages leider nicht mehr unterstützt. Das muss dann nach dem ersten Einloggen mi dem RPi- Konfigurationstool `raspi-config` erfolgen (s.u.)
 
 * Den RPi mit der so beschriebenen Karte booten.
 
 * Falls beim boot ein Netzwerk verfügbar ist (LAN), wird die Netzwerkeinbindung mit DHCP automatisch erledigt. 
 Der Zugriff auf den RPi kann dann mittels ssh (Windows: `putty`) erfolgen. 
 
-* Ist kein LAN verfügbar und kein WLAN konfiguriert, muss der erste Zugriff auf den RPi über Tastatur/Monitor erfolgen.
+* Ist kein LAN verfügbar, muss der erste Zugriff auf den RPi über Tastatur/Monitor erfolgen.
 
 Für den Erstzugriff  sind folgende Einstellungen fest vorgegeben:
 
@@ -35,13 +36,10 @@ Für den Erstzugriff  sind folgende Einstellungen fest vorgegeben:
     * passwort: telex
 
 
-> [!IMPORTANT]
-> Bei der deutschen Tastatur liegt wegen der vorgegebenen Standard-Lokale das `-` zunächst auf dem `ß` !
-> Nach dem ersten Einloggen sollte daher mittels `sudo raspi-config` die Spracheinstellung angepasst werden. 
+- Nach dem ersten Einloggen sollte zunächst mittels `sudo raspi-config` die Spracheinstellung angepasst werden. <br>(Achtung: Bei der deutschen Tastatur liegt wegen der voreingestellten Standard-Lokale das `-` zunächst auf dem `ß` ...)
+- Danach können bei Bedarf mit `sudo raspi-config` der Rechnername und das Passwort für den user pi angepasst werden.
 
-- Danach können bei Bedarf mit `sudo raspi-config` hostname und Passwort für den user pi angepasst werden
-
-- Ebenfalls bei Bedarf können WLAN-SSID und WLAN-Passwort konfiguriert werden 
+- Ebenfalls bei Bedarf können so auch WLAN-SSID und WLAN-Passwort konfiguriert werden.
 
    
 
@@ -52,7 +50,7 @@ Für den Erstzugriff  sind folgende Einstellungen fest vorgegeben:
 
 ### Erster Test
 
-**piTelex startet beim Boot automatisch** als [systemd-Dienst](https://github.com/fablab-wue/piTelex/wiki/SW_AutoStart). 
+**piTelex startet bei jedem Boot automatisch** als [systemd-Dienst](https://github.com/fablab-wue/piTelex/wiki/SW_AutoStart). 
 Die voreingestellte `telex.json` beinhaltet nur eine Minimal-Konfiguration aus Screen-, i-Telex- und log-Modul.
 
 Mit Eingabe von `byobu<Enter>` an der Kommandozeile gelangt man in das laufende [Screen-Modul](https://github.com/fablab-wue/piTelex/wiki/SW_DevScreen) und kann dort schonmal erste Verbindungstests durchführen:
