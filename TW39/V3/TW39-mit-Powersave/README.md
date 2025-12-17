@@ -25,17 +25,12 @@ Zusätzlich kann durch Aktivieren von `txd_powersave` im Standby auch der Schlei
 
 Die Empfängerschaltung und die Polwechselschaltung sind unverändert aus dem piTelex-Wiki übernommen, die Schaltung des Senders besteht wie im Original aus einer Stromquellenschaltung mit BC337 und TIP50, verwendet aber statt der ULN...-Treiber-ICs für die Invertierung und Ankopplung des TXD-Signals zwei einfache NPN-Transistoren BC337. Mit dem Trimmpoti wird der Schleifenstrom auf 40mA eingestellt. Da wir es hier mit einer einstellbaren Konstantstromquelle zu tun haben, ist die Stromschleife kurzschlussfest und die Einstellung der 40mA kann daher auch bei Kurzschluss der Schleife erfolgen.
 
-Diese Schaltung funktioniert in meinen sechs piTelex-TW39-Stationen seit Jahren problemlos...
 
 ---
 
 ## Die Platine
 
 <img src="img/TW39-V3-PCBlayout.png" width="30%" align=left>
-
----
-
-
 
 Besonderes Augenmerk habe ich auf ausreichende Leiterbahnabstände im Hochspannnungsbereich gelegt. Als SBC ist ein Raspberry Pi Zero WH vorgesehen, der einfach seitlich auf die zweireihige Kontaktleiste gesteckt wird. Es passen natürlich auch andere RPi mit 40-poligem GPIO-Sockel.
 Für die Steuerung eines einzelnen TW39-Fernschreibers ist ein  RPi Zero jedenfalls mehr als ausreichend.
@@ -50,9 +45,13 @@ Achtung, die Pinfolge auf der Platine entspricht wegen der Leiterabstände **nic
 Der Kühlkörper muss etwa 4W abgeben können bei zulässiger Temperaturerhöhung. 
 Ein solcher Alu-Fingerkühlkörper 36x36mm  bspw. tut hier gute Dienste.
 
-Diese Version ist gegenüber Version 1 deutlich kompakter aufgebaut. Dafür wurde die Beschränkung auf 1/10Zoll-Abstände aufgegeben. Die Vorwiderstände für die LEDs konnten trotz kompakterer Abmessungen auf der Platine untergebracht werden. Außerdem wurde die Anordnung der Steckverbinder optimiert.
+Diese Version unterscheidet sich von Version  2 nur durch ein geringfügig geändertes PCB-Layout, weil andere GPIOs verwendet wurden, um die Pins 3 und 5 des RPi frei zu halten (I2C-Bus).
 
-### Bauteileliste
+<br>
+
+---
+
+### Die Bauteileliste
 
 | Bauteil        | Bezeichnung         | Bemerkung                                  |
 | -------------- | ------------------- | ------------------------------------------ |
@@ -79,7 +78,7 @@ Alle Widerstände 0,125 W oder 0,25W
 
 
 
-### Anschlüsse
+### Die Anschlüsse
 
 Die Platine bietet folgende Anschlussmöglichkeiten:
 
@@ -136,7 +135,7 @@ Die Schaltung verwendet **nicht** die Standard-GPIOs von piTelex, daher füge ic
       "pin_power": 26,          # GPIO for power relay (switching mains in power save feature)
       "inv_power": false
     },
-(...)
+# (...)
 # if you want to use the power saving feature:
   "power_off_delay": 3,         # wait 3 seconds after poweroff condition 
                                 # before switching off mains
