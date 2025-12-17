@@ -1,4 +1,4 @@
-## Stromversorgung für piTelex TW39 (Version 2)
+## Stromversorgung für piTelex TW39 (Version 3 == Version 2)
 
 
 
