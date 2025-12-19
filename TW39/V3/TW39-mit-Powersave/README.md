@@ -72,6 +72,7 @@ Diese Version unterscheidet sich von Version  2 nur durch ein geringfügig geän
 | J3             | BTN_P               | PinHeader 1x02 vertical, z.B. Molex_KK-254 |
 | J4             | PWR                 | PinHeader 1x05 vertical, z.B. Molex_KK-254 |
 | J5             | 4/ADo/1             | PinHeader 1x03 vertical, z.B. Molex_KK-254 |
+| J6             | I2C                 | PinHeader 1x02 vertical (optional)         |
 | K1             | Miniaturrelais DPDT | z.B. Omron_G5V-2 oder Axicom D2n           |
 
 Alle Widerstände 0,125 W oder 0,25W
@@ -99,6 +100,9 @@ Die Platine bietet folgende Anschlussmöglichkeiten:
 |J5     |1  |    |A           |Linienstrom für TW39 (+) (ADo8 Pin 1, [Pins 2 und 3 in der Dose brücken!] )|
 |J5     |2  |    |-           |unbenutzt|
 |J5     |3  |    |A           |Linienstrom für TW39 (-) (ADo8 Pin 4)<br>Der Linienstrom von 40mA wird mit RV1 eingestellt, z.B. bei kurzgeschlossenen Pins von J5|
+|---|||||
+|J6     |1  |SDA |            | I2C|
+|J6     |2  |SCL |            | I2C|
 
 ---
 
