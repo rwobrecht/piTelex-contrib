@@ -1,6 +1,6 @@
 # RaspBerry Pi image für TW39 und V.10 Hardware
 
-
+## Update 02.01.2026 
 Passend  zu den PCB Layouts in diesem Repository habe ich ein bootfähiges Image zusammengebaut mit den Eigenschaften
 
 * 32bit (passt also für alle RPi inkl. ZeroW)
