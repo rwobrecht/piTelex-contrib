@@ -116,7 +116,7 @@ hinzuzufügen.
 
 ## Download
 
-### Update
+### Update 02.01.2026
 
 Es gibt ein neues Image mit aktualisiertem Betriebssystem (13.2) und dem neuen piTelex (2025-12):<br> [piTelex-2025-12_RPi.trixie-13.2-32bit-5G-260102.img.gz](https://mega.nz/file/1CtRUS6I#pVH1AhT80d8YevGjlHbM6CR7CRaaOCiU8coKFEG89I8)
 
