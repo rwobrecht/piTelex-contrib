@@ -1,5 +1,5 @@
 # RaspBerry Pi image für TW39 und V.10 Hardware
-### Version vom 17.11.25 / gepatcht für ssh/password auth 25.11.25
+
 
 Passend  zu den PCB Layouts in diesem Repository habe ich ein bootfähiges Image zusammengebaut mit den Eigenschaften
 
