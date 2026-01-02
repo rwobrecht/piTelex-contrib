@@ -36,10 +36,17 @@ Für den Erstzugriff  sind folgende Einstellungen fest vorgegeben:
     * passwort: telex
 
 
-- Nach dem ersten Einloggen sollte zunächst mittels `sudo raspi-config` die Spracheinstellung angepasst werden. <br>(Achtung: Bei der deutschen Tastatur liegt wegen der voreingestellten Standard-Lokale das `-` zunächst auf dem `ß` ...)
-- Danach können bei Bedarf mit `sudo raspi-config` der Rechnername und das Passwort für den user pi angepasst werden.
-
-- Ebenfalls bei Bedarf können so auch WLAN-SSID und WLAN-Passwort konfiguriert werden.
+- Nach dem ersten Einloggen sollte zunächst  
+      `sudo raspi-config`
+  
+  aufgerufen werden. Hiermit können bei Bedarf
+    * die Spracheinstellung angepasst werden. <br>(Achtung: Bei der deutschen Tastatur liegt wegen der voreingestellten Standard-Lokale das `-` zunächst auf dem `ß` ...)
+    * Rechnername
+    * Passwort für den user pi
+    * WLAN-SSID und WLAN-Passwort
+  
+  konfiguriert werden.
+- Die `root` -Partition ist knapp 4G groß und hat noch ca 800MB freien Platz. Bei Bedarf kann sie über raspi-config im Menü `Advanced` / Expand filesystem` vergrößert werden.
 
    
 
@@ -109,7 +116,13 @@ hinzuzufügen.
 
 ## Download
 
-Hier kommt der link zum Download für das Image: [piTelex-2025-06_RPi.trixie-32bit-5G-251123.img.gz](https://my.hidrive.com/lnk/H86hvNZwl).  (Die Datei ist zu groß für github...)
+### Update
+
+Es gibt ein neues Image mit aktualisiertem Betriebssystem (13.2) und dem neuen piTelex (2025-12):<br> [piTelex-2025-12_RPi.trixie-13.2-32bit-5G-260102.img.gz](https://mega.nz/file/1CtRUS6I#pVH1AhT80d8YevGjlHbM6CR7CRaaOCiU8coKFEG89I8)
+
+Das alte Image ist noch verfügbar unter <br>[piTelex-2025-06_RPi.trixie-32bit-5G-251123.img.gz](https://mega.nz/file/hLlQWLiD#MkVyDqVeCHbYmpAjTb7-vlEV0U97UYQeqwxxEhi64NU) .
+>[!NOTE]
+>Die Dateien sind zu groß für github, sie liegen daher in meiner Cloud bei **mega.nz**
 
 ---
 
