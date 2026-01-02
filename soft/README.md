@@ -16,10 +16,11 @@ Passend  zu den PCB Layouts in diesem Repository habe ich ein bootfähiges Image
 
 ## Betriebssystem
 
-* Das image wird mittels [rpi-imager](https://www.raspberrypi.com/software/) analog zur [Anleitung im piTelex-wiki]( https://github.com/fablab-wue/piTelex/wiki/SW_imager) auf die µSD-Karte geschrieben. 
+* Das image herunterladen (Downloadlink s.u.) und mittels [rpi-imager](https://www.raspberrypi.com/software/) analog zur [Anleitung im piTelex-wiki]( https://github.com/fablab-wue/piTelex/wiki/SW_imager) auf die µSD-Karte schreiben. 
 
 >[!IMPORTANT]
 > * Bitte die aktuelle Version des Imagers verwenden (>= 2.0.2).
+> * Als Betriebssystem "Eigenes Image" anklicken (ganz runterscrollen) und das heruntergeladene image auswählen
 > * Anpassungen des image (hostname, passwort, wlan,...) werden vom rpi-imager neuerdings bei Fremdimages leider nicht mehr unterstützt. Das muss dann nach dem ersten Einloggen mi dem RPi- Konfigurationstool `raspi-config` erfolgen (s.u.)
 
 * Den RPi mit der so beschriebenen Karte booten.
@@ -36,17 +37,18 @@ Für den Erstzugriff  sind folgende Einstellungen fest vorgegeben:
     * passwort: telex
 
 
-- Nach dem ersten Einloggen sollte zunächst  
+- _**Bei Bedarf**_  können mit Hilfe des Konfigurationswerkzeugs
       `sudo raspi-config`
   
-  aufgerufen werden. Hiermit können bei Bedarf
-    * die Spracheinstellung angepasst werden. <br>(Achtung: Bei der deutschen Tastatur liegt wegen der voreingestellten Standard-Lokale das `-` zunächst auf dem `ß` ...)
-    * Rechnername
-    * Passwort für den user pi
-    * WLAN-SSID und WLAN-Passwort
+    * die Spracheinstellung, <br>_(Achtung: Bei der deutschen Tastatur liegt wegen der voreingestellten Standard-Lokale das `-` zunächst auf dem `ß` ...)_
+    * der Rechnername,
+    * das Passwort für den user pi,
+    * die WLAN-SSID und das WLAN-Passwort
   
   konfiguriert werden.
-- Die `root` -Partition ist knapp 4G groß und hat noch ca 800MB freien Platz. Bei Bedarf kann sie über raspi-config im Menü `Advanced` / `Expand filesystem` vergrößert werden.
+- Die `root` -Partition ist knapp 4G groß und hat noch ca 800MB freien Platz. <br>
+  _**Bei Bedarf**_  kann sie über sudo raspi-config
+  im Menü `Advanced / Expand filesystem` vergrößert werden.
 
    
 
