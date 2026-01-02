@@ -5,7 +5,7 @@ Passend  zu den PCB Layouts in diesem Repository habe ich ein bootfähiges Image
 
 * 32bit (passt also für alle RPi inkl. ZeroW)
 * Vorinstalliertes RPi-OS trixie (Debian 13 basierend)
-* Vorinstalliertes und lauffähiges piTelex Release 2025-06
+* Vorinstalliertes und lauffähiges piTelex 
 * µSD-Speicherkarte sollte 8GB oder größer sein
 
 > [!TIP]
