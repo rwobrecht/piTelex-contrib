@@ -46,7 +46,7 @@ Für den Erstzugriff  sind folgende Einstellungen fest vorgegeben:
     * WLAN-SSID und WLAN-Passwort
   
   konfiguriert werden.
-- Die `root` -Partition ist knapp 4G groß und hat noch ca 800MB freien Platz. Bei Bedarf kann sie über raspi-config im Menü `Advanced` / Expand filesystem` vergrößert werden.
+- Die `root` -Partition ist knapp 4G groß und hat noch ca 800MB freien Platz. Bei Bedarf kann sie über raspi-config im Menü `Advanced` / `Expand filesystem` vergrößert werden.
 
    
 
