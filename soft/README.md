@@ -1,6 +1,5 @@
 # RaspBerry Pi image für TW39 und V.10 Hardware
 
-## Update 02.01.2026 
 Passend  zu den PCB Layouts in diesem Repository habe ich ein bootfähiges Image zusammengebaut mit den Eigenschaften
 
 * 32bit (passt also für alle RPi inkl. ZeroW)
@@ -8,27 +7,29 @@ Passend  zu den PCB Layouts in diesem Repository habe ich ein bootfähiges Image
 * Vorinstalliertes und lauffähiges piTelex 
 * µSD-Speicherkarte sollte 8GB oder größer sein
 
-> [!TIP]
->
-> Das Image kann natürlich auch mit anderer Hardware genutzt werden. Die mitgelieferten Beispiel-Konfigurationsdateien müssen dann lediglich an die verwendete Hardware angepasst werden.
+Das Image kann natürlich auch mit anderer piTelex-Hardware genutzt werden. Die telex.json muss dann an die verwendete Hardware angepasst werden.
+
+## Download
+### Update 02.01.2026
+Es gibt ein neues Image mit aktualisiertem Betriebssystem (13.2) und dem neuen piTelex (2025-12):<br>[piTelex-2025-12_RPi.trixie-13.2-32bit-5G-260102.img.gz](https://mega.nz/file/1CtRUS6I#pVH1AhT80d8YevGjlHbM6CR7CRaaOCiU8coKFEG89I8)
+
+<!-- (Das alte Image ist noch verfügbar unter [piTelex-2025-06_RPi.trixie-32bit-5G-251123.img.gz](https://mega.nz/file/hLlQWLiD#MkVyDqVeCHbYmpAjTb7-vlEV0U97UYQeqwxxEhi64NU) .) -->
+(Die Datei ist zu groß für github, sie liegt daher in meiner Cloud bei **mega.nz**)
 
 ---
 
-## Betriebssystem
+## Betriebssystem 
 
-* Das image herunterladen (Downloadlink s.u.) und mittels [rpi-imager](https://www.raspberrypi.com/software/) analog zur [Anleitung im piTelex-wiki]( https://github.com/fablab-wue/piTelex/wiki/SW_imager) auf die µSD-Karte schreiben. 
-
->[!IMPORTANT]
-> * Bitte die aktuelle Version des Imagers verwenden (>= 2.0.2).
-> * Als Betriebssystem "Eigenes Image" anklicken (ganz runterscrollen) und das heruntergeladene image auswählen
-> * Anpassungen des image (hostname, passwort, wlan,...) werden vom rpi-imager neuerdings bei Fremdimages leider nicht mehr unterstützt. Das muss dann nach dem ersten Einloggen mi dem RPi- Konfigurationstool `raspi-config` erfolgen (s.u.)
+* Das image herunterladen (s.o.) und mittels [rpi-imager](https://www.raspberrypi.com/software/) analog zur [Anleitung im piTelex-wiki]( https://github.com/fablab-wue/piTelex/wiki/SW_imager) auf die µSD-Karte schreiben. 
+    * Bitte die aktuelle Version des Imagers verwenden (>= 2.0.2).
+    * Als Betriebssystem "Eigenes Image" anklicken (ganz runterscrollen) und das heruntergeladene image auswählen. Weitere Anpassungen sind für Fremdimages nicht möglich.
+  
 
 * Den RPi mit der so beschriebenen Karte booten.
-
-* Falls beim boot ein Netzwerk verfügbar ist (LAN), wird die Netzwerkeinbindung mit DHCP automatisch erledigt. 
-Der Zugriff auf den RPi kann dann mittels ssh (Windows: `putty`) erfolgen. 
-
 * Ist kein LAN verfügbar, muss der erste Zugriff auf den RPi über Tastatur/Monitor erfolgen.
+* Wenn beim boot ein Netzwerk verfügbar ist (LAN), wird die Netzwerkeinbindung mit DHCP automatisch erledigt. 
+  Der Zugriff auf den RPi kann dann auch mittels ssh (Windows: `putty`) erfolgen. 
+
 
 Für den Erstzugriff  sind folgende Einstellungen fest vorgegeben:
 
@@ -113,18 +114,6 @@ Zum Aktivieren genügt,es, im Bereich i-Telex der `telex.json` den Eintrag
 ```
 
 hinzuzufügen.
-
----
-
-## Download
-
-### Update 02.01.2026
-
-Es gibt ein neues Image mit aktualisiertem Betriebssystem (13.2) und dem neuen piTelex (2025-12):<br> [piTelex-2025-12_RPi.trixie-13.2-32bit-5G-260102.img.gz](https://mega.nz/file/1CtRUS6I#pVH1AhT80d8YevGjlHbM6CR7CRaaOCiU8coKFEG89I8)
-
-Das alte Image ist noch verfügbar unter <br>[piTelex-2025-06_RPi.trixie-32bit-5G-251123.img.gz](https://mega.nz/file/hLlQWLiD#MkVyDqVeCHbYmpAjTb7-vlEV0U97UYQeqwxxEhi64NU) .
->[!NOTE]
->Die Dateien sind zu groß für github, sie liegen daher in meiner Cloud bei **mega.nz**
 
 ---
 
