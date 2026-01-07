@@ -139,12 +139,15 @@ Installationen, die mit dem alten image erstellt wurden ([piTelex-2025-06_RPi.tr
         ln -s piTelex-2025-12 piTelex                   # (neuen Verzeichnisverweis erzeugen [ln -s: link symbolic])
         sudo systemctl restart pitelex oder sudo reboot # (piTelex bzw Rechner neustarten)
 ```
+
 Das alte piTelex ist weiterhin vorhanden. Falls also was schiefläuft, einfach mit
+
 ```BASH
          cd
          rm piTelex
          ln -s piTelex-2025-06 piTelex
 ```
+
 das alte piTelex wieder aktivieren und neu booten :-)
 
 ---
