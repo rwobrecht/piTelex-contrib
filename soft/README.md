@@ -116,7 +116,38 @@ Zum Aktivieren genügt,es, im Bereich i-Telex der `telex.json` den Eintrag
 hinzuzufügen.
 
 ---
+## Upgrade von Installationen mit dem alten Image
+Installationen, die mit dem alten image erstellt wurden ([piTelex-2025-06_RPi.trixie-32bit-5G-251123.img.gz](https://mega.nz/file/hLlQWLiD#MkVyDqVeCHbYmpAjTb7-vlEV0U97UYQeqwxxEhi64NU) ), können einfach auf den neuesten Stand gebracht werden. 
+**Es ist keine Neuinstallation mit dem neuen Image nötig.**
 
+### Update-Anleitung:
+
+#### Betriebssystem updaten:
+
+```BASH
+        sudo apt update && sudo apt full-upgrade
+```
+#### piTelex updaten:
+
+```BASH
+
+        cd                                              # (ins Homeverzeichnis wechseln [cd: change directory])
+        wget https://github.com/fablab-wue/piTelex/archive/refs/tags/2025-12.zip # (neues piTelex saugenn)
+        unzip 2025-12.zip                               # (neues piTelex entpacken)
+        cp piTelex-2025-06/telex.json piTelex-2025-12/  # (Konfigurationsdatei rüberkopieren [cp: copy])
+        rm piTelex                                      # (alten Verzeichnisverweis löschen [rm: remove]) 
+        ln -s piTelex-2025-12 piTelex                   # (neuen Verzeichnisverweis erzeugen [ln -s: link symbolic])
+        sudo systemctl restart pitelex oder sudo reboot # (piTelex bzw Rechner neustarten)
+```
+Das alte piTelex ist weiterhin vorhanden. Falls also was schiefläuft, einfach mit
+```BASH
+         cd
+         rm piTelex
+         ln -s piTelex-2025-06 piTelex
+```
+das alte piTelex wieder aktivieren und neu booten :-)
+
+---
 ## Disclaimer
 
 Ich hoffe, das Image funktioniert nicht nur bei mir, sondern auch bei anderen. Klar ist, dass es nur eine Basisfunktionalität für piTelex mitbringen kann. Für fortgeschrittenere Konfigurationen ist Lesen der passenden Wiki-Seiten Pflicht.
