@@ -131,12 +131,12 @@ Installationen, die mit dem alten image erstellt wurden ([piTelex-2025-06_RPi.tr
 
 ```BASH
 
-        cd                                              # (ins Homeverzeichnis wechseln [cd: change directory])
+        cd                                              # (ins Homeverzeichnis wechseln)
         wget https://github.com/fablab-wue/piTelex/archive/refs/tags/2025-12.zip # (neues piTelex saugenn)
         unzip 2025-12.zip                               # (neues piTelex entpacken)
-        cp piTelex-2025-06/telex.json piTelex-2025-12/  # (Konfigurationsdatei rüberkopieren [cp: copy])
-        rm piTelex                                      # (alten Verzeichnisverweis löschen [rm: remove]) 
-        ln -s piTelex-2025-12 piTelex                   # (neuen Verzeichnisverweis erzeugen [ln -s: link symbolic])
+        cp piTelex-2025-06/telex.json piTelex-2025-12/  # (Konfigurationsdatei rüberkopieren)
+        rm piTelex                                      # (alten Verzeichnisverweis löschen) 
+        ln -s piTelex-2025-12 piTelex                   # (neuen Verzeichnisverweis erzeugen)
         sudo systemctl restart pitelex oder sudo reboot # (piTelex bzw Rechner neustarten)
 ```
 
