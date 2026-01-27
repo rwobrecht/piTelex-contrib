@@ -119,7 +119,6 @@ Die Schaltung verwendet **nicht** die Standard-GPIOs von piTelex, daher füge ic
       "inv_observe_line": true,
       "nZZ_observe_line": true,
       "baudrate": 200,
-      "coding": 0,
       "loopback": false
     },
     "RPiCtrl": {
@@ -129,7 +128,6 @@ Die Schaltung verwendet **nicht** die Standard-GPIOs von piTelex, daher füge ic
       "pin_button_PT": 26,
       "pin_LED_A": 19,
       "pin_LED_WB": 13,
-      "pin_LED_WB_A": 0,
       "pin_LED_Z": 6,
       "pin_power": 4,
       "inv_power": false
