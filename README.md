@@ -30,6 +30,7 @@ Hier sammle ich Anpassungen und anderes, was ich rund um piTelex mal entwickelt 
 
 * [V.10-Platine](V10/V.10-3-mit-Powersave) für die Anbindung von TeKaDe Fs200/FS220 mit Powersave-Funktion
 * [V.10-Stromversorgung](V10/V.10-3-Stromversorgung-mit-Powersave) dazu passend, mit Powersave-Unterstützung für die 230V-Versorgung.
+* [Aufbaubeispiel](V10/Beispiel.md)
 
 **Fragen oder Anregungen gerne an `telex(at)freenet.de`.**
 
