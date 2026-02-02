@@ -39,17 +39,14 @@ Für den Erstzugriff  sind folgende Einstellungen fest vorgegeben:
 
 
 - _**Bei Bedarf**_  können mit Hilfe des Konfigurationswerkzeugs
-      `sudo raspi-config`
+      `sudo raspi-config` verschiedene Anpassungen vorgenommen werden <br>_(Achtung: Bei der deutschen Tastatur liegt wegen der voreingestellten Standard-Lokale das `-` zunächst auf dem `ß` ...)_ 
   
-    * die Spracheinstellung, <br>_(Achtung: Bei der deutschen Tastatur liegt wegen der voreingestellten Standard-Lokale das `-` zunächst auf dem `ß` ...)_
+    * die Spracheinstellung, <br>
     * der Rechnername,
     * das Passwort für den user pi,
     * die WLAN-SSID und das WLAN-Passwort
-  
-  konfiguriert werden.
-- Die `root` -Partition ist knapp 4G groß und hat noch ca 800MB freien Platz. <br>
-  _**Bei Bedarf**_  kann sie über sudo raspi-config
-  im Menü `Advanced / Expand filesystem` vergrößert werden.
+    * Die `root` -Partition ist knapp 4G groß und hat noch ca 800MB freien Platz. <br>
+      _**Bei Bedarf**_  kann sie im Menü `Advanced / Expand filesystem` vergrößert werden.
 
    
 
