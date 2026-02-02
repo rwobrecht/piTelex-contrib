@@ -111,34 +111,34 @@ Die Schaltung verwendet **nicht** die Standard-GPIOs von piTelex, daher füge ic
     "RPiTTY_FS200": {
       "type": "RPiTTY",
       "enable": true,
-      "mode": "V10",
-      "pin_txd": 11,
-      "pin_rxd": 9,
-      "use_observe_line": true,
-      "pin_observe_line": 10,
-      "inv_observe_line": true,
-      "nZZ_observe_line": true,
+      "mode": "V10",             
+      "pin_txd": 11,             # Sendedaten (von piTelex an den FS)
+      "pin_rxd": 9,              # Empfangsdaten (vom FS an piTelex)
+      "use_observe_line": true,  # Leitung auf Zustandsänderung überwachen
+      "pin_observe_line": 10,    # GPIO der zu überwachenden Leitung
+      "inv_observe_line": true,  # Signal invertieren
+      "nZZ_observe_line": true,  
       "baudrate": 200,
       "loopback": false
     },
     "RPiCtrl": {
       "type": "RPiCtrl",
       "enable": true,
-      "pin_number_switch": 0,
-      "pin_button_PT": 26,
-      "pin_LED_A": 19,
-      "pin_LED_WB": 13,
-      "pin_LED_Z": 6,
-      "pin_power": 4,
-      "inv_power": false
+      "pin_number_switch": 0,    # Tastaturwahl
+      "pin_button_PT": 26,       # Taste zum Einschalten der Stromversorgung des FS
+      "pin_LED_A": 19,           # Zeigt aktive Verbindung an
+      "pin_LED_WB": 13,          # Zeigt Wählbereitschaft an
+      "pin_LED_Z": 6,            # leuchtet im Bereitschaftsmodus und blinkt im Schlafmodus
+      "pin_power": 4,            # Steuerausgang für das Leistungsrelais (Stromversorgung FS)
+      "inv_power": false         # +3V = H = Relais ein
     },
     
 (....)  
   
   },
   "wru_id": "123456 dummy d",
-  "wru_replace_always": false,
-  "continue_with_no_printer": false,
+  "wru_replace_always": false,   # Hardware-Kennungsgeber nutzen
+  "continue_with_no_printer": false, # ohne angeschlossenen FS Verbindungen ablehnen
   "power_off_delay": 3,          # 3s nach Ende der Verbindung schaltet die Maschine ab
   "power_button_timeout": 7200,  # nach 2h Betrieb schaltet die Maschine immer ab
   "dial_timeout": "+"            # plus-dialing wie im EDS (nach Eingabe der Ziffern muss  "+" eingegeben werden zum Starten der Wahl )
