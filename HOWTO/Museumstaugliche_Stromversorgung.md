@@ -47,7 +47,7 @@ Das FSG verlangt eine deutlich höhere Spannung. Mindestens 60V Linienspannung s
 Es gibt aber mittlerweile einen Nachfolgetyp (NCH6300HV), der zwar teurer ist (etwa 20 Euro), aber dafür mit 5V Eingangsspannung auskommt und somit die 12V-Versorgung erübrigt. Außerdem besitzt er eine höhere Maximalleistung von etwa 10W. Die Ausgangsspannung kann von 100V an aufwärts eingestellt werden, 100V sind aber mehr als genug.
 
 > Die vom Linienkreis benötigte Leistung beträgt $P_{Linie}=100V * 40mA = 4W$ . 
-> Bei einem Wirkungsgrad des Hochsetzstellers von $\eta_{Wandler}=0,8$ muss die 5V-Versorgung also hierfür $P_{Wandler}= P_{Linie}/\eta_{Wandler}= 5 W$ zur Verfügung stellen, was einem Strombedarf des Wandlers von $I_{Wandler}=P_{Wandler} / 5V = 1 A$ entspricht. 
+> Bei einem Wirkungsgrad des Hochsetzstellers von $\eta_{Wandler} = 0,8$ muss die 5V-Versorgung also hierfür $P_{Wandler}= P_{Linie}/\eta_{Wandler}= 5W$ zur Verfügung stellen, was einem Strombedarf des Wandlers von $I_{Wandler}=P_{Wandler} / 5V = 1A$ entspricht. 
 
 Mit einem 5V/3A-Netzteil ist man bei einer Stromaufnahme des RPi Zero2W von etwa 1 A  dabei auf der sicheren Seite.
 
