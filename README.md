@@ -40,3 +40,7 @@ Hier sammle ich Anpassungen und anderes, was ich rund um piTelex mal entwickelt 
 ## 4) RPi-Image dazu passend
 
 Zu den o.a. Hardware-Varianten gibt es ein [passendes Software-Image](./soft/README.md) für RaspBerry Pi's. Es enthält ein fertig vorinstalliertes und lauffähiges piTelex.
+
+## 5) HOWTOS und so...
+
+Unter [HOWTO](HOWTO) ...passenderweise :-)
