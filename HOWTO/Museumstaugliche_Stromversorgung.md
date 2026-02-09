@@ -74,14 +74,14 @@ Das ist bei Verwendung eines 2A-Netzteils und einer Stromaufnahme des RPi Zero2W
 
 Zum Schalten der Netzspannung für den Fernschreiber / das Fernschaltgerät im Rahmen einer Stromsparschaltung können WLAN-Schaltsteckdosen oder auch drahtgebundene Schaltsteckdosen im Originalzustand verwendet werden (nicht z.B. WLAN-Steckdose öffnen und TASMOTA flashen, dadurch verliert das Gerät die Zertifizierung!) Links hierzu:
 
-1. Mit Draht ginge z.B. das hier:
-   https://www.olimex.com/Products/Duino/Shields/PWR-SWITCH/ 
-   oder das hier:
-   https://www.vocomo.de/de/Trigger-Schalt-Steckdose-V1.html
-   oder das hier:
+1. Mit Draht ginge z.B. das hier:<br>
+   https://www.olimex.com/Products/Duino/Shields/PWR-SWITCH/ <br>
+   oder das hier:<br>
+   https://www.vocomo.de/de/Trigger-Schalt-Steckdose-V1.html<br>
+   oder das hier:<br>
    https://www.antrax.de/produkt/switchbox-plus/
 
-   Den Schalteingang der Dosen verbindet man mit dem als "pin_power" in telex.json konfigurierten GPIO, 
+   Den Schalteingang der Dosen verbindet man mit dem als "pin_power" in telex.json konfigurierten GPIO, <br>
    siehe https://github.com/fablab-wue/piTelex/wiki/SW_MainsPower#hardware-solution
 
    
