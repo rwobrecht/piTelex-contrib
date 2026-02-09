@@ -24,7 +24,7 @@ Abhilfe bietet die Verwendung industriell gefertigter und zertifizierter/zugelas
 > Diese Spannungen gelten als nicht lebensbedrohlich bei direktem Kontakt und  erfüllen die Sicherheitsanforderungen für viele Anwendungen 
 > (siehe auch den [wikipedia](https://de.wikipedia.org/wiki/Kleinspannung) -Artikel hierzu) .
 
-piTelex mit RPi SBC benötigen grundsätzlich eine stabile 5V-Versorgung für den RPi. Ein möglicher Weg ist also die Verwendung eines zugelassenen 5V-Steckernetzteils mit ausreichender Leistung, aus dem dann die weiteren benötigten Spannungen erzeugt werden. 
+**piTelex mit RPi SBC benötigen grundsätzlich eine stabile 5V-Versorgung für den RPi. Ein möglicher Weg ist also die Verwendung eines zugelassenen 5V-Steckernetzteils mit ausreichender Leistung, aus dem dann die weiteren benötigten Spannungen erzeugt werden.** 
 
 
 
