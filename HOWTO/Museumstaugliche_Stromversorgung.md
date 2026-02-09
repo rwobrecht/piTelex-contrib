@@ -46,7 +46,7 @@ Das FSG verlangt eine deutlich höhere Spannung. Mindestens 60V Linienspannung s
 
 Es gibt aber mittlerweile einen Nachfolgetyp (NCH6300HV), der zwar teurer ist (etwa 20 Euro), aber dafür mit 5V Eingangsspannung auskommt und somit die 12V-Versorgung erübrigt. Außerdem besitzt er eine höhere Maximalleistung von etwa 10W. Die Ausgangsspannung kann von 100V an aufwärts eingestellt werden, 100V sind aber mehr als genug.
 
-> Die vom Linienkreis benötigte Leistung beträgt $P_{Linie}=100V * 40mA = 4W $ . 
+> Die vom Linienkreis benötigte Leistung beträgt $P_{Linie}=100V * 40mA = 4W$ . 
 > Bei einem Wirkungsgrad des Hochsetzstellers von $\eta_{Wandler}=80\%$ muss die 5V-Versorgung also hierfür $P_{Wandler}= P_{Linie}/\eta_{Wandler}= 5 W$ zur Verfügung stellen, was einem Strombedarf des Wandlers von $I_{Wandler}=P_{Wandler} / 5V = 1 A$ entspricht. 
 
 Mit einem 5V/3A-Netzteil ist man bei einer Stromaufnahme des RPi Zero2W von etwa 1 A  dabei auf der sicheren Seite.
@@ -61,9 +61,9 @@ Mit einem 5V/3A-Netzteil ist man bei einer Stromaufnahme des RPi Zero2W von etwa
 
 #### Linienspannung
 
-Zusätzlich zu den 5V= wird eine Linienspannung für den FS benötigt. Da kein FSG gespeist werden muss, sondern nur der Empfangsmagnet des FS , ist hier eine Spannung von $U_{Linie}=24V_=$ ausreichend. Dafür kann ein einfacher Hochsetzsteller (DC-DC - Wandler) verwendet werden, findet man bei Pollin oder Reichelt oder Conrad etc für unter 10 Euro, z.B. [hier](https://www.pollin.de/p/daypower-step-up-schaltregler-modul-m-su-xl6019-810813) oder [hier]( https://www.reichelt.de/de/de/shop/produkt/dc_dc-wandler_am1s_1_w_24_v_42_ma_sil-4-35027) oder 
+Zusätzlich zu den 5V= wird eine Linienspannung für den FS benötigt. Da kein FSG gespeist werden muss, sondern nur der Empfangsmagnet des FS , ist hier eine Spannung von $U_{Linie}=24V_=$ ausreichend. Dafür kann ein einfacher Hochsetzsteller (DC-DC - Wandler) verwendet werden, findet man bei Pollin oder Reichelt oder Conrad etc für unter 10 Euro, z.B. [hier](https://www.pollin.de/p/daypower-step-up-schaltregler-modul-m-su-xl6019-810813) oder [hier]( https://www.reichelt.de/de/de/shop/produkt/dc_dc-wandler_am1s_1_w_24_v_42_ma_sil-4-35027) oder ...
 
-> Die vom Linienkreis benötigte Leistung beträgt $P_{Linie}=24V * 40mA = 0,96W $ . 
+> Die vom Linienkreis benötigte Leistung beträgt $P_{Linie}=24V * 40mA = 0,96W$ . 
 > Bei einem angenommenen Wirkungsgrad des Hochsetzstellers von $\eta_{Wandler}=80\%$ muss die 5V-Versorgung also hierfür $P_{Wandler}= P_{Linie}/\eta_{Wandler}= 1,42 W$ zur Verfügung stellen, was einem Strom von $I_{Wandler}=P_{Wandler} / 5V = 0,24 A$ entspricht.
 
 Das ist bei Verwendung eines 2A-Netzteils und einer Stromaufnahme des RPi Zero2W von etwa 1 A vernachlässigbar.
