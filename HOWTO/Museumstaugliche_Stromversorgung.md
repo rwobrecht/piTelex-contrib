@@ -86,7 +86,7 @@ Zum Schalten der Netzspannung für den Fernschreiber / das Fernschaltgerät im R
 
    
 
-2. Werksseitig Tasmota-fähige Steckdosen findet man beispielsweise unter dieser Adresse:
+2. Werksseitig Tasmota-fähige WLAN-Steckdosen findet man beispielsweise unter dieser Adresse:<br>
    https://templates.blakadder.com/preflashed-stand.html
 
    Die Ansteuerung mit piTelex ist unter https://github.com/fablab-wue/piTelex/wiki/SW_MainsPower#software-solution erläutert.
