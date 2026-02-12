@@ -42,6 +42,7 @@ Für den Erstzugriff  sind folgende Einstellungen fest vorgegeben:
     * Immer:
         * der Rechnername,
         * das Passwort für den user pi,
+        * Lokalisierungen (locale) und Tastaturlayout
 
     * Wenn WLAN genutzt werden soll:
         * das WiFi-Land
