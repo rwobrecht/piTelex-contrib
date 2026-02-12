@@ -38,15 +38,19 @@ Für den Erstzugriff  sind folgende Einstellungen fest vorgegeben:
     * passwort: telex
 
 
-- _**Bei Bedarf**_  können mit Hilfe des Konfigurationswerkzeugs
-      `sudo raspi-config` verschiedene Anpassungen vorgenommen werden <br>_(Achtung: Bei der deutschen Tastatur liegt wegen der voreingestellten Standard-Lokale das `-` zunächst auf dem `ß` ...)_ 
-  
-    * die Spracheinstellung, <br>
-    * der Rechnername,
-    * das Passwort für den user pi,
-    * die WLAN-SSID und das WLAN-Passwort
-    * Die `root` -Partition ist knapp 4G groß und hat noch ca 800MB freien Platz. <br>
-      _**Bei Bedarf**_  kann sie im Menü `Advanced / Expand filesystem` vergrößert werden.
+- Mit Hilfe des Konfigurationswerkzeugs `sudo raspi-config` dann verschiedene Anpassungen vornehmen: <br>_(Achtung: Bei der deutschen Tastatur liegt wegen der voreingestellten Standard-Lokale das `-` zunächst auf dem `ß` ...)_ 
+    * Immer:
+        * der Rechnername,
+        * das Passwort für den user pi,
+
+    * Wenn WLAN genutzt werden soll:
+        * das WiFi-Land
+        * die WLAN-SSID
+        * das WLAN-Passwort 
+
+    * Bei Bedarf:
+        * Die `root` -Partition ist knapp 4G groß und hat noch ca 800MB freien Platz. <br>
+          Sie kann sie im Menü `Advanced / Expand filesystem` vergrößert werden.
 
    
 
