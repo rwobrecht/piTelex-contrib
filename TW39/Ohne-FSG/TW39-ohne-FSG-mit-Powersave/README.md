@@ -77,7 +77,7 @@ Für die Steuerung eines einzelnen TW39-Fernschreibers ist ein  RPi Zero jedenfa
 
 Der Leistungstransistor TIP50 muss ausreichend gekühlt werden. Der Kühlkörper sollte etwa 4W abgeben können bei zulässiger Temperaturerhöhung. 
 
-Der Linienstrom von 40mA wird mit RV1 eingestellt, z.B. bei kurzgeschlossenen Pins von J5
+Der Linienstrom von 40mA wird mit RV1 eingestellt. Es empfiehlt sich, mit dem Maximalert von 20 Ohm zu beginnen. 40mA werden i.d.R. bei etwa 15 Ohm erreicht.
 
 
 
