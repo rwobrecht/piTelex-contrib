@@ -22,7 +22,7 @@ Folgende Haupt-Bestandteile habe ich verwendet:
      * Die Erdtaste habe ich umfunktioniert zum Abruf des Software-KG, weil meine Maschine keinen Kennungsgeber hat
        
  * tasmota-fähige WLAN-Steckdose: NOUS AT1T https://www.idealo.at/preisvergleich/OffersOfProduct/202229762_-a1t-nous.html
- * Taster Heschen (24V-LED): https://heschen.com/de/collections/push-button-switch
+ * Leuchtdrucktaster (24V-LED): https://heschen.com/de/collections/push-button-switch
  * Steckernetzteil 5V/2,4A https://www.berrybase.de/steckernetzteil-5v-dc-2-4a-12w-hohlstecker-5-5x2-1mm
  * Stepup-Wandler 5->24V https://www.pollin.de/p/daypower-step-up-schaltregler-modul-m-su-xl6019-810813
  * ADo-8UP Einsatz
