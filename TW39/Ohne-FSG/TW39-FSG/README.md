@@ -27,7 +27,11 @@ Folgende Haupt-Bestandteile habe ich verwendet:
 
 ## Ein paar Fotos
 
+<img src=img/TW39-FSG.1.jpg width=40%><img src=img/TW39-FSG.2.jpg width=40%>
 
+<img src=img/TW39-FSG.4.jpg width=40%><img src=img/TW39-FSG.5.jpg width=40%>
+
+<img src=img/TW39-FSG.3.jpg width=40%>
 
 ### [... und ein Video...](img/TW39-FSG.mp4)
 
