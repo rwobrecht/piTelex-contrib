@@ -14,14 +14,23 @@ Die Stromversorgung wird durch ein zertifiziertes Steckernetzteil "erledigt", di
 Folgende Haupt-Bestandteile habe ich verwendet:
 
  * Gehäuse: https://donau-elektronik.de/Artikel/Gehaeuse/Gehaeuseserie-KGB/3304/KGB21-Euro-Box-mittel-150x146x60-schwarz
+     * Hier konnte ich bis auf einen alle vorhandenen Schraubsockel verwenden - das war praktisch...
+     * Die Schnapp-Befestigung von Ober- und Unterschale ist was für geduldige Gemüter :-(
+       
  * Feldfernsprecher-Wählzusatz: https://www.kleinanzeigen.de/s-anzeige/amtszusatz-waehlzusatz-neu-ovp-fuer-feldfernsprecher-ff-ob-zb/2921692000-234-8355
+     * die Preise gehen von 10€ bis fast 100€, das ist unglaublich...
+     * Die Erdtaste habe ich umfunktioniert zum Abruf des Software-KG, weil meine Maschine keinen Kennungsgeber hat
+       
  * tasmota-fähige WLAN-Steckdose: NOUS AT1T https://www.idealo.at/preisvergleich/OffersOfProduct/202229762_-a1t-nous.html
  * Taster Heschen (24V-LED): https://heschen.com/de/collections/push-button-switch
  * Steckernetzteil 5V/2,4A https://www.berrybase.de/steckernetzteil-5v-dc-2-4a-12w-hohlstecker-5-5x2-1mm
  * Stepup-Wandler 5->24V https://www.pollin.de/p/daypower-step-up-schaltregler-modul-m-su-xl6019-810813
+ * ADo-8UP Einsatz
  * RPi Zero 2W:  https://www.berrybase.de/raspberry-pi-zero-2-wh
  * PiTelex Adapter Board nach https://github.com/rwobrecht/piTelex-contrib/tree/main/TW39/Ohne-FSG/TW39-ohne-FSG-mit-Powersave
- * piTelex Release 2025-12a von https://github.com/fablab-wue/piTelex/releases/tag/2025-12a
+ * Software von https://github.com/rwobrecht/piTelex-contrib/blob/main/soft/ mit
+   * RPi OS 13.2 trixie 32bit lite
+   * piTelex Release 2025-12a von https://github.com/fablab-wue/piTelex/releases/tag/2025-12a
 
 
 
@@ -83,8 +92,8 @@ Folgende Haupt-Bestandteile habe ich verwendet:
       "type": "shellcmd",
       "enable": true,
       "LUT": {
-        "A": "curl -s -o null http://wlan-steckdose1.fritz.box/cm?cmnd=Power%20On",
-        "Z": "curl -s -o null http://wlan-steckdose1.fritz.box/cm?cmnd=Power%20Off"
+        "A": "curl -s -o /dev/null http://wlan-steckdose1.fritz.box/cm?cmnd=Power%20On",
+        "Z": "curl -s -o /dev/null http://wlan-steckdose1.fritz.box/cm?cmnd=Power%20Off"
       }
     },
     "i-Telex": {
