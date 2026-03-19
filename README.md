@@ -24,6 +24,7 @@ Hier sammle ich Anpassungen und anderes, was ich rund um piTelex mal entwickelt 
 ## 2) piTelex als Fernschaltgerät-Ersatz für Linienstrommaschinen
 * [TW39-Platine](TW39/Ohne-FSG/TW39-ohne-FSG-mit-Powersave) für einen RaspBerry Pi als vollwertiger FSG-Ersatz mit Powersave-Funktion sowohl für die 230V-Versorgung als auch für die Linienstromversorgung
 * [TW39-Stromversorgung](TW39/Ohne-FSG//Stromversorgung-für-TW39-ohne-FSG-mit-Powersave) mit reduzierter Linienspannung, dazu passend. 
+* [Aufbaubeispiel mit Steckernetzteil und Kleinspannung](Ohne-FSG/TW39-FSG)
 
 
 ## 3) Hardware für V.10
