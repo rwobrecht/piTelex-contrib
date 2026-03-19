@@ -21,7 +21,7 @@ Folgende Haupt-Bestandteile habe ich verwendet:
  * Stepup-Wandler 5->24V https://www.pollin.de/p/daypower-step-up-schaltregler-modul-m-su-xl6019-810813
  * RPi Zero 2W:  https://www.berrybase.de/raspberry-pi-zero-2-wh
  * PiTelex Adapter Board nach https://github.com/rwobrecht/piTelex-contrib/tree/main/TW39/Ohne-FSG/TW39-ohne-FSG-mit-Powersave
- * piTelex Release 2025-12a 
+ * piTelex Release 2025-12a von https://github.com/fablab-wue/piTelex/releases/tag/2025-12a
 
 
 
