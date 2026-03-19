@@ -15,11 +15,12 @@ Folgende Haupt-Bestandteile habe ich verwendet:
 
  * Gehäuse: https://donau-elektronik.de/Artikel/Gehaeuse/Gehaeuseserie-KGB/3304/KGB21-Euro-Box-mittel-150x146x60-schwarz
      * Hier konnte ich bis auf einen alle vorhandenen Schraubsockel verwenden - das war praktisch...
-     * Die Schnapp-Befestigung von Ober- und Unterschale ist was für geduldige Gemüter :-(
+     * Die Schnapp-Befestigung von Ober- und Unterschale ist was für geduldige Gemüter, zumal die Stege für die Einlegeplatten (Vorder-/Rückseite) eher spärlichen Halt geben :-(
        
  * Feldfernsprecher-Wählzusatz: https://www.kleinanzeigen.de/s-anzeige/amtszusatz-waehlzusatz-neu-ovp-fuer-feldfernsprecher-ff-ob-zb/2921692000-234-8355
      * die Preise gehen von 10€ bis fast 100€, das ist unglaublich...
-     * Die Erdtaste habe ich umfunktioniert zum Abruf des Software-KG, weil meine Maschine keinen Kennungsgeber hat
+     * zur Befestigung am KGB21 zwei M4-Gewinde in den Fuß des Gehäuses geschnitten
+     * Erdtaste umfunktioniert zum Abruf des Software-KG, weil meine Maschine keinen Kennungsgeber hat
        
  * tasmota-fähige WLAN-Steckdose: NOUS AT1T https://www.idealo.at/preisvergleich/OffersOfProduct/202229762_-a1t-nous.html
  * Leuchtdrucktaster (24V-LED): https://heschen.com/de/collections/push-button-switch
