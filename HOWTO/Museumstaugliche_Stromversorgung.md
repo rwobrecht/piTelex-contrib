@@ -90,3 +90,6 @@ Zum Schalten der Netzspannung für den Fernschreiber / das Fernschaltgerät im R
    https://templates.blakadder.com/preflashed-stand.html
 
    Die Ansteuerung mit piTelex ist unter https://github.com/fablab-wue/piTelex/wiki/SW_MainsPower#software-solution erläutert.
+
+#### Aufbaubeispiel
+Ein piTelex-FSG Aufbaubeispiel hierzu findet sich unter https://github.com/rwobrecht/piTelex-contrib/blob/main/TW39/Ohne-FSG/TW39-FSG/
