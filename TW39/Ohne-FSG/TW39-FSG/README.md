@@ -7,7 +7,7 @@ In Museen und bei manchen Ausstellungen sind elektrotechnische Selbstbaugeräte 
 ## Die Idee
 
 Sozusagen als "proof of concept" habe ich ein piTelex aufgebaut, das als FSG-Ersatz für eine Linienstrommaschine arbeitet. 
-Die Stromversorgung wird durch ein zertifiziertes Steckernetzteil "erledigt", die Linienspannung von 24V/40mA wird über einen preiswerten Stepup-Wandler bereitgestellt. Das Ein- und Ausschalten der 230V für die FS-Maschine erledigt eine WLAN-Steckdose, es kann aber auch eine drahtgebundene Schaltsteckdose angeschlossen werden; dazu ist der GPIO-Pin "pin_power" auf eine Buchse herausgeführt. Damit sind sämtliche berührungsgefährliche Spannungen "zertifiziert ausgelagert".
+Die Stromversorgung wird durch ein zertifiziertes Steckernetzteil "erledigt", die Linienspannung von 24V/40mA wird über einen preiswerten Stepup-Wandler bereitgestellt. Das Ein- und Ausschalten der 230V für die FS-Maschine erledigt eine WLAN-Steckdose, es kann aber auch eine drahtgebundene Schaltsteckdose angeschlossen werden; dazu ist der GPIO-Pin "pin_relay" auf eine Buchse herausgeführt. Damit sind sämtliche berührungsgefährliche Spannungen "zertifiziert ausgelagert".
 
 ## Der Aufbau
 
@@ -93,8 +93,8 @@ Folgende Haupt-Bestandteile habe ich verwendet:
       "type": "shellcmd",
       "enable": true,
       "LUT": {
-        "A": "curl -s -o /dev/null http://wlan-steckdose1.fritz.box/cm?cmnd=Power%20On",
-        "Z": "curl -s -o /dev/null http://wlan-steckdose1.fritz.box/cm?cmnd=Power%20Off"
+        "A": "curl -s -o /dev/null http://wlan-steckdose1.fritz.box/cm?cmnd=Power%20On",  # Kommando zum Einschalten der WLAN-Steckdose
+        "Z": "curl -s -o /dev/null http://wlan-steckdose1.fritz.box/cm?cmnd=Power%20Off"  # Kommando zum Ausschalten der WLAN-Steckdose
       }
     },
     "i-Telex": {
