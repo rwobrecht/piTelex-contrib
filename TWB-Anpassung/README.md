@@ -1,5 +1,5 @@
 # TWB-Anpassung
-
+<img src=img/TWB-Anpassung_bestückt.png height=500>
 
 
 ## Die Idee
@@ -39,3 +39,13 @@ Zwischen (1) und (3) liegt die Versorgungsspannung an, die Wahlimpulse werden zw
 
 Die Platine misst etwa 2x4cm und ist selbsterklärend. R3 und R4 können im Regelfall weggelassen werden. Die Pins für den TWB sind so ausgelegt, dass der TWB-Stecker direkt aufgesteckt werden kann. 
 Die Gerberdateien liegen im [Unterverzeichnis](KiCad) .
+
+
+## Abschließend der unvermeidliche Disclaimer:
+
+Für korrekte Funktion und für mögliche Schäden, verursacht durch Verwendung der in diesem Repository bereitgestellten Informationen, kann ich keine Haftung übernehmen.
+
+Für die Einhaltung der sicherheitstechnischen Vorschriften und anerkannten Regeln der Technik, insbesondere im Bereich der elektrischen Sicherheit, ist jeder Anwender selbst verantwortlich.
+
+Unabhängig davon würde ich mich über Rückmeldungen zu Funktion oder möglichen Verbesserungen, auch in der Dokumentation, sehr freuen.
+
