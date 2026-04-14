@@ -166,8 +166,8 @@ Die Platine bietet folgende Anschlussmöglichkeiten:
 |J8     |3  |SCL |            | I2C|
 |J8 |4 |GND | | I2C |
 |---|||||
-|J9|1|ADo4'||Zum (+)  Anschluss Linienstrom-Amperemeter, ansonsten BRÜCKEN mit JP9 Pin2!|
-|J9|2|ADo4||Zum (-)  Anschluss Linienstrom-Amperemeter, ansonsten BRÜCKEN mit JP9 Pin1!|
+|J9|1|ADo4'||Zum (+)  Anschluss Linienstrom-Amperemeter, ansonsten BRÜCKEN mit J9 Pin2!|
+|J9|2|ADo4||Zum (-)  Anschluss Linienstrom-Amperemeter, ansonsten BRÜCKEN mit J9 Pin1!|
 |---|||||
 |J10 |1 |GND |A | Massepotential für RLY_P |
 |J10     |2   |RLY_P  |A           |`pin_power` herausgeführt. Schaltet das Leistungsrelais für die Netzspannungsversorgung zum Fernschreiber:<br>- manuell bei Drücken der Powertaste<br>- und bei ankommenden Verbindungen. <br>Das Relais befindet sich auf der Stromversorgungsplatine.|
