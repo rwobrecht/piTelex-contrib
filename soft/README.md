@@ -40,9 +40,10 @@ Für den Erstzugriff  sind folgende Einstellungen fest vorgegeben:
 
 - Mit Hilfe des Konfigurationswerkzeugs `sudo raspi-config` dann verschiedene Anpassungen vornehmen: <br>_(Achtung: Bei der deutschen Tastatur liegt wegen der voreingestellten Standard-Lokale das `-` zunächst auf dem `ß` ...)_ 
     * Immer:
+        * Am besten zuerst Lokalisierungen (locale) und Tastaturlayout (siehe oben :-) 
         * der Rechnername,
         * das Passwort für den user pi,
-        * Lokalisierungen (locale) und Tastaturlayout
+
 
     * Wenn WLAN genutzt werden soll:
         * das WiFi-Land
