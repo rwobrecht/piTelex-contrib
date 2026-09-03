@@ -15,8 +15,10 @@ Die Platine/Schaltung verwendet drei LEDs:
 
 Es ist möglich, eine Stromsparschaltung zu aktivieren. Dazu kann die Stromversorgung aus dem [Bauvorschlag](https://github.com/rwobrecht/piTelex-contrib/blob/main/V10/V.10-3-Stromversorgung-mit-Powersave) verwendet werden. Der Pin 3 des Steckers J3 dieser Platine steuert das Leistungsrelais auf der Stromversorgungsplatine, an deren Kontaktblock die Steckdose zur Versorgung des Fernschreibers angeklemmt wird. Außerdem muss in der telex.json die Stromsparschaltung aktiviert werden. Der `telex.json`-Ausschnitt weiter unten enthält alle hierfür nötigen Einstellungen. Ist die Stromsparschaltung aktiv, dann gilt:
 
-* Bei ankommendem Anruf schaltet piTelex die Stromversorgung ein und nach Verbindungsende automatisch auch wieder aus.
+* Bei ankommendem Anruf schaltet piTelex die Stromversorgung des FS220 ein und nach Verbindungsende automatisch auch wieder aus.
 * Für einen ausgehenden Anruf drückt man kurz die am `pin_button_PT` angeschlossene Taste, um das Stromrelais einzuschalten. Nach Verbindungsende wird der FS durch erneutes Drücken der Taste oder automatisch nach einer vorwählbaren Zeit (`power_button_timeout`) wieder ausgeschaltet.
+
+Die Stromsparschaltung empfiehlt sich schon wegen der nicht unbeträchtlichen Leistungsaufnahme des FS220 im Bereitschaftfsmodus von  ca 35W.
 
 ---
 
