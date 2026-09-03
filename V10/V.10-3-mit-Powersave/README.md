@@ -1,7 +1,7 @@
 # Platine für piTelex V.10 (FS200/220)
 
 
-<img src="img/V10-3.3-bestückt.png" width="45%" align=right>
+<img src="img/v10-3.3-bestückt.png" width="45%" align=right>
 
 ## Die Funktionsmerkmale
 Die hier beschriebene Platine eignet sich zum Anschluss eines Fernschreibers mit V.10 Schnittstelle (TeKaDe FS200/FS220) ***ohne*** Fernschaltgerät (FAG200 o.ä.). 
