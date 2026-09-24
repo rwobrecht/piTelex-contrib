@@ -19,7 +19,7 @@ Die hier beschriebene Platine ermöglicht den Anschluss eines [Tastwahlblocks](h
 
 
 
-Die Platine ist für die Versorgung mit +24V ausgelegt und  in erster Linie zur Verwendung mit der [TW39-Platine ohne FSG](../../Ohne-FSG/) gedacht. Bei anderen Versorgungsspannungen sind die Widerstände R1 und R5 so anzupassen, dass der TWB einen Strom von ca 10-20mA "zieht", dabei ist die nötige Belastbarkeit der Widerstände berücksichtigen.
+Die Platine ist für die Versorgung mit +24V ausgelegt und  in erster Linie zur Verwendung mit der [TW39-Platine ohne FSG](../Ohne-FSG/) gedacht. Bei anderen Versorgungsspannungen sind die Widerstände R1 und R5 so anzupassen, dass der TWB einen Strom von ca 10-20mA "zieht", dabei ist die nötige Belastbarkeit der Widerstände berücksichtigen.
 
 Der TWB wird zwischen seinen Anschlüssen 1 und 3 mit einem Strom von 10-20mA gespeist. R2 und R3 ahmen die Leitungsnachbildung für den TWB nach. Über einen Optokoppler wird ein Relais angesteuert, das die Impulse  potentialfrei über einen Relaiskontakt erzeugt. In Reihe zum Relaiskontakt kann zusätzlich zum TWB auch noch ein NrS verwendet werden, ansonsten muss J7 gebrückt werden. Über J8 wird der Adapter mit dem `"pin_number_switch"` der piTelex-Platine verbunden.
 
@@ -27,7 +27,7 @@ Mit JP1 kann  gewählt werden, ob im Ruhezustand die Schleife offen oder geschlo
 
 
 
-Pin 2 des J1 kann entweder auf GND des piTelex-Boards gelegt werden oder aber bei Verwendung der [TW39-Platine ohne FSG](../../Ohne-FSG/) an die Kathode der LED_WB. Dann wird die gesamte Schaltung nur im Status "Wählbereit" mit Spannung versorgt.
+Pin 2 des J1 kann entweder auf GND des piTelex-Boards gelegt werden oder aber bei Verwendung der [TW39-Platine ohne FSG](../Ohne-FSG/) an die Kathode der LED_WB. Dann wird die gesamte Schaltung nur im Status "Wählbereit" mit Spannung versorgt.
 
 
 
