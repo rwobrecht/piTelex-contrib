@@ -26,7 +26,7 @@ Hier ein paar Beispielbilder der Anzeige:
 
 Als Display habe ich das [Modul LCD1602 von Waveshare](https://www.waveshare.com/wiki/LCD1602_I2C_Module) verwendet. Es kann mit RPi-kompatiblen 3,3V ohne Einschränkung betrieben werden und erlaubt eine Einstellung der Displayhelligkeit über einen intergierten SN3193 Baustein. Standard-HD44780-Module mit PCF8574-Treiberbaustein für den I2C-Bus können mit diesem Modul nicht direkt betrieben werden, sie benötigen Anpassungen im Code; u.a. kann die Hintergrundbeleuchtung bei diesen Displays nur geschaltet werden, PWM zur Helligkeitseinstellung muss extern realisiert werden (bspw. über einen GPIO-Pin des RPi). 
 
-<img src=""https://www.waveshare.com/img/devkit/LCD/LCD1602-I2C-Module/LCD1602-I2C-Module-details-9.jpg size=50%">
+<img src="https://www.waveshare.com/img/devkit/LCD/LCD1602-I2C-Module/LCD1602-I2C-Module-details-9.jpg size=50%">
 
 Das Modul wird mit den mitgelieferten Kabel an die I2C-Pins des RPi angeschlossen. Das sind
 
