@@ -1,37 +1,42 @@
-# Willkommen zum piTelex-contrib
+# Willkommen zu meinem piTelex-contrib
 
 Hier sammle ich Anpassungen und anderes, was ich rund um piTelex mal entwickelt habe, in der Hoffnung, dass der eine oder andere piTelex-Nutzer mit der einen oder anderen Sache etwas anfangen kann, und -nicht zu vergessen- damit ich die Sachen bei Bedarf auch selbst wiederfinde :-)
 
-## piTelex-Hardware
-
-- ### für TW39 mit Fernschaltgerät
-
-    <u>**In dieser Version 3 gegenüber V2 geänderte GPIO-belegung(!)**</u>, damit I2C zugänglich bleibt (Pins 3 und 5); funktional identisch mit V1/V2 (siehe Archiv)
-
-	* [TW39-Platine](TW39/V3/TW39-mit-Powersave) für einen RaspBerry Pi mit Powersave-Funktion sowohl für die 230V-Versorgung als auch für die Linienstromversorgung.
-	* [TW39-Stromversorgung](TW39/V3/Stromversorgung-für-TW39-mit-Powersave) dazu passend, mit Powersave-Unterstützung.
+## piTelex-Hardware für TW39
 
 
-- ### als Fernschaltgerät-Ersatz für Linienstrommaschinen
+- #### Kombi-Platine für Linienstrommaschinen mit und ohne Fernschaltgerät
+
+  jumper-konfigurierbar für Betrieb mit/ohne FSG
+
+  - [TW39-Platine](TW39/Kombiversion/TW39-mit-Powersave) für einen RaspBerry Pi mit Powersave-Funktion sowohl für die 230V-Versorgung als auch für die Linienstromversorgung.
+  - [TW39-Stromversorgung](TW39/Kombiversion/Stromversorgung-für-TW39-mit-Powersave) dazu passend, mit Powersave-Unterstützung.
+  - [Aufbaubeispiel mit Steckernetzteil und Kleinspannung](TW39/Kombiversion/Aufbaubeispiel/README.md)
+
+
+
+- #### als Fernschaltgerät-Ersatz für Linienstrommaschinen mit 24V-LED-Treiber
 
   * [TW39-Platine](TW39/Ohne-FSG/TW39-ohne-FSG-mit-Powersave) für einen RaspBerry Pi als vollwertiger FSG-Ersatz mit Powersave-Funktion sowohl für die 230V-Versorgung als auch für die Linienstromversorgung
+
   * [TW39-Stromversorgung](TW39/Ohne-FSG//Stromversorgung-für-TW39-ohne-FSG-mit-Powersave) mit reduzierter Linienspannung, dazu passend. 
-  * [Aufbaubeispiel mit Steckernetzteil und Kleinspannung](TW39/Ohne-FSG/TW39-FSG/)
-  
-- ### Kombi-Platine für Linienstrommaschinen mit und ohne Fernschaltgerät
 
-  jumper-konfigurierbar
+  * [Aufbaubeispiel mit Steckernetzteil und Kleinspannung](TW39/Ohne-FSG/Aufbaubeispiel/)
 
-
-  - [TW39-Platine](TW39/V4/TW39-mit-Powersave) für einen RaspBerry Pi mit Powersave-Funktion sowohl für die 230V-Versorgung als auch für die Linienstromversorgung.
-  - [TW39-Stromversorgung](TW39/V4/Stromversorgung-für-TW39-mit-Powersave) dazu passend, mit Powersave-Unterstützung.
+- #### [Adapterplatinchen zum Anschluss eines Tastwahlblocks](TW39/TWB/)
 
 
 
-- ###  für V.10
-	* [V.10-Platine](V10/V.10-3-mit-Powersave) für die Anbindung von TeKaDe FS200/FS220 mit Powersave-Funktion
-	* [V.10-Stromversorgung](V10/V.10-3-Stromversorgung-mit-Powersave) dazu passend, mit Powersave-Unterstützung für die 230V-Versorgung.
-	* [Aufbaubeispiel](V10/Beispiel.md)
+- ####  für V.10
+  * [V.10-Platine](V10/V.10-3-mit-Powersave) für die Anbindung von TeKaDe FS200/FS220 mit Powersave-Funktion
+
+  * [V.10-Stromversorgung](V10/V.10-3-Stromversorgung-mit-Powersave) dazu passend, mit Powersave-Unterstützung für die 230V-Versorgung.
+
+  * [Aufbaubeispiel](V10/Aufbaubeispiel/README.md)
+
+
+
+
 
 **Fragen oder Anregungen gerne an `telex(at)freenet.de`.**
 
@@ -42,7 +47,14 @@ Hier sammle ich Anpassungen und anderes, was ich rund um piTelex mal entwickelt 
 
 ## Software: RPi-Image mit piTelex
 
-Zu den o.a. Hardware-Varianten gibt es ein [passendes Software-Image](./soft/README.md) für RaspBerry Pi's. Es enthält ein fertig vorinstalliertes und lauffähiges piTelex.
+- #### RPi-Image mit piTelex
+
+  Zu den o.a. Hardware-Varianten  [passendes Software-Image](./soft/rpi-image/README.md) für RaspBerry Pi's. Es enthält ein fertig vorinstalliertes und lauffähiges piTelex.
+  
+
+- #### Device modul für LCD1602 Display
+
+  Statt der LEDs ein [zweizeiliges LCD](.soft/LCD1602/README.md)  **mit Rufnummernanzeige**
 
 
 

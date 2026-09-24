@@ -4,13 +4,13 @@
 
 ## Die Funktion
 Die hier beschriebene Platine liefert zum einen eine galvanisch vom Netz getrennte Linienstromversorgung mit 24V Spannung mit einem fertigen Netzteilbaustein Meanwell IRM-2-24. Zum anderen stellt sie ebenfalls galvanisch vom Netz getrennte +5V bei max 2A für die Versorgung eines RPi Zero WH und die übrige Steuerelektronik bereit. Dafür ist ein fertiger Netzteilbaustein Meanwell IRM 10-5 verwendet. Diese Bausteine sind in Schutzklasse II ausgeführt und u.a. TÜV-zertifiziert:
-[<img src="/img/IRM-safety.png" >](https://www.meanwell.com/webapp/product/search.aspx?prod=IRM-10)
+[<img src="img/IRM-safety.png" >](https://www.meanwell.com/webapp/product/search.aspx?prod=IRM-10)
 
 Beide Sekundärspannungen haben ein gemeinsames Potential. 
 
-Darüber hinaus gibt es einen relaisgeschalteten 230V-Ausgang zum Anschluss des Fernschreibers/des Fernschaltgeräts. Der Steuereingang "RLY" wird mit dem entsprechenden Ausgang auf der TW39-Platine verbunden, so dass der Fernschreiber Netzspannung erhält für die Dauer eines ankommenden Fernschreibens, bei Betätigung der "AT"-Taste (sofort bei Tastaturwahl, bei Nummernschalterwahl erst nach Verbindungsaufbau) und bei Betätigung des Tasters "LT" ([siehe TW39-Platine](https://github.com/rwobrecht/piTelex-contrib/tree/main/TW39/Ohne-FSG/TW39-ohne-FSG-mit-Powersave) ).
+Darüber hinaus gibt es einen relaisgeschalteten 230V-Ausgang zum Anschluss des Fernschreibers/des Fernschaltgeräts. Der Steuereingang "RLY" wird mit dem entsprechenden Ausgang auf der TW39-Platine verbunden, so dass der Fernschreiber Netzspannung erhält für die Dauer eines ankommenden Fernschreibens, bei Betätigung der "AT"-Taste (sofort bei Tastaturwahl, bei Nummernschalterwahl erst nach Verbindungsaufbau) und bei Betätigung des Tasters "LT" ([siehe TW39-Platine](../TW39-ohne-FSG-mit-Powersave) ).
 
-<img src="img/Schaltplan-Stromversorgung-für-TW39-ohne-FSG-mit-Powersave.png" width="50%" align=middle>
+<img src="img/Schaltplan-Stromversorgung-für-TW39-ohne-FSG-mit-Powersave.png" width="70%" align=middle>
 
 ---
 

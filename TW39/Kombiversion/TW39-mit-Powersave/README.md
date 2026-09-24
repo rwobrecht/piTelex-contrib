@@ -10,7 +10,7 @@ Die hier beschriebene Platine eignet sich zum Anschluss eines Linienstrom-Fernsc
 
 Durch Jumper kann die Verwendung mit bzw. ohne FSG konfiguriert werden, je nach Einsatz sind bestimmte Bauteile nicht zu bestücken bzw zwingend zu bestücken.
 
-Die nötige Stromversorgung (+5V= und ca 80V= für die Linienversorgung)  muss extern bereitgestellt werden. Ein passender Bauvorschlag, der auch die Powersave-Funktion unterstützt, findet sich im [entsprechenden Unterverzeichnis](https://github.com/rwobrecht/piTelex-contrib/blob/main/TW39/V4/Stromversorgung-für-TW39-mit-Powersave) des repositories.
+Die nötige Stromversorgung (+5V= und ca 80V= für die Linienversorgung)  muss extern bereitgestellt werden. Ein passender Bauvorschlag, der auch die Powersave-Funktion unterstützt, findet sich im [entsprechenden Unterverzeichnis](../Stromversorgung-für-TW39-mit-Powersave) des repositories.
 
 ### LEDs
 
@@ -45,7 +45,7 @@ Es ist möglich, eine [Stromsparschaltung](https://github.com/fablab-wue/piTelex
 
 #### Realisierung
 
-Dazu kann die Stromversorgung aus dem [Bauvorschlag](https://github.com/rwobrecht/piTelex-contrib/blob/main/TW39/V3/Stromversorgung-für-TW39-mit-Powersave) verwendet werden. Der Pin `RLY_P` (J10Pin2)  dieser Platine wird dann mit dem Pin `RP` der Stromversorgung verbunden und steuert das Leistungsrelais auf der Stromversorgungsplatine, an deren Kontaktblock die (schutzgeerdete!) Steckdose zur Versorgung des Fernschaltgeräts und des Fernschreibers angeklemmt wird. Außerdem muss in der telex.json die Stromsparschaltung aktiviert werden. Der `telex.json`-Ausschnitt weiter unten enthält alle hierfür nötigen Einstellungen.
+Dazu kann die Stromversorgung aus dem [Bauvorschlag](../Stromversorgung-für-TW39-mit-Powersave) verwendet werden. Der Pin `RLY_P` (J10Pin2)  dieser Platine wird dann mit dem Pin `RP` der Stromversorgung verbunden und steuert das Leistungsrelais auf der Stromversorgungsplatine, an deren Kontaktblock die (schutzgeerdete!) Steckdose zur Versorgung des Fernschaltgeräts und des Fernschreibers angeklemmt wird. Außerdem muss in der telex.json die Stromsparschaltung aktiviert werden. Der `telex.json`-Ausschnitt weiter unten enthält alle hierfür nötigen Einstellungen.
 
 Alternativ kann auch eine [kompatible WLAN-Schaltsteckdose](https://github.com/fablab-wue/piTelex/wiki/SW_MainsPower#software-solution) angesteuert werden. 
 
@@ -64,14 +64,14 @@ Die Empfängerschaltung und die Polwechselschaltung sind unverändert aus dem pi
 
 ## Die Platine
 
-<img src="img/TW39-V4-PCBlayout.png" width="30%" align=left>
+<img src="img/TW39-V4-PCBlayout.png" width="30%" align=middle>
 
 Besonderes Augenmerk habe ich auf ausreichende Leiterbahnabstände im Hochspannnungsbereich gelegt. Als SBC ist ein Raspberry Pi Zero WH vorgesehen, der einfach seitlich auf die zweireihige Kontaktleiste gesteckt wird. Es passen natürlich auch andere RPi mit 40-poligem GPIO-Sockel.
 Für die Steuerung eines einzelnen TW39-Fernschreibers ist ein  RPi Zero jedenfalls mehr als ausreichend.
 
 Auf den Ersatz des Umpolrelais durch eine H-Bridge habe ich verzichtet. Die Standard-Relais arbeiten zuverlässig, sind preiswert und erfüllen ihren Zweck.
 
-<img src="../../../img/C800_ICKS_36X36X20_01.png" width="14%" align=right>
+<img src="img/C800_ICKS_36X36X20_01.png" width="14%" align=middle>
 
 Der Leistungstransistor TIP50 wird abgesetzt über den Anschluss Q5 an geeigneter Stelle im Gehäuse mit Kühlkörper montiert. Es ist nicht vorgesehen, ihn direkt auf der Platine zu montieren. 
 **-->** Achtung, die Pinfolge auf der Platine entspricht wegen der Leiterabstände **nicht** der [Pinfolge am Transistor](https://www.componentsinfo.com/wp-content/uploads/2022/10/tip50-transistor-pinout-equivalent.gif) !
