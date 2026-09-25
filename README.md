@@ -5,17 +5,16 @@ Hier sammle ich Anpassungen und anderes, was ich rund um piTelex mal entwickelt 
 ## piTelex-Hardware für TW39
 
 
-- #### Kombi-Platine für Linienstrommaschinen mit und ohne Fernschaltgerät
+- ### Kombi-Platine für Linienstrommaschinen mit und ohne Fernschaltgerät
 
   jumper-konfigurierbar für Betrieb mit/ohne FSG
 
   - [TW39-Platine](TW39/Kombiversion/TW39-mit-Powersave) für einen RaspBerry Pi mit Powersave-Funktion sowohl für die 230V-Versorgung als auch für die Linienstromversorgung.
   - [TW39-Stromversorgung](TW39/Kombiversion/Stromversorgung-für-TW39-mit-Powersave) dazu passend, mit Powersave-Unterstützung.
-  - [Aufbaubeispiel mit Steckernetzteil und Kleinspannung](TW39/Kombiversion/Aufbaubeispiel/README.md)
 
 
 
-- #### als Fernschaltgerät-Ersatz für Linienstrommaschinen mit 24V-LED-Treiber
+- ### als Fernschaltgerät-Ersatz für Linienstrommaschinen mit 24V-LED-Treiber
 
   * [TW39-Platine](TW39/Ohne-FSG/TW39-ohne-FSG-mit-Powersave) für einen RaspBerry Pi als vollwertiger FSG-Ersatz mit Powersave-Funktion sowohl für die 230V-Versorgung als auch für die Linienstromversorgung
 
@@ -23,11 +22,11 @@ Hier sammle ich Anpassungen und anderes, was ich rund um piTelex mal entwickelt 
 
   * [Aufbaubeispiel mit Steckernetzteil und Kleinspannung](TW39/Ohne-FSG/Aufbaubeispiel/)
 
-- #### [Adapterplatinchen zum Anschluss eines Tastwahlblocks](TW39/TWB/)
+- ### [Adapterplatinchen zum Anschluss eines Tastwahlblocks](TW39/TWB/)
 
 
 
-- ####  für V.10
+- ###  für V.10
   * [V.10-Platine](V10/V.10-3-mit-Powersave) für die Anbindung von TeKaDe FS200/FS220 mit Powersave-Funktion
 
   * [V.10-Stromversorgung](V10/V.10-3-Stromversorgung-mit-Powersave) dazu passend, mit Powersave-Unterstützung für die 230V-Versorgung.
@@ -47,14 +46,13 @@ Hier sammle ich Anpassungen und anderes, was ich rund um piTelex mal entwickelt 
 
 ## Software: RPi-Image mit piTelex
 
-- #### RPi-Image mit piTelex
+- ### RPi-Image mit piTelex
 
   Zu den o.a. Hardware-Varianten  [passendes Software-Image](./soft/rpi-image/README.md) für RaspBerry Pi's. Es enthält ein fertig vorinstalliertes und lauffähiges piTelex.
   
+- ### Device modul für LCD1602 Display
 
-- #### Device modul für LCD1602 Display
-
-  Statt der LEDs ein [zweizeiliges LCD](./soft/LCD1602/README.md)  **mit Rufnummernanzeige**
+  Statt der LEDs (oder ergänzend) ein [zweizeiliges LCD](.soft/LCD1602/README.md)  **mit Rufnummernanzeige** einbinden
 
 
 
