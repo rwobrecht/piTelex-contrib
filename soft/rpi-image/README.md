@@ -140,7 +140,8 @@ Installationen, die mit dem alten image erstellt wurden ([piTelex-2025-06_RPi.tr
         cp piTelex-2025-06/telex.json piTelex-2025-12/  # (Konfigurationsdatei rüberkopieren)
         rm piTelex                                      # (alten Verzeichnisverweis löschen) 
         ln -s piTelex-2025-12 piTelex                   # (neuen Verzeichnisverweis erzeugen)
-        sudo systemctl restart pitelex oder sudo reboot # (piTelex bzw Rechner neustarten)
+        sudo systemctl restart pitelex                  # (piTelex neustarten)
+                                                        # (oder auch: sudo reboot (RPi neustarten))
 ```
 
 Das alte piTelex ist weiterhin vorhanden. Falls also was schiefläuft, einfach mit
