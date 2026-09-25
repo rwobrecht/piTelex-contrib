@@ -52,7 +52,7 @@ Hier sammle ich Anpassungen und anderes, was ich rund um piTelex mal entwickelt 
   
 - ### Device modul für LCD1602 Display
 
-  Statt der LEDs (oder ergänzend) ein [zweizeiliges LCD](.soft/LCD1602/README.md)  **mit Rufnummernanzeige** einbinden
+  Statt der LEDs (oder ergänzend) ein [zweizeiliges LCD](./soft/LCD1602/README.md)  **mit Rufnummernanzeige** einbinden
 
 
 
