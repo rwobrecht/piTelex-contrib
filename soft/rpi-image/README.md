@@ -70,7 +70,7 @@ Für den Erstzugriff  sind folgende Einstellungen fest vorgegeben:
 Die voreingestellte `telex.json` beinhaltet nur eine Minimal-Konfiguration aus Screen-, i-Telex- und log-Modul.
 
 * Über SSH (putty) oder Monitor/Tastatur am RPi als user pi einloggen.
-* 
+
 * Mit Eingabe von `byobu<Enter>` an der Kommandozeile gelangt man in das laufende [Screen-Modul](https://github.com/fablab-wue/piTelex/wiki/SW_DevScreen) und kann dort schonmal erste Verbindungstests durchführen:
 
 * `<ESC>AT<ENTER>` geht in die Wählbereitschaft, danach kann man eine i-telex-Nummer eingeben.
