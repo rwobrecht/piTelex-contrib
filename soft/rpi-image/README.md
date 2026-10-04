@@ -10,11 +10,14 @@ Passend  zu den PCB Layouts in diesem Repository habe ich ein bootfähiges Image
 Das Image kann natürlich auch mit anderer piTelex-Hardware genutzt werden. Die telex.json muss dann an die verwendete Hardware angepasst werden.
 
 ## Download
-### Update 02.01.2026
-Es gibt ein neues Image mit aktualisiertem Betriebssystem (13.2) und dem neuen piTelex (2025-12):<br>[piTelex-2025-12_RPi.trixie-13.2-32bit-5G-260102.img.gz](https://mega.nz/file/1CtRUS6I#pVH1AhT80d8YevGjlHbM6CR7CRaaOCiU8coKFEG89I8)
+<!--### Update 02.01.2026 -->
+Das Image mit piTelex-2025-12 ist zu groß für github und liegt daher in meiner Cloud bei mega.nz unter  <br>[piTelex-2025-12_RPi.trixie-13.2-32bit-5G-260102.img.gz](https://mega.nz/file/1CtRUS6I#pVH1AhT80d8YevGjlHbM6CR7CRaaOCiU8coKFEG89I8).
+
+Es kann über den obigen Link mit einem Browser geladen werden oder mit 
+    
+    wget https://mega.nz/file/1CtRUS6I#pVH1AhT80d8YevGjlHbM6CR7CRaaOCiU8coKFEG89I8
 
 <!-- (Das alte Image ist noch verfügbar unter [piTelex-2025-06_RPi.trixie-32bit-5G-251123.img.gz](https://mega.nz/file/hLlQWLiD#MkVyDqVeCHbYmpAjTb7-vlEV0U97UYQeqwxxEhi64NU) .) -->
-(Die Datei ist zu groß für github, sie liegt daher in meiner Cloud bei **mega.nz**)
 
 ---
 
@@ -22,13 +25,13 @@ Es gibt ein neues Image mit aktualisiertem Betriebssystem (13.2) und dem neuen p
 
 * Das image herunterladen (s.o.) und mittels [rpi-imager](https://www.raspberrypi.com/software/) analog zur [Anleitung im piTelex-wiki]( https://github.com/fablab-wue/piTelex/wiki/SW_imager) auf die µSD-Karte schreiben. 
     * Bitte die aktuelle Version des Imagers verwenden (>= 2.0.2).
-    * Als Betriebssystem "Eigenes Image" anklicken (ganz runterscrollen) und das heruntergeladene image auswählen. Weitere Anpassungen sind für Fremdimages nicht möglich.
+    * Als Betriebssystem "Eigenes Image" anklicken (ganz runterscrollen) und das heruntergeladene Image auswählen. Weitere Anpassungen sind im rpi-imager für Fremdimages nicht mehr möglich.  :-(
   
 
 * Den RPi mit der so beschriebenen Karte booten.
 * Ist kein LAN verfügbar, muss der erste Zugriff auf den RPi über Tastatur/Monitor erfolgen.
 * Wenn beim boot ein Netzwerk verfügbar ist (LAN), wird die Netzwerkeinbindung mit DHCP automatisch erledigt. 
-  Der Zugriff auf den RPi kann dann auch mittels ssh (Windows: `putty`) erfolgen. 
+  Der Zugriff auf den RPi kann dann auch mittels ssh (`ssh pi@pitelex`, Windows: `putty`) erfolgen. 
 
 
 Für den Erstzugriff  sind folgende Einstellungen fest vorgegeben:
@@ -66,7 +69,9 @@ Für den Erstzugriff  sind folgende Einstellungen fest vorgegeben:
 **piTelex startet bei jedem Boot automatisch** als [systemd-Dienst](https://github.com/fablab-wue/piTelex/wiki/SW_AutoStart). 
 Die voreingestellte `telex.json` beinhaltet nur eine Minimal-Konfiguration aus Screen-, i-Telex- und log-Modul.
 
-Mit Eingabe von `byobu<Enter>` an der Kommandozeile gelangt man in das laufende [Screen-Modul](https://github.com/fablab-wue/piTelex/wiki/SW_DevScreen) und kann dort schonmal erste Verbindungstests durchführen:
+* Über SSH (putty) oder Monitor/Tastatur am RPi als user pi einloggen.
+* 
+* Mit Eingabe von `byobu<Enter>` an der Kommandozeile gelangt man in das laufende [Screen-Modul](https://github.com/fablab-wue/piTelex/wiki/SW_DevScreen) und kann dort schonmal erste Verbindungstests durchführen:
 
 * `<ESC>AT<ENTER>` geht in die Wählbereitschaft, danach kann man eine i-telex-Nummer eingeben.
 
@@ -147,12 +152,13 @@ Installationen, die mit dem alten image erstellt wurden ([piTelex-2025-06_RPi.tr
 Das alte piTelex ist weiterhin vorhanden. Falls also was schiefläuft, einfach mit
 
 ```BASH
-         cd
-         rm piTelex
-         ln -s piTelex-2025-06 piTelex
+        cd                                              # (ins Homeverzeichnis wechseln)
+        rm piTelex                                      # (alten Verzeichnisverweis löschen) 
+        ln -s piTelex-2025-06 piTelex                   # (neuen Verzeichnisverweis auf die alte Version erzeugen)
+        sudo systemctl restart pitelex                  # (die alte piTelex Vserion neustarten)
 ```
 
-das alte piTelex wieder aktivieren und neu booten :-)
+das alte piTelex wieder aktivieren :-)
 
 ---
 ## Disclaimer
