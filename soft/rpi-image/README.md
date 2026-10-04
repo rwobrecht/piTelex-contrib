@@ -101,7 +101,7 @@ Anschließend entweder piTelex neu starten:
 oder einfach neu booten: 
     `sudo reboot`
 
->[!NOTE]
+>[!IMPORTANT]
 >Sollte piTelex durch Fehlbedienung oder fehlerhafte `telex.json` beendet werden, versucht der systemd, den Dienst erneut nach 10 Sekunden zu starten. Wenn das gelingt, kann man auch wieder mit `byobu` das Screen-interface bedienen. Wenn nichts mehr hilft, hilft ein reboot; ggf. vorher eine funktionierende Variante der telex.json aktivieren... :-)
 >
 >Bitte **nicht** versuchen, `telex.py` "zu Fuß" zu starten, das überkreuzt sich mit dem systemd-Dienst und führt zu Fehlermeldungen, aber nicht zum Funktionieren :-)
