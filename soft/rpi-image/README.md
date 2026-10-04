@@ -28,7 +28,7 @@ Es kann über den obigen Link mit einem Browser geladen werden oder mit
     * Als Betriebssystem "Eigenes Image" anklicken (ganz runterscrollen) und das heruntergeladene Image auswählen. Weitere Anpassungen sind im rpi-imager für Fremdimages nicht mehr möglich.  :-(
   
 
-* Den RPi mit der so beschriebenen Karte booten.
+* Den RPi mit der so beschriebenen Karte booten.<br>Geduld haben... der erste boot dauert bei einem RPi Zero mehrere Minuten!
 * Ist kein LAN verfügbar, muss der erste Zugriff auf den RPi über Tastatur/Monitor erfolgen.
 * Wenn beim boot ein Netzwerk verfügbar ist (LAN), wird die Netzwerkeinbindung mit DHCP automatisch erledigt. 
   Der Zugriff auf den RPi kann dann auch mittels ssh (`ssh pi@pitelex`, Windows: `putty`) erfolgen. 
