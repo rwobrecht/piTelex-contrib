@@ -1,4 +1,4 @@
-# Museumstaugliches piTelex-FSG
+# piTelex-FSG
 
 ## Die Motivation
 
