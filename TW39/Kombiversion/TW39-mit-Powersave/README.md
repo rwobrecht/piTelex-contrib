@@ -184,7 +184,7 @@ Mit den Jumpern kann die Platine konfiguriert werden.
 | JP1    | ---                | gebrückt            | D1,K1,R1,Q1 nicht bestücken bei Betrieb ohne FSG             |
 | JP2    | ---                | gebrückt            | D1,K1,R1,Q1 nicht bestücken bei Betrieb ohne FSG             |
 | JP3    | Brücke 1-2         | Brücke 2-3          |                                                              |
-| JP4    | Brücke 1-2         | Brücke 2-3          | separater NrS bei Betrieb ohne FSG                           |
+| JP4    | Brücke 1-2         | Brücke 2-3          | Brücke 2-3 bei separatem NrS, Brücke 1-2 sonst               |
 | JP5-8  |                    |                     | frei, kann softwareseitig frei verwendet werden für Zusatzfunktionen |
 
 
