@@ -1,11 +1,18 @@
 # Platine für piTelex TW39 (ersetzt Fernschaltgerät)
 
-<img src="img/Aufbau-TW39-ohne-FSG-mit-Powersave.png" width="60%" align=middle>
+**Update: Version 260831** ist funktional identisch zu den Vorgängerversionen, bietet aber zusätzliche (in den meisten Fällen entbehrliche) Optionen:
+
+- Herausgeführter Pinheader für den I2C-Bus des RPi, dazu gehörend 
+- zusätzlicher JP2 zur Festlegung der Versorgungsspannung am I2C-Bus
+- Zusätzlicher Header zum Anschluss eines Tastwahlblocks mit Impulswahl (dazu ist weitere Zusatzelektronik nötig)
+
+<img src="img/Aufbau-TW39-ohne-FSG-mit-Powersave.png" width="70%" align=middle>
 
 ## Die Funktionsmerkmale
 Die hier beschriebene Platine eignet sich zum Anschluss eines 40mA-Linienstrom-Fernschreibers (z.B. T100, Lo15 u.a.) an das i-telex-Netz für das Wählverfahren TW39 mit Nummernschalterwahl oder Tastaturwahl, ***ohne*** vorgeschaltetes Fernschaltgerät. piTelex übernimmt die Funktion des FSG.
 
-Da kein FSG gespeist werden muss, kann die Linienspannung ohne Einbuße auf 24V herabgesetzt werden; die Verlustwärme im Leistungstransistor wird dadurch deutlich reduziert.
+Da kein FSG gespeist werden muss, kann die Linienspannung für die meisten Fernschreiber ohne Einbuße auf 24V herabgesetzt werden; die Verlustwärme im Leistungstransistor wird dadurch deutlich reduziert. 
+**Einzige zurzeit bekannte Ausnahme ist der Streifenschreiber Siemens T34, der eine höhere Linienspannung benötigt. Hierfür ist diese Platine nicht geeignet.**
 
 Die nötige Stromversorgung (5V= und 24V= für die Linienversorgung)  muss extern bereitgestellt werden. Ein passender Bauvorschlag findet sich im [entsprechenden Unterverzeichnis](../Stromversorgung-für-TW39-ohne-FSG-mit-Powersave) des Repositories. Dieser unterstützt auch den erforderlichen Schaltausgang für die Netzspannungsversorgung des Fernschreibers (normalerweise würde das FSG diese Funktion übernehmen). 
 
@@ -46,7 +53,10 @@ Für alle vier LEDs sind 24V-Ausgänge vorhanden, mit denen handelsübliche 24V-
 Der Pin `RLY`  dieser Platine wird mit dem entsprechenden Pin der Stromversorgungsplatine verbunden und steuert das Leistungsrelais auf der Stromversorgungsplatine, an deren Kontaktblock die (schutzgeerdete!) Steckdose zur Versorgung des Fernschreibers angeklemmt wird. 
 
 * Bei ankommendem Anruf schaltet piTelex die Stromversorgung für den Fernschreiber ein und nach Verbindungsende automatisch auch wieder aus.
-* Für einen ausgehenden Anruf drückt man kurz die am `pin_button_AT` angeschlossene Anruftaste, um das Stromrelais einzuschalten (bei Tastaturwahl, ansonsten erst bei aufgebauter Verbindung). Nach Verbindungsende wird die Anlage durch Drücken der am `pin_button_ST` angeschlossenen "ST"-Taste oder automatisch nach einer vorwählbaren Zeit (`power_button_timeout`) wieder ausgeschaltet.
+* Für einen ausgehenden Anruf drückt man kurz die am `pin_button_AT` angeschlossene Anruftaste, um das Leistungsrelais zu aktivieren
+  *  bei Tastaturwahl sofort, sobald Wählbereitschaft vorhanden ist
+  * bei Nummernschalterwahl erst bei aufgebauter Verbindung). 
+* Nach Verbindungsende wird die Anlage durch Drücken der am `pin_button_ST` angeschlossenen "ST"-Taste oder automatisch nach einer vorwählbaren Zeit `power_button_timeout` wieder ausgeschaltet.
 * Zusätzlich kann durch Aktivieren von `txd_powersave` im Standby auch der Schleifenstrom abgeschaltet werden. 
 
 Der Lokalbetrieb wird durch Drücken der am `pin_button_LT` angeschlossenen Lokaltaste ein- und durch Drücken der "ST"-Taste wieder ausgeschaltet.
@@ -57,11 +67,12 @@ Der Lokalbetrieb wird durch Drücken der am `pin_button_LT` angeschlossenen Loka
 
 ## Die Schaltung
 
-<img src="img/Schaltplan-TW39-ohne-FSG-mit-Powersave.png" width="50%" align=center>
+<img src="img/Schaltplan-TW39-ohne-FSG-mit-Powersave.png" width="100%" align=center>
 
 Die Empfängerschaltung ist unverändert aus dem piTelex-Wiki übernommen, die Schaltung des Senders besteht wie im Original aus einer Stromquellenschaltung mit BC337 und TIP50, verwendet aber statt der ULN...-Treiber-ICs für die Invertierung und Ankopplung des TXD-Signals zwei einfache NPN-Transistoren BC337. Mit dem Trimmpoti wird der Schleifenstrom auf 40mA eingestellt. Da wir es hier mit einer einstellbaren Konstantstromquelle zu tun haben, ist die Stromschleife kurzschlussfest und die Einstellung der 40mA kann daher auch bei Kurzschluss der Schleife erfolgen. Die 24V-Ausgänge für die LEDs werden über einen ULN2003A bereitgestellt. 
 
-Die Gesamtstromaufnahme von Fernschreiber (40mA) plus maximal zwei gleichzeitig leuchtenden LEDs ("LT" und "A") darf bei Verwendung des Netzteil-Bauvorschlags mit IRM-2-24-Wandler 80 mA nicht überschreiten.
+> [!IMPORTANT]
+> Die Gesamtstromaufnahme von Fernschreiber (40mA) plus maximal zwei gleichzeitig leuchtenden LEDs ("LT" und "A") darf bei Verwendung des Netzteil-Bauvorschlags mit IRM-2-24-Wandler 80 mA nicht überschreiten.
 
 
 
@@ -69,39 +80,42 @@ Die Gesamtstromaufnahme von Fernschreiber (40mA) plus maximal zwei gleichzeitig 
 
 ## Die Platine
 
-<img src="img/PCBunbestückt-TW39-ohne-FSG-mit-Powersave.png" width="30%" align=middle><img src="img/PCBlayout-TW39-ohne-FSG-mit-Powersave.png" width="30%" align=right>
+| Oberseite                                                    | Unterseite                                                   |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| <img src="img/PCB-Oberseite-TW39-ohne-FSG-mit-Powersave.png" width="60%"> | <img src="img/PCB-Unterseite-TW39-ohne-FSG-mit-Powersave.png" width="60%" > |
+
 
 
 Als SBC ist ein Raspberry Pi Zero WH vorgesehen, der einfach seitlich auf die zweireihige Kontaktleiste gesteckt wird. Es passen natürlich auch andere RPi mit 40-poligem GPIO-Sockel.
-Für die Steuerung eines einzelnen TW39-Fernschreibers ist ein  RPi Zero jedenfalls mehr als ausreichend.
+Für die Steuerung eines  TW39-Fernschreibers ist ein  RPi Zero jedenfalls mehr als ausreichend.
 
-Der Leistungstransistor TIP50 muss ausreichend gekühlt werden. Der Kühlkörper sollte etwa 4W abgeben können bei zulässiger Temperaturerhöhung. 
+Der Leistungstransistor TIP50 muss ausreichend gekühlt werden. Der Kühlkörper sollte etwa 1-2W abgeben können bei zulässiger Temperaturerhöhung. 
 
-Der Linienstrom von 40mA wird mit RV1 eingestellt. Es empfiehlt sich, mit dem Maximalert von 20 Ohm zu beginnen. 40mA werden i.d.R. bei etwa 15 Ohm erreicht.
+Der Linienstrom von 40mA wird mit RV1 eingestellt. Es empfiehlt sich, mit dem Maximalwert von 20 Ohm zu beginnen. 40mA werden bei etwa 15 Ohm erreicht.
 
 
 
 
 ### Bauteileliste
 
-| Bauteil  | Bezeichnung                       | Bemerkung                       |
-| -------- | --------------------------------- | ------------------------------- |
-| C1       | 100nF/100V, RM15, MKT             |                                 |
-| J1       | PinSocket_2x20_P2.54mm Horizontal |                                 |
-| J2,J5    | PinHeader 1x02 P2.54mm Vertical   | z.B. Molex KK-254               |
-| J3       | PinHeader 1x04 P2.54mm Vertical   | z.B. Molex KK-254               |
-| J4,J6    | PinHeader 1x05 P2.54mm Vertical   | z.B. Molex KK-254               |
-| Q1,Q2,Q3 | BC337                             |                                 |
-| Q4       | TIP50                             |                                 |
-| R1,R9    | 1kOhm                             | 0,25W                           |
-| R2       | 470 Ohm                           | 0,25W                           |
-| R3       | 510 Ohm                           | 0,25W                           |
-| R4,R7    | 330 Ohm                           | 0,25W                           |
-| R6,R5    | 68 Ohm                            | 0,25W                           |
-| R8       | 100 Ohm                           | 0,25W                           |
-| RV1      | 20 Ohm Mehrgang                   | 0,5W z.B. Bourns_3296W_Vertical |
-| U1       | LTV-817                           |                                 |
-| U2       | ULN2003A                          |                                 |
+| Bauteil    | Bezeichnung                       | Bemerkung                       |
+| ---------- | --------------------------------- | ------------------------------- |
+| C1         | 100nF/100V, RM15, MKT             |                                 |
+| J1         | PinSocket_2x20_P2.54mm Horizontal |                                 |
+| J2, J5, J8 | PinHeader 1x02 P2.54mm Vertical   | z.B. Molex KK-254               |
+| J3, J7     | PinHeader 1x04 P2.54mm Vertical   | z.B. Molex KK-254               |
+| J4,J6      | PinHeader 1x05 P2.54mm Vertical   | z.B. Molex KK-254               |
+| Q1,Q2,Q3   | BC337                             |                                 |
+| Q4         | TIP50                             |                                 |
+| R1,R9      | 1kOhm                             | 0,25W                           |
+| R2         | 470 Ohm                           | 0,25W                           |
+| R3         | 510 Ohm                           | 0,25W                           |
+| R4,R7      | 330 Ohm                           | 0,25W                           |
+| R6,R5      | 68 Ohm                            | 0,25W                           |
+| R8         | 100 Ohm                           | 0,25W                           |
+| RV1        | 20 Ohm Mehrgang                   | 0,5W z.B. Bourns_3296W_Vertical |
+| U1         | LTV-817                           |                                 |
+| U2         | ULN2003A                          |                                 |
 
 
 
@@ -134,9 +148,29 @@ Die Platine bietet folgende Anschlussmöglichkeiten:
 |                     | 3    | BTN_AT   | A            | Lokaltaste (`pin_button_AT` herausgeführt)                   |
 |                     | 4    | BTN_ST   | A            | Lokaltaste (`pin_button_ST` herausgeführt)                   |
 |                     | 5    | BTN_ID   | A            | Lokaltaste (`pin_button_ID` herausgeführt)                   |
+| |  |  |  |  |
+| **J7**<br>(I2C) | 1 | Vcc | A | Versorgungsspannung für I2C, wählbar mit JP2 zwischen 3,3V oder 5V |
+|  | 2 | GND | E | Massepotential |
+|  | 3 | SDA | E/A | Busdaten |
+|  | 4 | SCL | A | Bustakt |
+|  |  |  |  |  |
+| **J8**<br>(TWB) | 1 | +U | A | Versorgungsspannung für TWB-Adapter (24V) |
+|  | 2 | GND | E | Massepotential für TWB-Adapter |
+|  |  |  |  |  |
 
 
 ---
+
+## Die Jumper
+
+|                                                            |              |                                                    |
+| ---------------------------------------------------------- | ------------ | -------------------------------------------------- |
+| **JP1**<br>(Selektiert die LED-Versorgungsspannung)        | gebrückt     | U_(LED) = 24V (Linienspannung)                     |
+|                                                            | offen        | U_(LED) muss über Pin 1 von J8 eingespeist werden. |
+|                                                            |              |                                                    |
+| **JP2**<br>(Selektiert die Versorgungsspannung des I2C-Bus | Brücke 1-2   | 5V                                                 |
+|                                                            | Brücke 2-3   | 3,3V                                               |
+|                                                            | Brücke 1-2-3 | NIEMALS!!! Führt zur Zerstörung der Elektronik!    |
 
 
 
@@ -191,7 +225,7 @@ Die Schaltung verwendet **nicht** die Standard-GPIOs von piTelex, daher füge ic
     }
   },
   "wru_id": "123456 dummy d",          # Software-Kennung
-  "errorlog_path": "./piTelex-log/",
+  "errorlog_path": "./piTelex-log/",   # Verzeichnis für Logfiles
   "power_off_delay": 5,                # Verzögerung für das Abschalten der Netzspannung nach Drücken der ST-Taste   
   "power_button_timeout": 7200,        # Nach 7200s Inaktivität wird die Maschine abgeschaltet
   "wru_replace_always": true,          # Immer Software-KG nutzen (nur für Maschine ohne KG)

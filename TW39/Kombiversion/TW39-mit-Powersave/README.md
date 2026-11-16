@@ -1,6 +1,6 @@
 # Platine für piTelex TW39 (Version 4 - Allround)
 
-<img src="img/TW39-V4-PCBbestückt.png" width="45%" align=right>
+<img src="img/TW39-V4-PCBbestückt.png" width="70%" align=left >
 
 ## Die Funktionsmerkmale
 Die hier beschriebene Platine eignet sich zum Anschluss eines Linienstrom-Fernschreibers
@@ -55,7 +55,7 @@ Zusätzlich kann durch Aktivieren von `"txd_powersave": true` auch der Schleifen
 
 ## Die Schaltung
 
-<img src="img/TW39-V4-Schaltplan.png" width="50%" align=center>
+<img src="img/TW39-V4-Schaltplan.png" width="100%" align=center>
 
 Die Empfängerschaltung und die Polwechselschaltung sind unverändert aus dem piTelex-Wiki übernommen, die Schaltung des Senders besteht wie im Original aus einer Stromquellenschaltung mit BC337 und TIP50, verwendet aber statt der ULN...-Treiber-ICs für die Invertierung und Ankopplung des TXD-Signals zwei einfache NPN-Transistoren BC337. Mit dem Trimmpoti wird der Schleifenstrom auf 40mA eingestellt. 
 
@@ -64,7 +64,11 @@ Die Empfängerschaltung und die Polwechselschaltung sind unverändert aus dem pi
 
 ## Die Platine
 
-<img src="img/TW39-V4-PCBlayout.png" width="30%" align=middle>
+| Oberseite                                                    | Unterseite                                                   |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| <img src="img/TW39-V4-PCBlayout-Oberseite.png" width=70% align=middle> | <img src="img/TW39-V4-PCBlayout-Unterseite.png" width="70%" align=middle> |
+
+
 
 Besonderes Augenmerk habe ich auf ausreichende Leiterbahnabstände im Hochspannnungsbereich gelegt. Als SBC ist ein Raspberry Pi Zero WH vorgesehen, der einfach seitlich auf die zweireihige Kontaktleiste gesteckt wird. Es passen natürlich auch andere RPi mit 40-poligem GPIO-Sockel.
 Für die Steuerung eines einzelnen TW39-Fernschreibers ist ein  RPi Zero jedenfalls mehr als ausreichend.
@@ -74,7 +78,12 @@ Auf den Ersatz des Umpolrelais durch eine H-Bridge habe ich verzichtet. Die Stan
 <img src="img/C800_ICKS_36X36X20_01.png" width="14%" align=middle>
 
 Der Leistungstransistor TIP50 wird abgesetzt über den Anschluss Q5 an geeigneter Stelle im Gehäuse mit Kühlkörper montiert. Es ist nicht vorgesehen, ihn direkt auf der Platine zu montieren. 
-**-->** Achtung, die Pinfolge auf der Platine entspricht wegen der Leiterabstände **nicht** der [Pinfolge am Transistor](https://www.componentsinfo.com/wp-content/uploads/2022/10/tip50-transistor-pinout-equivalent.gif) !
+<!IMPORTANT>
+
+> ```markdown
+> > [!IMPORTANT]
+> Achtung, die Pinfolge auf der Platine entspricht wegen der Leiterabstände **nicht** der [Pinfolge am Transistor](https://www.componentsinfo.com/wp-content/uploads/2022/10/tip50-transistor-pinout-equivalent.gif) !
+> ```
 
 Bei Betrieb mit FSG, also voller Linienspannung, muss der Kühlkörper etwa 4W abgeben können bei zulässiger Temperaturerhöhung. Ein solcher Alu-Fingerkühlkörper 36x36mm  bspw. tut hier gute Dienste.
 
