@@ -1,13 +1,14 @@
 # RaspBerry Pi image für TW39 und V.10 Hardware
 
-Passend  zu den PCB Layouts in diesem Repository habe ich ein bootfähiges Image zusammengebaut mit den Eigenschaften
+Passend (nicht nur) zu den PCB Layouts in diesem Repository habe ich ein bootfähiges Image zusammengebaut mit den Eigenschaften
 
 * 32bit (passt also für alle RPi inkl. ZeroW)
 * Vorinstalliertes RPi-OS trixie (Debian 13 basierend)
 * Vorinstalliertes und lauffähiges piTelex 
 * µSD-Speicherkarte sollte 8GB oder größer sein
 
-Das Image kann natürlich auch mit anderer piTelex-Hardware genutzt werden. Die telex.json muss dann an die verwendete Hardware angepasst werden.
+Die Grundidee ist, ein fertig lauffähiges piTelex mit einer hardwareunabhängigen Grundkonfiguration bereitzustellen, die auf Anhieb läuft und die dann nur noch an die verwendete Fernschreiberhardware angepasst werden muss. Das Image startet piTelex deshalb nur mit den Modulen Screen und i-telex.
+Die telex.json kann dann an die verwendete Hardware angepasst werden.
 
 ## Download
 <!--### Update 02.01.2026 -->
